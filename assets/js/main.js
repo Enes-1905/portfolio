@@ -1,25 +1,8 @@
-// ================= BURGER MENU =================
-
 const burger = document.getElementById("burger");
 const nav = document.getElementById("nav");
-
-if (burger && nav) {
-  burger.addEventListener("click", () => {
-    burger.classList.toggle("open");
-    nav.classList.toggle("open");
-    nav.classList.toggle("active");
-  });
-
-  nav.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      burger.classList.remove("open");
-      nav.classList.remove("open");
-      nav.classList.remove("active");
-    });
-  });
-}
-
-// ================= TRANSLATIONS =================
+const btnDe = document.getElementById("btn-de");
+const btnEn = document.getElementById("btn-en");
+const contactForm = document.getElementById("contact-form");
 
 const translations = {
   en: {
@@ -30,6 +13,16 @@ const translations = {
     heroIam: "I am",
     heroJob: "FRONTEND DEVELOPER",
     heroButton: "Let’s talk!",
+
+    aboutTitle: "About me",
+    aboutIntro:
+      "Write some information about yourself that is IT related. Why are you passionate about coding? What is your source of inspiration for improving your programming skills?",
+    aboutLocation:
+      "Where are you located? Are you open to different ways of working, such as working remotely or even relocating?",
+    aboutLearning:
+      "Show that you are open-minded. Are you enthusiastic about learning new technologies and continually improving your skills?",
+    aboutProblem:
+      "A brief description of your problem-solving approach. Do you learn from each challenge as you search for the most efficient or elegant solution? You can include some keywords like: analytical thinking, creativity, persistence and collaboration.",
 
     skillsTitle: "My skills",
     skillsText1:
@@ -53,12 +46,16 @@ const translations = {
 
     contactTitle: "Contact",
     contactHeadline: "Got a problem to solve?",
-    contactText1: "Encourage people to contact you.",
+    contactText1:
+      "Encourage people to contact you and describe what role you are interested in. Show that you will add value to their projects through your work.",
+    contactHighlight: "Need a Frontend developer?",
+    contactHighlightSpan: "Contact me!",
     namePlaceholder: "Your name",
     emailPlaceholder: "Your email",
     messagePlaceholder: "Your message",
-    privacy:
-      "I've read the privacy policy and agree to the processing of my data.",
+    privacyStart: "I've read the",
+    privacyLink: "privacy policy",
+    privacyEnd: "and agree to the processing of my data as outlined.",
     sendButton: "Send message :)",
     legalNotice: "Legal Notice",
 
@@ -75,6 +72,16 @@ const translations = {
     heroIam: "Ich bin",
     heroJob: "FRONTEND ENTWICKLER",
     heroButton: "Schreib mir!",
+
+    aboutTitle: "Über mich",
+    aboutIntro:
+      "Schreibe einige Informationen über dich, die IT-bezogen sind. Warum bist du leidenschaftlich am Programmieren interessiert? Was inspiriert dich, deine Programmierfähigkeiten zu verbessern?",
+    aboutLocation:
+      "Wo befindest du dich? Bist du offen für verschiedene Arbeitsweisen, wie Remote-Arbeit oder sogar einen Umzug?",
+    aboutLearning:
+      "Zeige, dass du offen bist. Begeisterst du dich dafür, neue Technologien zu lernen und deine Fähigkeiten kontinuierlich zu verbessern?",
+    aboutProblem:
+      "Eine kurze Beschreibung deines Problemlösungsansatzes. Lernst du aus jeder Herausforderung, während du nach der effizientesten oder elegantesten Lösung suchst? Du kannst Begriffe wie analytisches Denken, Kreativität, Ausdauer und Zusammenarbeit einbauen.",
 
     skillsTitle: "Meine Skills",
     skillsText1:
@@ -98,12 +105,16 @@ const translations = {
 
     contactTitle: "Kontakt",
     contactHeadline: "Hast du ein Problem zu lösen?",
-    contactText1: "Kontaktiere mich.",
+    contactText1:
+      "Kontaktiere mich und beschreibe, welche Rolle du suchst. Ich zeige dir, wie ich durch meine Arbeit Mehrwert für dein Projekt schaffen kann.",
+    contactHighlight: "Brauchst du einen Frontend Entwickler?",
+    contactHighlightSpan: "Kontaktiere mich!",
     namePlaceholder: "Dein Name",
     emailPlaceholder: "Deine E-Mail",
     messagePlaceholder: "Deine Nachricht",
-    privacy:
-      "Ich habe die Datenschutzerklärung gelesen und stimme der Verarbeitung meiner Daten zu.",
+    privacyStart: "Ich habe die",
+    privacyLink: "Datenschutzerklärung",
+    privacyEnd: "gelesen und stimme der Verarbeitung meiner Daten zu.",
     sendButton: "Nachricht senden :)",
     legalNotice: "Impressum",
 
@@ -113,246 +124,230 @@ const translations = {
   }
 };
 
-// ================= LANGUAGE FUNCTION =================
+function setText(selector, text) {
+  const element = document.querySelector(selector);
+  if (element) element.textContent = text;
+}
+
+function setPlaceholder(selector, text) {
+  const element = document.querySelector(selector);
+  if (element) element.placeholder = text;
+}
+
+function translateNav(t) {
+  const links = document.querySelectorAll(".nav-list a");
+  if (links[0]) links[0].textContent = t.navAbout;
+  if (links[1]) links[1].textContent = t.navSkills;
+  if (links[2]) links[2].textContent = t.navPortfolio;
+}
+
+function translateHero(t) {
+  setText(".iam", t.heroIam);
+  setText(".hero-text h2", t.heroJob);
+  setText(".hero-text .cta", t.heroButton);
+}
+
+function translateAbout(t) {
+  const aboutInfos = document.querySelectorAll(".about-info p");
+  setText(".about-text h2", t.aboutTitle);
+  setText(".about-intro", t.aboutIntro);
+  if (aboutInfos[0]) aboutInfos[0].textContent = t.aboutLocation;
+  if (aboutInfos[1]) aboutInfos[1].textContent = t.aboutLearning;
+  if (aboutInfos[2]) aboutInfos[2].textContent = t.aboutProblem;
+}
+
+function translateSkills(t) {
+  setText(".skills-heading h2", t.skillsTitle);
+  setText(".skills-description", t.skillsText1);
+  setText(".skills-question p", t.skillsText2);
+  setText(".skills-btn", t.skillsButton);
+  setSkillsHeadline(t);
+}
+
+function setSkillsHeadline(t) {
+  const headline = document.querySelector(".skills-question h3");
+  if (!headline) return;
+  headline.innerHTML = `${t.skillsHeadline} <span>${t.skillsSpan}</span>`;
+}
+
+function translatePortfolio(t) {
+  const techs = document.querySelectorAll(".project-tech");
+  const descriptions = document.querySelectorAll(".project-description");
+  if (techs[0]) techs[0].textContent = t.joinTech;
+  if (techs[1]) techs[1].textContent = t.polloTech;
+  if (descriptions[0]) descriptions[0].textContent = t.joinDescription;
+  if (descriptions[1]) descriptions[1].textContent = t.polloDescription;
+}
+
+function translateProjectButtons(t) {
+  document.querySelectorAll(".live-btn").forEach((btn) => {
+    btn.textContent = t.liveTest;
+  });
+  document.querySelectorAll(".github-btn").forEach((btn) => {
+    btn.textContent = t.github;
+  });
+}
+
+function translateContact(t, lang) {
+  setText(".contact-left h2", t.contactTitle);
+  setText(".contact-left h3", t.contactHeadline);
+  setText(".contact-description", t.contactText1);
+  translateContactHighlight(t);
+  translatePrivacy(t, lang);
+}
+
+function translateContactHighlight(t) {
+  const element = document.querySelector(".contact-highlight");
+  if (!element) return;
+  element.innerHTML = `${t.contactHighlight} <span>${t.contactHighlightSpan}</span>`;
+}
+
+function translatePlaceholders(t) {
+  setPlaceholder('input[name="name"]', t.namePlaceholder);
+  setPlaceholder('input[name="email"]', t.emailPlaceholder);
+  setPlaceholder('textarea[name="message"]', t.messagePlaceholder);
+}
+
+function translatePrivacy(t, lang) {
+  const privacyText = document.querySelector(".privacy-text");
+  if (!privacyText) return;
+  const href = lang === "de" ? "./datenschutz.html" : "./datenschutz-en.html";
+  privacyText.innerHTML = `${t.privacyStart} <a href="${href}" class="privacy-link">${t.privacyLink}</a> ${t.privacyEnd}`;
+}
+
+function translateFooter(t, lang) {
+  const footerLegal = document.querySelector(".footer-legal");
+  if (!footerLegal) return;
+  footerLegal.textContent = t.legalNotice;
+  footerLegal.href = lang === "de" ? "./impressum.html" : "./impressum-en.html";
+}
+
+function setActiveLanguageButton(lang) {
+  if (!btnDe || !btnEn) return;
+  btnDe.classList.toggle("active", lang === "de");
+  btnEn.classList.toggle("active", lang === "en");
+}
 
 function setLanguage(lang) {
   const t = translations[lang];
-
   if (!t) return;
-
   document.documentElement.lang = lang;
-
-  // NAV
-  const navLinks = document.querySelectorAll(".nav-list a");
-
-  if (navLinks[0]) navLinks[0].textContent = t.navAbout;
-  if (navLinks[1]) navLinks[1].textContent = t.navSkills;
-  if (navLinks[2]) navLinks[2].textContent = t.navPortfolio;
-
-  // HERO
-  const heroIam = document.querySelector(".iam");
-  const heroJob = document.querySelector(".hero-text h2");
-  const heroButton = document.querySelector(".hero-text .cta");
-
-  if (heroIam) heroIam.textContent = t.heroIam;
-  if (heroJob) heroJob.textContent = t.heroJob;
-  if (heroButton) heroButton.textContent = t.heroButton;
-
-  // SKILLS
-  const skillsTitle =
-    document.querySelector(".skills-heading h2") ||
-    document.querySelector(".skills-title-row h2");
-
-  const skillsDescription = document.querySelector(".skills-description");
-  const skillsHeadline = document.querySelector(".skills-question h3");
-  const skillsLearning = document.querySelector(".skills-question p");
-  const skillsButton =
-    document.querySelector(".skills-btn") ||
-    document.querySelector(".skills-cta");
-
-  if (skillsTitle) skillsTitle.textContent = t.skillsTitle;
-
-  if (skillsDescription) {
-    skillsDescription.textContent = t.skillsText1;
-  }
-
-  if (skillsHeadline) {
-    skillsHeadline.innerHTML = `${t.skillsHeadline} <span>${t.skillsSpan}</span>`;
-  }
-
-  if (skillsLearning) {
-    skillsLearning.textContent = t.skillsText2;
-  }
-
-  if (skillsButton) {
-    skillsButton.textContent = t.skillsButton;
-  }
-
-  // PORTFOLIO
-  const projectTechs = document.querySelectorAll(".project-tech");
-  const projectDescriptions = document.querySelectorAll(".project-description");
-
-  if (projectTechs[0]) {
-    projectTechs[0].textContent = t.joinTech;
-  }
-
-  if (projectDescriptions[0]) {
-    projectDescriptions[0].textContent = t.joinDescription;
-  }
-
-  if (projectTechs[1]) {
-    projectTechs[1].textContent = t.polloTech;
-  }
-
-  if (projectDescriptions[1]) {
-    projectDescriptions[1].textContent = t.polloDescription;
-  }
-
-  // BUTTONS
-  const liveButtons = document.querySelectorAll(".live-btn");
-  const githubButtons = document.querySelectorAll(".github-btn");
-
-  liveButtons.forEach((button) => {
-    button.textContent = t.liveTest;
-  });
-
-  githubButtons.forEach((button) => {
-    button.textContent = t.github;
-  });
-
-  // CONTACT
-  const contactTitle =
-    document.querySelector(".contact-header h2") ||
-    document.querySelector(".contact-left h2");
-
-  const contactHeadline = document.querySelector(".contact-left h3");
-  const contactParagraph = document.querySelector(".contact-description");
-
-  if (contactTitle) {
-    contactTitle.textContent = t.contactTitle;
-  }
-
-  if (contactHeadline) {
-    contactHeadline.textContent = t.contactHeadline;
-  }
-
-  if (contactParagraph) {
-    contactParagraph.textContent = t.contactText1;
-  }
-
-  // PLACEHOLDERS
-  const nameInput = document.querySelector('input[name="name"]');
-  const emailInput = document.querySelector('input[name="email"]');
-  const messageInput = document.querySelector('textarea[name="message"]');
-
-  if (nameInput) nameInput.placeholder = t.namePlaceholder;
-  if (emailInput) emailInput.placeholder = t.emailPlaceholder;
-  if (messageInput) messageInput.placeholder = t.messagePlaceholder;
-
-  // PRIVACY
-  const privacyText = document.querySelector(".privacy-text");
-if (privacyText) {
-  if (lang === "de") {
-    privacyText.innerHTML = `
-      Ich habe die
-      <a href="./datenschutz.html" class="privacy-link">Datenschutzerklärung</a>
-      gelesen und stimme der Verarbeitung meiner Daten zu.
-    `;
-  } else {
-    privacyText.innerHTML = `
-      I've read the
-      <a href="./datenschutz-en.html" class="privacy-link">privacy policy</a>
-      and agree to the processing of my data as outlined.
-    `;
-  }
-}
-  // CONTACT BUTTON
-  const contactButton = document.querySelector(".contact-btn");
-
-  if (contactButton) {
-    contactButton.textContent = t.sendButton;
-  }
-
-  // FOOTER
-  const imprintLink =
-    document.getElementById("imprintLink") ||
-    document.querySelector(".footer-legal");
-
-  if (imprintLink) {
-    imprintLink.textContent = t.legalNotice;
-  }
-
-  // ACTIVE BUTTONS
-  const btnDe = document.getElementById("btn-de");
-  const btnEn = document.getElementById("btn-en");
-
-  if (btnDe && btnEn) {
-    btnDe.classList.toggle("active", lang === "de");
-    btnEn.classList.toggle("active", lang === "en");
-  }
-
+  translatePage(t, lang);
   localStorage.setItem("language", lang);
 }
 
-// ================= BUTTON EVENTS =================
+function translatePage(t, lang) {
+  translateNav(t);
+  translateHero(t);
+  translateAbout(t);
+  translateSkills(t);
+  translatePortfolio(t);
+  translateProjectButtons(t);
+  translateContact(t, lang);
+  translatePlaceholders(t);
+  setText(".contact-btn", t.sendButton);
+  translateFooter(t, lang);
+  setActiveLanguageButton(lang);
+}
 
-const btnDe = document.getElementById("btn-de");
-const btnEn = document.getElementById("btn-en");
+function toggleMenu() {
+  burger.classList.toggle("open");
+  nav.classList.toggle("open");
+  nav.classList.toggle("active");
+}
 
-if (btnDe) {
-  btnDe.addEventListener("click", () => {
-    setLanguage("de");
+function closeMenu() {
+  burger.classList.remove("open");
+  nav.classList.remove("open");
+  nav.classList.remove("active");
+}
+
+function initBurgerMenu() {
+  if (!burger || !nav) return;
+  burger.addEventListener("click", toggleMenu);
+  nav.querySelectorAll("a").forEach(addCloseEvent);
+}
+
+function addCloseEvent(link) {
+  link.addEventListener("click", closeMenu);
+}
+
+function initLanguageButtons() {
+  if (btnDe) btnDe.addEventListener("click", () => setLanguage("de"));
+  if (btnEn) btnEn.addEventListener("click", () => setLanguage("en"));
+}
+
+function getCurrentLanguage() {
+  return localStorage.getItem("language") || "en";
+}
+
+function showToast(message) {
+  const toast = createToast(message);
+  document.body.appendChild(toast);
+  window.setTimeout(() => toast.remove(), 3000);
+}
+
+function createToast(message) {
+  const toast = document.createElement("div");
+  toast.className = "toast-message";
+  toast.textContent = message;
+  return toast;
+}
+
+function setSubmitState(button, text, disabled) {
+  if (!button) return;
+  button.disabled = disabled;
+  button.textContent = text;
+}
+
+async function handleFormSubmit(event) {
+  event.preventDefault();
+  const lang = getCurrentLanguage();
+  const t = translations[lang];
+  const button = contactForm.querySelector(".contact-btn");
+  setSubmitState(button, t.sending, true);
+  await fakeSubmit();
+  contactForm.reset();
+  showToast(t.success);
+  setSubmitState(button, t.sendButton, false);
+}
+
+function fakeSubmit() {
+  return new Promise((resolve) => {
+    window.setTimeout(resolve, 500);
   });
 }
 
-if (btnEn) {
-  btnEn.addEventListener("click", () => {
-    setLanguage("en");
-  });
+function initContactForm() {
+  if (!contactForm) return;
+  contactForm.addEventListener("submit", handleFormSubmit);
 }
 
-// ================= LOAD SAVED LANGUAGE =================
-
-const savedLanguage = localStorage.getItem("language") || "en";
-
-setLanguage(savedLanguage);
-
-// ================= CONTACT FORM =================
-
-const contactForm = document.getElementById("contact-form");
-
-if (contactForm) {
-  contactForm.addEventListener("submit", async (event) => {
-    event.preventDefault();
-
-    const lang = localStorage.getItem("language") || "en";
-    const t = translations[lang];
-
-    const submitButton = contactForm.querySelector(".contact-btn");
-
-    if (submitButton) {
-      submitButton.disabled = true;
-      submitButton.textContent = t.sending;
-    }
-
-    try {
-      alert(t.success);
-      contactForm.reset();
-    } catch (error) {
-      console.error(error);
-      alert(t.serverError);
-    } finally {
-      if (submitButton) {
-        submitButton.disabled = false;
-        submitButton.textContent = t.sendButton;
-      }
-    }
-  });
+function scrollToTop(event) {
+  event.preventDefault();
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-// ================= SCROLL TOP =================
-
-const scrollTopBtn =
-  document.getElementById("scrollTopBtn") ||
-  document.querySelector(".scroll-top");
-
-if (scrollTopBtn) {
-  scrollTopBtn.addEventListener("click", (event) => {
-    event.preventDefault();
-
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  });
+function initScrollTop() {
+  const button = document.querySelector(".go-up-button");
+  if (button) button.addEventListener("click", scrollToTop);
 }
 
-// ================= RESIZE =================
+function closeMenuOnDesktop() {
+  if (window.innerWidth > 768 && burger && nav) closeMenu();
+}
 
-window.addEventListener("resize", () => {
-  if (window.innerWidth > 768 && burger && nav) {
-    burger.classList.remove("open");
-    nav.classList.remove("open");
-    nav.classList.remove("active");
-  }
-});
+function initResizeHandler() {
+  window.addEventListener("resize", closeMenuOnDesktop);
+}
+
+function initPage() {
+  initBurgerMenu();
+  initLanguageButtons();
+  initContactForm();
+  initScrollTop();
+  initResizeHandler();
+  setLanguage(getCurrentLanguage());
+}
+
+initPage();
