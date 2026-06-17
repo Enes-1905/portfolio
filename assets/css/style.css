@@ -327,9 +327,36 @@ img {
 
 .scroll-down {
   position: absolute;
-  right: 0;
-  bottom: 48px;
+  right: -20px;
+  bottom: 120px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  transform: rotate(90deg);
+
   z-index: 6;
+}
+
+.scroll-text {
+  font-family: "Poppins", sans-serif;
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 120%;
+  color: #ffffff;
+}
+
+.scroll-arrow {
+  width: 24px;
+  height: 24px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 24px;
+  color: #ffffff;
 }
 /* ABOUT */
 
@@ -425,6 +452,7 @@ img {
 }
 
 /* =========================================
+/* =========================================
    SKILLS
 ========================================= */
 
@@ -468,7 +496,6 @@ img {
   width: 620px;
   max-width: 620px;
 
-
   display: grid;
   grid-template-columns: repeat(4, 88px);
 
@@ -476,6 +503,14 @@ img {
 
   column-gap: 60px;
   row-gap: 54px;
+}
+
+.skill-item {
+  width: 88px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .skill-item img {
@@ -486,6 +521,20 @@ img {
   transition: 0.2s ease;
 }
 
+.skill-item span {
+  margin-top: 8px;
+
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 120%;
+  letter-spacing: 0;
+
+  color: #ffffff;
+  text-align: center;
+}
+
 .skill-item:hover img {
   transform: translateY(-10px);
 }
@@ -494,7 +543,8 @@ img {
 
 .skills-right {
   width: 550px;
-flex-shrink: 0;
+  flex-shrink: 0;
+
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -603,7 +653,6 @@ flex-shrink: 0;
 .skills-btn:hover {
   transform: scale(1.05);
 }
-
 /* PORTFOLIO */
 
 .portfolio-section {
@@ -623,19 +672,48 @@ flex-shrink: 0;
   z-index: 0;
   pointer-events: none;
 }
-
 .portfolio-header {
   position: relative;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
   z-index: 2;
+
+  width: 100%;
+  max-width: 1060px;
+  height: 108px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  gap: 32px;
 }
 
-.portfolio-title-img {
-  width: min(100%, 1060px);
-  height: auto;
-  object-fit: contain;
+.portfolio-line-left {
+  width: 100px;
+  height: 4px;
+  background: #9747ff;
+  flex-shrink: 0;
+}
+
+.portfolio-title {
+  width: 389px;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 90px;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: 0;
+
+  color: #ffffff;
+  text-align: center;
+
+  flex-shrink: 0;
+}
+
+.portfolio-line-right {
+  width: 507px;
+  height: 4px;
+  background: #9747ff;
+  flex-shrink: 0;
 }
 
 .portfolio-project {
@@ -856,6 +934,62 @@ flex-shrink: 0;
   padding: 15px 25px;
   resize: vertical;
 }
+.input-group {
+  position: relative;
+  width: 100%;
+}
+
+.error-message {
+  display: none;
+  margin-top: 8px;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 120%;
+  color: #e61c40;
+}
+
+.input-group.error .error-message,
+.privacy-wrapper.error .error-message {
+  display: block;
+}
+
+.input-group.error input,
+.input-group.error textarea {
+  border-color: #e61c40;
+}
+
+.input-group.error::after {
+  content: "!";
+  position: absolute;
+  right: 25px;
+  top: 13px;
+
+  width: 24px;
+  height: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: #e61c40;
+  color: #ffffff;
+
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.input-group:has(textarea).error::after {
+  top: 18px;
+}
+
+.contact-btn:disabled {
+  background: #b6b6b6;
+  color: #ffffff;
+  cursor: not-allowed;
+  transform: none;
+}
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
@@ -1017,14 +1151,15 @@ flex-shrink: 0;
 ========================================= */
 
 .legal-page {
-  padding-top: 140px;
-  padding-bottom: 100px;
+  padding-top: 120px;
+  padding-bottom: 40px;
   background: var(--bg);
 }
 
 .legal-content {
   max-width: 900px;
   margin: 0 auto;
+  min-height: auto;
 }
 
 .legal-content h1 {
@@ -1070,40 +1205,39 @@ flex-shrink: 0;
 
 @media (max-width: 1350px) {
   .container {
+    max-width: 100%;
     padding-left: 32px;
     padding-right: 32px;
   }
 
   .hero-inner {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: 1fr;
     justify-items: center;
-    row-gap: 48px;
     padding-top: 48px;
     padding-bottom: 120px;
   }
 
   .hero-image {
-    width: min(100%, 520px);
-    max-width: 520px;
+    width: 520px;
+    max-width: 100%;
     height: auto;
     margin: 0;
   }
 
-  .hero-shadow {
-    width: 100%;
-    height: auto;
-    left: 0;
-  }
-
+  .hero-shadow,
   .hero-photo {
     width: 100%;
     height: auto;
   }
 
+  .hero-shadow {
+    left: 0;
+  }
+
   .hero-content {
-    width: 100%;
     max-width: 700px;
-    margin: 0;
+    margin: 0 auto;
+    justify-content: center;
   }
 
   .hero-text h1 {
@@ -1118,7 +1252,6 @@ flex-shrink: 0;
 
   .iam {
     font-size: 44px;
-    white-space: normal;
   }
 
   .hero-email,
@@ -1143,12 +1276,13 @@ flex-shrink: 0;
 
   .skills-content {
     flex-direction: column-reverse;
-   align-items: flex-start;
+    align-items: center;
     gap: 64px;
   }
 
   .skills-right,
   .skills-text-wrapper {
+    width: 100%;
     max-width: 700px;
     align-items: center;
     text-align: center;
@@ -1163,14 +1297,16 @@ flex-shrink: 0;
   }
 
   .skills-heading h2 {
-    white-space: normal;
     text-align: center;
+    white-space: normal;
   }
 
   .skills-icons {
+    width: 100%;
     max-width: 664px;
     grid-template-columns: repeat(4, 88px);
-    justify-content: space-between;
+    justify-content: center;
+    gap: 54px 60px;
   }
 
   .portfolio-project {
@@ -1187,7 +1323,7 @@ flex-shrink: 0;
     position: fixed;
     top: 88px;
     right: -100%;
-    width: 100%;
+    width: 100vw;
     height: calc(100vh - 88px);
     background: rgba(20, 29, 47, 0.98);
     flex-direction: column;
@@ -1205,12 +1341,14 @@ flex-shrink: 0;
 
   .nav-list {
     flex-direction: column;
+    align-items: center;
     gap: 32px;
   }
 
   .about-content,
   .contact-content {
     flex-direction: column;
+    align-items: center;
   }
 
   .about-text,
@@ -1223,7 +1361,8 @@ flex-shrink: 0;
 
   .about-text h2,
   .skills-heading h2,
-  .contact-left h2 {
+  .contact-left h2,
+  .portfolio-title {
     font-size: 45px;
   }
 
@@ -1232,9 +1371,28 @@ flex-shrink: 0;
   }
 
   .skills-icons {
+    max-width: 360px;
     grid-template-columns: repeat(3, 88px);
     justify-content: center;
     gap: 40px;
+  }
+
+  .portfolio-header {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .portfolio-line-left,
+  .portfolio-line-right {
+    flex: 1;
+    max-width: 100px;
+  }
+
+  .portfolio-title {
+    width: auto;
   }
 
   .portfolio-project {
@@ -1272,6 +1430,7 @@ flex-shrink: 0;
     margin-top: 0;
   }
 }
+
 @media (max-width: 600px) {
   .container {
     padding-left: 16px;
@@ -1283,22 +1442,25 @@ flex-shrink: 0;
     padding-top: 88px;
   }
 
-  .hero-inner {
-    min-height: calc(100vh - 88px);
-    padding-top: 32px;
-    padding-bottom: 80px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
+.hero-inner {
+  min-height: calc(100vh - 88px);
+  padding-top: 24px;
+  padding-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.hero-image,
+.hero-content {
+  margin-left: auto;
+  margin-right: auto;
+}
   .hero-content {
     width: 100%;
     max-width: 320px;
     margin: 0 auto;
-    display: flex;
     justify-content: center;
-    align-items: center;
     gap: 8px;
     text-align: center;
   }
@@ -1311,13 +1473,11 @@ flex-shrink: 0;
   .hero-text h1 {
     font-size: 54px;
     line-height: 100%;
-    white-space: normal;
   }
 
   .hero-text h2 {
     font-size: 28px;
     line-height: 120%;
-    white-space: normal;
   }
 
   .cta {
@@ -1350,7 +1510,6 @@ flex-shrink: 0;
   }
 
   .about-intro {
-    width: 100%;
     max-width: 280px;
   }
 
@@ -1361,12 +1520,7 @@ flex-shrink: 0;
     text-align: left;
   }
 
-  .about-info p {
-    width: 100%;
-  }
-
   .skills-content {
-    flex-direction: column;
     align-items: center;
     gap: 48px;
     width: 100%;
@@ -1390,7 +1544,6 @@ flex-shrink: 0;
 
   .skills-heading h2 {
     font-size: 45px;
-    white-space: normal;
     text-align: center;
   }
 
@@ -1406,22 +1559,29 @@ flex-shrink: 0;
     grid-template-columns: repeat(2, 88px);
     justify-content: center;
     gap: 36px;
+    margin: 0 auto;
   }
 
-  .skills-purple-line {
-    display: none;
+  .footer-content {
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+    text-align: center;
   }
 
   .footer-left {
     align-items: center;
   }
-}
-@media (max-width: 460px) {
-  .hero-email,
-  .hero-line {
-    display: none;
-  }
+  .contact-section::before {
+  left: -520px;
+  bottom: -240px;
 
+  width: 700px;
+  height: 760px;
+}
+}
+
+@media (max-width: 460px) {
   .hero-content {
     max-width: 100%;
     gap: 0;

@@ -13,6 +13,9 @@
 
 <body>
 
+    
+
+    
   <!-- HEADER -->
   <header class="navbar">
 
@@ -162,13 +165,19 @@
 
         </div>
 
-        <!-- SCROLL -->
-        <a href="#about-me" class="scroll-down">
-          <img
-            src="./assets/img/scrolldown.jpg"
-            alt="Scroll down"
-          />
-        </a>
+<a href="#about-me" class="scroll-down">
+
+  <span class="scroll-text"
+        data-de="Runterscrollen"
+        data-en="Scroll down">
+    Scroll down
+  </span>
+
+  <span class="scroll-arrow">
+     →
+  </span>
+
+</a>
 
       </div>
 
@@ -244,60 +253,59 @@
 
       <div class="skill-item">
         <img src="./assets/img/html.jpg" alt="HTML" />
-        
+        <span>HTML</span>
       </div>
 
       <div class="skill-item">
         <img src="./assets/img/css.jpg" alt="CSS" />
-        
+        <span>CSS</span>
       </div>
 
       <div class="skill-item">
         <img src="./assets/img/java.jpg" alt="JavaScript" />
-        
+        <span>JavaScript</span>
       </div>
 
       <div class="skill-item">
         <img src="./assets/img/type.jpg" alt="TypeScript" />
-        
+        <span>TypeScript</span>
       </div>
 
       <div class="skill-item">
         <img src="./assets/img/angular.jpg" alt="Angular" />
-      
+        <span>Angular</span>
       </div>
 
       <div class="skill-item">
         <img src="./assets/img/supabase.jpg" alt="Supabase" />
-        
+        <span>Supabase</span>
       </div>
 
       <div class="skill-item">
         <img src="./assets/img/git.jpg" alt="Git" />
-        
+        <span>Git</span>
       </div>
 
       <div class="skill-item">
         <img src="./assets/img/api.jpg" alt="REST-API" />
-       
+        <span>REST-API</span>
       </div>
 
       <div class="skill-item">
         <img src="./assets/img/scrum.jpg" alt="Scrum" />
-        
+        <span>Scrum</span>
       </div>
 
       <div class="skill-item">
         <img src="./assets/img/material.jpg" alt="Material Design" />
-        
+        <span>Material Design</span>
       </div>
 
-      <div class="skill-item">
-        <img src="./assets/img/learning.jpg" alt="Continually learning" />
-        
-      </div>
+     
 
     </div>
+
+    
 
     <!-- RIGHT -->
     <div class="skills-right">
@@ -357,12 +365,16 @@
   <div class="container portfolio-content">
 
     <!-- TITLE -->
-    <div class="portfolio-header">
-  <img
-    class="portfolio-title-img"
-    src="./assets/img/frame.jpg"
-    alt="Portfolio"
-  />
+<div class="portfolio-header">
+
+  <div class="portfolio-line-left"></div>
+
+  <h2 class="portfolio-title">
+    Portfolio
+  </h2>
+
+  <div class="portfolio-line-right"></div>
+
 </div>
 
 <p class="portfolio-description">
@@ -497,25 +509,45 @@
 
     <form id="contact-form" class="contact-form">
 
-      <input
-        type="text"
-        name="name"
-        placeholder="Your name"
-        required
-      />
+    <div class="input-group">
 
-      <input
-        type="email"
-        name="email"
-        placeholder="Your email"
-        required
-      />
+  <input
+    type="text"
+    name="name"
+    id="name"
+    placeholder="Your name"
+    required
+  />
 
-      <textarea
-        name="message"
-        placeholder="Your message"
-        required
-      ></textarea>
+  <span class="error-message" id="name-error"></span>
+
+</div>
+
+ <div class="input-group">
+
+  <input
+    type="email"
+    name="email"
+    id="email"
+    placeholder="Your email"
+    required
+  />
+
+  <span class="error-message" id="email-error"></span>
+
+</div>
+<div class="input-group">
+
+  <textarea
+    name="message"
+    id="message"
+    placeholder="Your message"
+    required
+  ></textarea>
+
+  <span class="error-message" id="message-error"></span>
+
+</div>
 
       <div class="privacy-wrapper">
 
@@ -532,6 +564,8 @@
   </a>
   and agree to the processing of my data as outlined.
 </span>
+
+<span class="error-message" id="privacy-error"></span>
 
         </label>
 
@@ -559,9 +593,10 @@
 
       <div class="footer-left">
 
-        <a href="#top" class="footer-logo">
-          Ene<span>s</span>
-        </a>
+       <a href="#top" class="logo">
+        Enes<span>K</span>
+      </a>
+
 
         <a href="./impressum.html" class="footer-legal">
           Legal Notice

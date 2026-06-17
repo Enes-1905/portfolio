@@ -13,6 +13,7 @@ const translations = {
     heroIam: "I am",
     heroJob: "FRONTEND DEVELOPER",
     heroButton: "Let’s talk!",
+    scrollDown: "Scroll down",
 
     aboutTitle: "About me",
     aboutIntro:
@@ -60,9 +61,15 @@ const translations = {
     legalNotice: "Legal Notice",
 
     sending: "Message is being sent...",
-    success: "Message sent successfully!",
-    serverError: "Server error."
-  },
+success: "Message sent successfully!",
+serverError: "Server error.",
+errors: {
+  name: "Your name is required",
+  email: "Your email is required",
+  message: "Your message is empty",
+  privacy: "Please accept the privacy policy."
+}
+},
 
   de: {
     navAbout: "Über mich",
@@ -72,6 +79,7 @@ const translations = {
     heroIam: "Ich bin",
     heroJob: "FRONTEND ENTWICKLER",
     heroButton: "Schreib mir!",
+    scrollDown: "Runterscrollen",
 
     aboutTitle: "Über mich",
     aboutIntro:
@@ -118,10 +126,16 @@ const translations = {
     sendButton: "Nachricht senden :)",
     legalNotice: "Impressum",
 
-    sending: "Nachricht wird gesendet...",
-    success: "Nachricht erfolgreich gesendet!",
-    serverError: "Serverfehler."
-  }
+sending: "Nachricht wird gesendet...",
+success: "Nachricht erfolgreich gesendet!",
+serverError: "Serverfehler.",
+errors: {
+  name: "Dein Name ist erforderlich",
+  email: "Deine E-Mail ist erforderlich",
+  message: "Deine Nachricht ist leer",
+  privacy: "Bitte akzeptiere die Datenschutzerklärung."
+}
+}
 };
 
 function setText(selector, text) {
@@ -145,6 +159,7 @@ function translateHero(t) {
   setText(".iam", t.heroIam);
   setText(".hero-text h2", t.heroJob);
   setText(".hero-text .cta", t.heroButton);
+  setText(".scroll-text", t.scrollDown);
 }
 
 function translateAbout(t) {
@@ -293,35 +308,144 @@ function createToast(message) {
   toast.textContent = message;
   return toast;
 }
-
 function setSubmitState(button, text, disabled) {
   if (!button) return;
   button.disabled = disabled;
   button.textContent = text;
 }
 
+function getFormFields() {
+  return {
+    name: contactForm.querySelector("#name"),
+    email: contactForm.querySelector("#email"),
+    message: contactForm.querySelector("#message"),
+    privacy: contactForm.querySelector('input[type="checkbox"]'),
+    button: contactForm.querySelector(".contact-btn")
+  };
+}
+
+function isEmailValid(value) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
+
+function getErrorTexts() {
+  const lang = getCurrentLanguage();
+  return translations[lang].errors;
+}
+
+function setFieldError(field, message) {
+  const group = field.closest(".input-group");
+  const error = group.querySelector(".error-message");
+  group.classList.add("error");
+  error.textContent = message;
+}
+
+function clearFieldError(field) {
+  const group = field.closest(".input-group");
+  const error = group.querySelector(".error-message");
+  group.classList.remove("error");
+  error.textContent = "";
+}
+
+function validateName(showError = true) {
+  const { name } = getFormFields();
+  const isValid = name.value.trim().length > 0;
+  if (!isValid && showError) setFieldError(name, getErrorTexts().name);
+  if (isValid) clearFieldError(name);
+  return isValid;
+}
+
+function validateEmail(showError = true) {
+  const { email } = getFormFields();
+  const isValid = isEmailValid(email.value.trim());
+  if (!isValid && showError) setFieldError(email, getErrorTexts().email);
+  if (isValid) clearFieldError(email);
+  return isValid;
+}
+
+function validateMessage(showError = true) {
+  const { message } = getFormFields();
+  const isValid = message.value.trim().length > 0;
+  if (!isValid && showError) setFieldError(message, getErrorTexts().message);
+  if (isValid) clearFieldError(message);
+  return isValid;
+}
+
+function validatePrivacy(showError = true) {
+  const { privacy } = getFormFields();
+  const wrapper = privacy.closest(".privacy-wrapper");
+  const error = wrapper.querySelector(".error-message");
+  const isValid = privacy.checked;
+  wrapper.classList.toggle("error", !isValid && showError);
+  error.textContent = !isValid && showError ? getErrorTexts().privacy : "";
+  return isValid;
+}
+
+function isFormValid() {
+  return validateName(false) &&
+    validateEmail(false) &&
+    validateMessage(false) &&
+    validatePrivacy(false);
+}
+
+function updateSubmitButton() {
+  const { button } = getFormFields();
+  button.disabled = !isFormValid();
+}
+
+function validateAllFields() {
+  validateName();
+  validateEmail();
+  validateMessage();
+  validatePrivacy();
+  updateSubmitButton();
+}
+
 async function handleFormSubmit(event) {
   event.preventDefault();
-  const lang = getCurrentLanguage();
-  const t = translations[lang];
-  const button = contactForm.querySelector(".contact-btn");
+  validateAllFields();
+  if (!isFormValid()) return;
+  await submitContactForm();
+}
+
+async function submitContactForm() {
+  const t = translations[getCurrentLanguage()];
+  const { button } = getFormFields();
   setSubmitState(button, t.sending, true);
   await fakeSubmit();
   contactForm.reset();
   showToast(t.success);
-  setSubmitState(button, t.sendButton, false);
+  setSubmitState(button, t.sendButton, true);
 }
 
 function fakeSubmit() {
-  return new Promise((resolve) => {
-    window.setTimeout(resolve, 500);
-  });
+  return new Promise((resolve) => window.setTimeout(resolve, 500));
+}
+
+function addFormEvents(fields) {
+  fields.name.addEventListener("blur", () => validateName());
+  fields.email.addEventListener("blur", () => validateEmail());
+  fields.message.addEventListener("blur", () => validateMessage());
+  fields.privacy.addEventListener("change", validatePrivacy);
+}
+
+function addInputEvents(fields) {
+  fields.name.addEventListener("input", updateSubmitButton);
+  fields.email.addEventListener("input", updateSubmitButton);
+  fields.message.addEventListener("input", updateSubmitButton);
+  fields.privacy.addEventListener("change", updateSubmitButton);
 }
 
 function initContactForm() {
   if (!contactForm) return;
+  const fields = getFormFields();
+  fields.button.disabled = true;
+  addFormEvents(fields);
+  addInputEvents(fields);
   contactForm.addEventListener("submit", handleFormSubmit);
 }
+
+ 
 
 function scrollToTop(event) {
   event.preventDefault();
