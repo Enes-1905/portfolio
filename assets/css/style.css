@@ -22,7 +22,7 @@ body {
   font-family: "Poppins", Arial, sans-serif;
   background: var(--bg);
   color: var(--white);
-  overflow-x: hidden;
+ 
 }
 
 a {
@@ -630,7 +630,7 @@ img {
 }
 
 .skills-btn {
-  width: 200px;
+  width: 240px;
   height: 58px;
 
   display: flex;
@@ -646,10 +646,13 @@ img {
 
   font-size: 23px;
   font-weight: 400;
+  line-height: 120%;
+  text-align: center;
+  white-space: nowrap;
 
   transition: 0.2s ease;
+  align-self: center;
 }
-
 .skills-btn:hover {
   transform: scale(1.05);
 }
@@ -676,43 +679,25 @@ img {
   position: relative;
   z-index: 2;
 
-  width: 100%;
-  max-width: 1060px;
-  height: 108px;
-
-  margin: 0 auto;
-
   display: flex;
   align-items: center;
   gap: 32px;
+
+  width: 100%;
 }
 
-.portfolio-line-left {
-  width: 100px;
+.portfolio-line-left,
+.portfolio-line-right {
+  flex-grow: 1;
   height: 4px;
   background: #9747ff;
-  flex-shrink: 0;
 }
 
 .portfolio-title {
-  width: 389px;
-
-  font-family: "Poppins", sans-serif;
   font-size: 90px;
   font-weight: 700;
   line-height: 120%;
-  letter-spacing: 0;
-
-  color: #ffffff;
-  text-align: center;
-
-  flex-shrink: 0;
-}
-
-.portfolio-line-right {
-  width: 507px;
-  height: 4px;
-  background: #9747ff;
+  white-space: nowrap;
   flex-shrink: 0;
 }
 

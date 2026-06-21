@@ -38,6 +38,9 @@ const translations = {
     joinDescription:
       "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
 
+      portfolioDescription:
+  "Explore a selection of my work here - Interact with projects to see my skills in action.",
+
     polloTech: "JavaScript | HTML | CSS",
     polloDescription:
       "A simple Jump-and-Run game based on an object-oriented approach. Help El Pollo Loco to find coins and poison bottles to fight against the killer chicken.",
@@ -103,7 +106,8 @@ errors: {
     joinTech: "Angular | TypeScript | HTML | CSS | Firebase",
     joinDescription:
       "Task Manager inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben mit Drag-and-Drop-Funktionen, weise Benutzer und Kategorien zu.",
-
+portfolioDescription:
+  "Entdecke hier eine Auswahl meiner Projekte – interagiere mit ihnen und erhalte einen Einblick in meine Fähigkeiten.",
     polloTech: "JavaScript | HTML | CSS",
     polloDescription:
       "Ein Jump-and-Run-Spiel auf Basis objektorientierter Programmierung. Hilf El Pollo Loco dabei, Münzen und Giftflaschen zu sammeln und gegen das Killer-Huhn zu kämpfen.",
@@ -192,6 +196,7 @@ function translatePortfolio(t) {
   if (techs[1]) techs[1].textContent = t.polloTech;
   if (descriptions[0]) descriptions[0].textContent = t.joinDescription;
   if (descriptions[1]) descriptions[1].textContent = t.polloDescription;
+  setText(".portfolio-description", t.portfolioDescription);
 }
 
 function translateProjectButtons(t) {
@@ -411,15 +416,40 @@ async function handleFormSubmit(event) {
 async function submitContactForm() {
   const t = translations[getCurrentLanguage()];
   const { button } = getFormFields();
+
   setSubmitState(button, t.sending, true);
-  await fakeSubmit();
+
+  const response = await sendContactMail();
+
+  if (!response.ok) {
+    showToast(t.serverError);
+    setSubmitState(button, t.sendButton, false);
+    return;
+  }
+
   contactForm.reset();
   showToast(t.success);
   setSubmitState(button, t.sendButton, true);
 }
 
-function fakeSubmit() {
-  return new Promise((resolve) => window.setTimeout(resolve, 500));
+function getFormData() {
+  const fields = getFormFields();
+
+  return {
+    name: fields.name.value.trim(),
+    email: fields.email.value.trim(),
+    message: fields.message.value.trim()
+  };
+}
+
+function sendContactMail() {
+  return fetch("./send_mail.php", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(getFormData())
+  });
 }
 
 function addFormEvents(fields) {
