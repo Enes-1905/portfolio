@@ -330,7 +330,8 @@ function getFormFields() {
 }
 
 function isEmailValid(value) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+  const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+$/;
+  return emailPattern.test(value) && !value.includes("..");
 }
 
 function getErrorTexts() {
@@ -370,7 +371,7 @@ function validateEmail(showError = true) {
 
 function validateMessage(showError = true) {
   const { message } = getFormFields();
-  const isValid = message.value.trim().length > 0;
+  const isValid = message.value.trim().length >= 10;
   if (!isValid && showError) setFieldError(message, getErrorTexts().message);
   if (isValid) clearFieldError(message);
   return isValid;

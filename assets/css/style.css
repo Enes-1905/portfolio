@@ -506,7 +506,7 @@ img {
 }
 
 .skill-item {
-  width: 88px;
+  width: 60px;
 
   display: flex;
   flex-direction: column;
@@ -514,8 +514,8 @@ img {
 }
 
 .skill-item img {
-  width: 88px;
-  height: 101px;
+  width: 60px;
+  height: 60px;
 
   object-fit: contain;
   transition: 0.2s ease;
@@ -925,20 +925,27 @@ img {
 }
 
 .error-message {
-  display: none;
+  display: block;
+  min-height: 18px;
   margin-top: 8px;
 
   font-size: 14px;
   font-weight: 400;
   line-height: 120%;
   color: #e61c40;
+
+  opacity: 0;
 }
 
 .input-group.error .error-message,
 .privacy-wrapper.error .error-message {
-  display: block;
+  opacity: 1;
 }
 
+.input-group.error .error-message,
+.privacy-wrapper.error .error-message {
+  opacity: 1;
+}
 .input-group.error input,
 .input-group.error textarea {
   border-color: #e61c40;
@@ -1219,12 +1226,11 @@ img {
     left: 0;
   }
 
-  .hero-content {
-    max-width: 700px;
-    margin: 0 auto;
-    justify-content: center;
-  }
-
+.hero-content {
+  max-width: 700px;
+  margin: 40px auto 0;
+  justify-content: center;
+}
   .hero-text h1 {
     font-size: 64px;
     white-space: normal;
@@ -1465,11 +1471,12 @@ img {
     line-height: 120%;
   }
 
-  .cta {
-    font-size: 18px;
-    padding: 14px 28px;
-  }
+.cta {
+  font-size: 16px;
+  padding: 12px 24px;
+}
 
+.skills-btn,
   .hero-socials {
     left: 50%;
     transform: translateX(-50%);
@@ -1587,4 +1594,12 @@ img {
   .hero-text h2 {
     font-size: 22px;
   }
+}
+.contact-form input:-webkit-autofill,
+.contact-form input:-webkit-autofill:hover,
+.contact-form input:-webkit-autofill:focus,
+.contact-form textarea:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #141d2f inset;
+  -webkit-text-fill-color: #ffffff;
+  transition: background-color 5000s ease-in-out 0s;
 }

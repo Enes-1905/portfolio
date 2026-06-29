@@ -511,7 +511,7 @@
 
     </div>
 
-    <form id="contact-form" class="contact-form">
+    <form id="contact-form" class="contact-form" novalidate>
 
     <div class="input-group">
 
@@ -542,12 +542,13 @@
 </div>
 <div class="input-group">
 
-  <textarea
-    name="message"
-    id="message"
-    placeholder="Your message"
-    required
-  ></textarea>
+<textarea
+  name="message"
+  id="message"
+  placeholder="Your message"
+  minlength="10"
+  required
+></textarea>
 
   <span class="error-message" id="message-error"></span>
 
