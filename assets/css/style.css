@@ -162,29 +162,30 @@ img {
   padding-top: 88px;
   background: #141d2f;
 }
-
-.hero-bg {
+.hero-wave {
   position: absolute;
-  left: 0;
-  bottom: 0;
+  left: -2px;
+  top: 110px;
 
-  width: 100%;
-  height: 100%;
+  width: calc(100% + 4px);
+  height: auto;
+  max-width: none;
 
-  background-image: url("../img/background.jpg");
-  background-repeat: no-repeat;
-  background-position: center 120px;
-  background-size: 100% auto;
+  display: block;
 
-  z-index: 1;
+  z-index: 4;
   pointer-events: none;
+  user-select: none;
 }
-
 .hero-inner {
   position: relative;
-  z-index: 2;
 
+  width: calc(100% - 98px);
+  max-width: 1344px;
   min-height: calc(100vh - 88px);
+
+  margin: 0 auto;
+  padding: 0;
 
   display: grid;
   grid-template-columns: 520px 1fr;
@@ -212,10 +213,12 @@ img {
   height: 760px;
 
   object-fit: contain;
+
   z-index: 1;
   filter: blur(10px);
   pointer-events: none;
 }
+
 .hero-photo {
   position: relative;
   z-index: 2;
@@ -227,47 +230,44 @@ img {
   object-position: bottom center;
 
   transform: translateY(-8px);
-
-  clip-path: path(
-    "M 0 0 H 580 V 520 C 470 540 360 555 240 565 C 140 572 70 570 0 555 Z"
-  );
 }
+
+/* Text liegt vor der SVG-Welle */
 .hero-content {
+  position: absolute;
+  top: 209px;
+  left: 573px;
+  z-index: 6;
+
   width: 718px;
   height: 172px;
 
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: -15px;
+  gap: 35px;
 
-  position: relative;
-  z-index: 6;
-
-  margin-left: 70px;
-  margin-top: -170px;
+  margin: 0;
 }
-
 .iam {
-  width: 152px;
-  height: 63px;
+  width: 63px;
+  height: 152px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
+  flex-shrink: 0;
+
   font-family: "Poppins", sans-serif;
   font-size: 64px;
   font-weight: 400;
-  line-height: 120%;
-  letter-spacing: 0;
+  line-height: 1;
   color: #ffffff;
   white-space: nowrap;
 
-  transform: rotate(-90deg);
-  transform-origin: center;
-
-  flex-shrink: 0;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
 }
 
 .hero-text {
@@ -276,39 +276,65 @@ img {
 
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   justify-content: flex-start;
 }
-
 .hero-text h1 {
   width: 620px;
   height: 108px;
+
+  margin: 0;
 
   font-family: "Poppins", sans-serif;
   font-size: 90px;
   font-weight: 700;
   line-height: 120%;
   letter-spacing: 0;
+
   color: #ffffff;
   white-space: nowrap;
 }
-
 .hero-text h2 {
   width: 619px;
   height: 70px;
+
+  margin: -6px 0 0;
 
   font-family: "Poppins", sans-serif;
   font-size: 58px;
   font-weight: 400;
   line-height: 120%;
   letter-spacing: 0;
+
   color: var(--purple);
   white-space: nowrap;
-
-  margin-top: -6px;
 }
 
 .cta {
+  width: 165px;
+  height: 58px;
+
   margin-top: 36px;
+  align-self: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 15px 30px;
+
+  border: 0;
+  border-radius: 10px;
+  background: var(--green);
+  color: #ffffff;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 120%;
+  white-space: nowrap;
+
+  transition: transform 0.2s ease;
 }
 .cta:hover {
   transform: scale(1.05);
@@ -341,6 +367,7 @@ img {
 .hero-socials a img {
   width: 30px;
   height: 30px;
+
   object-fit: contain;
   transition: 0.2s ease;
 }
@@ -350,14 +377,15 @@ img {
 }
 
 .hero-email {
-  font-size: 23px;
-  color: white;
   margin-left: 8px;
+
+  font-size: 23px;
+  color: #ffffff;
 }
 
 .scroll-down {
   position: absolute;
-  right: -20px;
+  right: 20px;
   bottom: 120px;
 
   display: flex;
@@ -374,6 +402,7 @@ img {
   font-size: 23px;
   font-weight: 400;
   line-height: 120%;
+
   color: #ffffff;
 }
 
@@ -382,8 +411,8 @@ img {
   height: 24px;
 
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   font-size: 24px;
   color: #ffffff;
