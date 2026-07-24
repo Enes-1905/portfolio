@@ -1593,7 +1593,7 @@ margin-left: -7px;
   .nav-right {
     position: fixed;
     top: 88px;
-    right: 0;
+    left: 0;
 
     width: 100%;
     height: calc(100vh - 88px);
@@ -1605,23 +1605,78 @@ margin-left: -7px;
     align-items: center;
     gap: 32px;
 
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease;
 
     z-index: 999;
   }
 
   .nav-right.open,
   .nav-right.active {
-    transform: translateX(0);
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .nav-list {
     flex-direction: column;
     align-items: center;
     gap: 32px;
+  
+}@media (max-width: 380px) {
+  .hero-inner {
+    width: calc(100% - 24px);
   }
 
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+    gap: 6px;
+  }
+
+  .iam {
+    width: 28px;
+    height: 76px;
+    font-size: 24px;
+  }
+
+  .hero-text {
+    width: calc(100% - 34px);
+    max-width: calc(100% - 34px);
+    min-width: 0;
+  }
+
+  .hero-text h1 {
+    width: 100%;
+    max-width: 100%;
+    font-size: clamp(32px, 90deg, 38px);
+    white-space: nowrap;
+  }
+
+  .hero-text h2 {
+    width: 100%;
+    max-width: 100%;
+    font-size: clamp(17px, 5.7vw, 21px);
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-email {
+    display: none !important;
+  }
+
+  .hero-socials {
+    width: auto;
+    max-width: calc(100% - 24px);
+    justify-content: center;
+  }
+ 
+}
   /* =========================
      HERO
   ========================= */
