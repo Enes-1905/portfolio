@@ -1313,10 +1313,19 @@ margin-left: -7px;
   font-weight: 700;
 }
 
+.footer-legal,
+.footer-privacy {
+  font-size: 16px;
+  transition: color 0.2s ease;
+}
+
+.footer-legal:hover,
+.footer-privacy:hover {
+  color: var(--green);
+}
 /* FOOTER */
 
 .footer-section {
-  position: relative;
   width: 100%;
   min-height: 291px;
   border-top: 4px solid var(--green);
@@ -1341,7 +1350,7 @@ margin-left: -7px;
   font-size: 58px;
   font-weight: 700;
   line-height: 1;
-  transition: 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
 .footer-logo span {
@@ -1352,18 +1361,13 @@ margin-left: -7px;
   transform: scale(1.03);
 }
 
-.footer-legal {
+.footer-links {
+  display: flex;
+  gap: 16px;
   margin-top: 10px;
-  font-size: 16px;
-  transition: 0.2s ease;
-}
-
-.footer-legal:hover {
-  color: var(--green);
 }
 
 .footer-copyright {
-  font-weight: 400;
   font-size: 23px;
   line-height: 120%;
 }
@@ -1374,17 +1378,20 @@ margin-left: -7px;
   gap: 42px;
 }
 
+.footer-socials a {
+  display: flex;
+}
+
 .footer-socials a img {
   width: 30px;
-  height: 29.26px;
+  height: 30px;
   object-fit: contain;
-  transition: 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
 .footer-socials a:hover img {
   transform: scale(1.2);
 }
-
 /* =========================================
    LEGAL PAGES
 ========================================= */
@@ -2178,8 +2185,7 @@ margin-left: -7px;
 }
 
 /* =========================================
-   FINAL MOBILE HERO FIX
-   Muss am Ende der Datei bleiben.
+    MOBILE HERO FIX
 ========================================= */
 
 @media (max-width: 600px) {
