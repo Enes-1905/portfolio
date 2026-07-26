@@ -231,7 +231,9 @@ function translatePlaceholders(t) {
 function translatePrivacy(t, lang) {
   const privacyText = document.querySelector(".privacy-text");
   if (!privacyText) return;
-  const href = lang === "de" ? "./datenschutz.html" : "./datenschutz-en.html";
+ const href = lang === "de"
+  ? "./datenschutz.html"
+  : "./privacypolicy.html";
   privacyText.innerHTML = `${t.privacyStart} <a href="${href}" class="privacy-link">${t.privacyLink}</a> ${t.privacyEnd}`;
 }
 
@@ -239,7 +241,9 @@ function translateFooter(t, lang) {
   const footerLegal = document.querySelector(".footer-legal");
   if (!footerLegal) return;
   footerLegal.textContent = t.legalNotice;
-  footerLegal.href = lang === "de" ? "./impressum.html" : "./impressum-en.html";
+  footerLegal.href = lang === "de"
+  ? "./impressum.html"
+  : "./legalnotice.html";
 }
 
 function setActiveLanguageButton(lang) {
