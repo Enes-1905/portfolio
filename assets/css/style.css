@@ -2290,3 +2290,56 @@ margin-left: -7px;
     margin-top: 0;
   }
 }
+@media (max-width: 768px) {
+  .burger {
+    position: relative;
+    z-index: 1101;
+  }
+
+  .nav-right {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    width: min(430px, 80vw);
+    height: 100vh;
+
+    padding: 120px 40px 40px;
+
+    background-color: #141d2f;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+
+    z-index: 1100;
+  }
+
+  .nav-right.open,
+  .nav-right.active {
+    transform: translateX(0);
+  }
+
+  .nav-right nav {
+    width: 100%;
+  }
+
+  .nav-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+  }
+
+  .nav-list a {
+    font-size: 23px;
+  }
+
+  .language {
+    margin-top: 28px;
+  }
+}
