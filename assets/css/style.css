@@ -2176,62 +2176,111 @@ margin-left: -7px;
     height: 460px;
   }
 }
-@media (max-width: 340px) {
-  .hero-text h2 {
-    font-size: 15px;
-    letter-spacing: -0.3px;
-  }
 
-  .hero-email {
-    font-size: 14px;
-    letter-spacing: -0.2px;
-  }
-}
+/* =========================================
+   FINAL MOBILE HERO FIX
+   Muss am Ende der Datei bleiben.
+========================================= */
+
 @media (max-width: 600px) {
-  .hero-email {
-    display: none;
-  }
-
-  .hero-line {
-    display: block;
-    width: 72px;
-    height: 4px;
-  }
-
   .hero-socials {
+    position: absolute;
     left: 0;
     bottom: 48px;
 
-    width: 100%;
-    max-width: none;
-
-    transform: none;
+    width: auto;
+    max-width: 100%;
 
     display: flex;
     align-items: center;
     justify-content: flex-start;
-
     gap: 24px;
+
+    transform: none;
+    z-index: 6;
   }
 
-  .hero-socials a img {
+  /* Höhere Spezifität als ".hero-socials a" */
+  .hero-socials > a.hero-email {
+    display: none;
+  }
+
+  .hero-socials > .hero-line {
+    display: block;
+    width: 72px;
+    height: 4px;
+    flex: 0 0 72px;
+  }
+
+  .hero-socials > a:not(.hero-email) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 30px;
     width: 30px;
     height: 30px;
+  }
+
+  .hero-socials > a:not(.hero-email) > img {
+    display: block;
+    width: 30px;
+    height: 30px;
+    max-width: none;
+    opacity: 1;
+    visibility: visible;
+    object-fit: contain;
   }
 }
 
 @media (max-width: 380px) {
+  .hero-text h2 {
+    width: auto;
+    max-width: none;
+    font-size: 15px;
+    line-height: 1.15;
+    letter-spacing: -0.2px;
+    white-space: nowrap;
+  }
+
   .hero-socials {
     gap: 20px;
   }
 
-  .hero-line {
+  .hero-socials > .hero-line {
     width: 56px;
+    flex-basis: 56px;
+  }
+}
+@media (max-width: 1110px) {
+  .portfolio-project {
+    margin-top: 64px;
+    gap: 32px;
   }
 
-  .hero-text h2 {
-    font-size: 15px;
-    white-space: nowrap;
-    letter-spacing: -0.2px;
+  .project-image {
+    width: 100%;
+    max-width: 540px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .project-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+@media (max-width: 600px) {
+  .portfolio-project {
+    margin-top: 56px;
+    gap: 24px;
+  }
+
+  .project-image {
+    height: auto;
+  }
+
+  .project-content {
+    margin-top: 0;
   }
 }
