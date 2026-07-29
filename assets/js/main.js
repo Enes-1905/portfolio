@@ -158,9 +158,19 @@ function translateNav(t) {
   if (links[1]) links[1].textContent = t.navSkills;
   if (links[2]) links[2].textContent = t.navPortfolio;
 }
+function translateHero(t, lang) {
+  const iamTop = document.querySelector(".iam-top");
+  const iamBottom = document.querySelector(".iam-bottom");
 
-function translateHero(t) {
-  setText(".iam", t.heroIam);
+  if (iamTop) {
+    iamTop.textContent = lang === "de" ? "bin" : "am";
+  }
+
+   if (iamBottom) {
+    iamBottom.textContent = lang === "de" ? "Ich" : "I";
+  }
+
+
   setText(".hero-text h2", t.heroJob);
   setText(".hero-text .cta", t.heroButton);
   setText(".scroll-text", t.scrollDown);
@@ -207,15 +217,14 @@ function translateProjectButtons(t) {
     btn.textContent = t.github;
   });
 }
-
 function translateContact(t, lang) {
   setText(".contact-left h2", t.contactTitle);
   setText(".contact-left h3", t.contactHeadline);
   setText(".contact-description", t.contactText1);
+
   translateContactHighlight(t);
   translatePrivacy(t, lang);
 }
-
 function translateContactHighlight(t) {
   const element = document.querySelector(".contact-highlight");
   if (!element) return;
@@ -262,7 +271,7 @@ function setLanguage(lang) {
 
 function translatePage(t, lang) {
   translateNav(t);
-  translateHero(t);
+  translateHero(t, lang);
   translateAbout(t);
   translateSkills(t);
   translatePortfolio(t);
