@@ -270,7 +270,7 @@ img {
 
 .iam > span {
   position: absolute;
-  width: 152px;
+  width: 202px;
   height: 63px;
   display: flex;
   align-items: center;
@@ -323,7 +323,7 @@ html[lang="en"] .iam-bottom {
   width: 620px;
   margin: 0;
 
-  font-size: 90px;
+  font-size: 100px;
   font-weight: 700;
   line-height: 83%;
   white-space: nowrap;
@@ -334,7 +334,7 @@ html[lang="en"] .iam-bottom {
   margin: 0;
 
   font-family: "Poppins", sans-serif;
-  font-size: 88px;
+  font-size: 68px;
   font-weight: 400;
   line-height: 86%;
 
