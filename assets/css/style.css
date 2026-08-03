@@ -515,21 +515,22 @@ transform: scaleX(0.58);
     margin-left: 0;
   }
 
- .hero-content {
-  position: absolute;
-  top: 209px;
-  left: 573px;
+  .hero-content {
+    position: absolute;
+    top: 209px;
+    left: 573px;
 
-  width: 718px;
+    width: calc(100% - 573px);
+    min-width: 0;
 
-  display: grid;
-  grid-template-columns: 63px 620px;
-  grid-template-rows: 108px 64px;
-  column-gap: 35px;
+    display: grid;
+    grid-template-columns: 63px minmax(0, 1fr);
+    grid-template-rows: 108px 64px;
+    column-gap: 24px;
 
-  margin: 0;
-  z-index: 6;
-}
+    margin: 0;
+    z-index: 6;
+  }
 
   .iam {
     width: 50px;
@@ -542,6 +543,11 @@ transform: scaleX(0.58);
     max-width: 100%;
     min-width: 0;
     height: auto;
+  }
+
+  .hero-text h1,
+  .hero-text h2 {
+    min-width: 0;
   }
 
   .hero-text h1 {
@@ -1590,6 +1596,53 @@ transform: scaleX(0.58);
     gap: 48px;
   }
 }
+/* Verhindert horizontalen Overflow, ohne Abstände oder Ausrichtung umzubauen. */
+@media (min-width: 1111px) and (max-width: 1350px) {
+  .portfolio-project,
+  .contact-content {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .portfolio-project {
+    gap: clamp(32px, 4vw, 48px);
+  }
+
+  .project-image {
+    width: auto;
+    min-width: 0;
+    flex: 1 1 620px;
+    height: auto;
+  }
+
+  .project-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .project-content {
+    width: auto;
+    min-width: 0;
+    flex: 1 1 513px;
+  }
+
+  .contact-content {
+    gap: clamp(40px, 5vw, 80px);
+  }
+
+  .contact-left {
+    width: auto;
+    min-width: 0;
+    flex: 1 1 474px;
+  }
+
+  .contact-form {
+    width: auto;
+    min-width: 0;
+    flex: 1 1 617px;
+  }
+}
+
 @media (max-width: 1110px) {
 
   .burger {
@@ -1633,7 +1686,9 @@ transform: scaleX(0.58);
     flex-direction: column;
     align-items: center;
     gap: 32px;
-  } 
+  }
+}
+
 @media (max-width: 380px) {
   .container {
     padding-left: 12px;
@@ -1687,6 +1742,8 @@ transform: scaleX(0.58);
     justify-content: center;
   }
 }
+
+@media (max-width: 1110px) {
   /* =========================
      HERO
   ========================= */
@@ -2316,15 +2373,26 @@ transform: scaleX(0.58);
     align-items: center;
     justify-content: flex-start;
 
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
+    transform: none;
+    clip-path: inset(0 0 0 100%);
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+
+    transition:
+      clip-path 0.3s ease-in-out,
+      opacity 0.3s ease-in-out,
+      visibility 0.3s ease-in-out;
 
     z-index: 1100;
   }
 
   .nav-right.open,
   .nav-right.active {
-    transform: translateX(0);
+    clip-path: inset(0);
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .nav-right nav {
@@ -2345,4 +2413,47 @@ transform: scaleX(0.58);
   .language {
     margin-top: 28px;
   }
+}
+/* =========================================
+   I AM – SAUBER RESPONSIVE
+========================================= */
+
+.iam {
+  position: relative;
+  width: clamp(34px, 4.4vw, 63px);
+  height: clamp(82px, 10.55vw, 152px);
+  flex-shrink: 0;
+
+  writing-mode: sideways-lr;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+
+.iam > span {
+  position: static;
+
+  width: auto;
+  height: auto;
+
+  display: inline;
+  transform: none;
+
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(34px, 4.45vw, 64px);
+  font-weight: 400;
+  line-height: 1;
+  white-space: pre;
+}
+
+/* Alte absolute Positionen vollständig neutralisieren */
+.iam-top,
+.iam-bottom,
+html[lang="de"] .iam-bottom,
+html[lang="en"] .iam-bottom {
+  position: static;
+  top: auto;
+  left: auto;
 }
