@@ -158,19 +158,8 @@ function translateNav(t) {
   if (links[1]) links[1].textContent = t.navSkills;
   if (links[2]) links[2].textContent = t.navPortfolio;
 }
-function translateHero(t, lang) {
-  const iamTop = document.querySelector(".iam-top");
-  const iamBottom = document.querySelector(".iam-bottom");
-
-  if (iamTop) {
-    iamTop.textContent = lang === "de" ? "bin" : "am";
-  }
-
-   if (iamBottom) {
-    iamBottom.textContent = lang === "de" ? "Ich" : "I";
-  }
-
-
+function translateHero(t) {
+  setText(".iam > span", t.heroIam);
   setText(".hero-text h2", t.heroJob);
   setText(".hero-text .cta", t.heroButton);
   setText(".scroll-text", t.scrollDown);
@@ -271,7 +260,7 @@ function setLanguage(lang) {
 
 function translatePage(t, lang) {
   translateNav(t);
-  translateHero(t, lang);
+  translateHero(t);
   translateAbout(t);
   translateSkills(t);
   translatePortfolio(t);
