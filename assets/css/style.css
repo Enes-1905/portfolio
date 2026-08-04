@@ -352,7 +352,7 @@ img {
 /* Social Links */
 .hero-socials {
   position: absolute;
-  left: -135px;
+  left: -275px;
   bottom: 48px;
 
   display: flex;
@@ -742,12 +742,12 @@ img {
 .skills-right {
   width: 550px;
   flex-shrink: 0;
-
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-
   text-align: right;
+   position: relative;
+   left: 40px;
 }
 
 .skills-heading {
@@ -769,13 +769,15 @@ img {
 }
 
 .skills-purple-line {
-  width: 68px;
+  position: absolute;
+  left: calc(100% + 32px);
+  
+  width: calc((100vw - 1440px) / 2 + 48px);
+  min-width: 68px;
   height: 4px;
-
   background: var(--purple);
-  flex-shrink: 0;
+  transform: translateY(-50%);
 }
-
 .skills-text-wrapper {
   width: 471px;
 
