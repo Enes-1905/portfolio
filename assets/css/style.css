@@ -915,6 +915,7 @@ img {
   color: #ffffff;
   text-align: center;
   white-space: nowrap;
+   transform: translateX(-250px);
 }
 
 .portfolio-project {
