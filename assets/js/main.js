@@ -237,11 +237,23 @@ function translatePrivacy(t, lang) {
 
 function translateFooter(t, lang) {
   const footerLegal = document.querySelector(".footer-legal");
-  if (!footerLegal) return;
-  footerLegal.textContent = t.legalNotice;
-  footerLegal.href = lang === "de"
-  ? "./impressum.html"
-  : "./legalnotice.html";
+  const footerPrivacy = document.querySelector(".footer-privacy");
+
+  if (footerLegal) {
+    footerLegal.textContent = t.legalNotice;
+    footerLegal.href =
+      lang === "de"
+        ? "./impressum.html"
+        : "./legalnotice.html";
+  }
+
+  if (footerPrivacy) {
+    footerPrivacy.textContent = t.privacyPolicy;
+    footerPrivacy.href =
+      lang === "de"
+        ? "./datenschutz.html"
+        : "./privacypolicy.html";
+  }
 }
 
 function setActiveLanguageButton(lang) {
