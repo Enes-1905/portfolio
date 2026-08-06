@@ -2479,3 +2479,62 @@ img {
     object-fit: contain;
   }
 }
+/* =========================================
+   WIDESCREEN AB 1440PX
+========================================= */
+
+@media (min-width: 1440px) {
+ .container {
+    width: 100%;
+    max-width: 1440px;
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+   .hero-inner {
+    width: 1344px;
+    max-width: 1344px;
+    grid-template-columns: 520px minmax(0, 1fr);
+    column-gap: 20px;
+  }
+.hero-image {
+    width: 620px;
+    height: 650px;
+    margin-left: -40px;
+    margin-top: 18px;
+  }
+ .hero-shadow {
+    left: -150px;
+    top: 80px;
+    width: 760px;
+    height: 760px;
+  }
+
+  .hero-photo {
+    width: 580px;
+    height: 650px;
+    margin-left: 0;
+  }
+ .hero-content {
+    position: absolute;
+    top: 209px;
+    left: 573px;
+    width: 760px;
+    height: 172px;
+    margin: 0;
+  }
+   .hero-socials {
+    left: calc((100vw - 1344px) / -2);
+    bottom: 48px;
+    width: auto;
+    max-width: none;
+    gap: 28px;
+  }
+   .hero-socials > .hero-line {
+    width: calc((100vw - 1344px) / 2 + 180px);
+    flex: 0 0 calc((100vw - 1344px) / 2 + 180px);
+    height: 4px;
+  }
+   .hero-socials > a.hero-email {
+    display: flex;
+  }
+}
