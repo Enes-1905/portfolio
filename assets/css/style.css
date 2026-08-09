@@ -352,7 +352,7 @@ img {
 /* Social Links */
 .hero-socials {
   position: absolute;
-  left: -275px;
+ left: calc((100vw - 100%) / -2);
   bottom: 48px;
 
   display: flex;
