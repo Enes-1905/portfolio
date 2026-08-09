@@ -2545,7 +2545,7 @@ img {
 }
 }
 /* == BIS 480PX == */
-@media (max-width: 480px) {
+@media (max-width: 490px) {
 
   .hero-content {
     width: 100%;
@@ -2566,7 +2566,9 @@ img {
   .hero-text h2 {
     width: 100%;
     max-width: 100%;
-    font-size: 22px;
+
+    font-size: clamp(18px, 4.6vw, 21px);
+
     white-space: nowrap;
   }
 
@@ -2574,6 +2576,7 @@ img {
     margin-top: 40px;
     gap: 16px;
   }
+}
 
   .hero-socials > .hero-line {
     max-width: 100px;
@@ -2715,5 +2718,80 @@ img {
 
   .hero-socials > a.hero-email {
     display: flex;
+  }
+}
+/* =========================================
+   DESKTOP NAV FINAL FIX
+   Desktop-Design wie Figma beibehalten
+========================================= */
+
+@media (min-width: 769px) {
+  .navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 40px;
+
+    width: auto;
+    height: auto;
+
+    position: static;
+
+    padding: 0;
+    margin: 0;
+
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+
+    background: transparent;
+    clip-path: none;
+    transform: none;
+  }
+
+  .nav-right nav {
+    width: auto;
+    flex: 0 0 auto;
+  }
+
+  .nav-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+
+    width: auto;
+  }
+
+  .nav-list li {
+    flex: 0 0 auto;
+  }
+
+  .nav-list li:last-child {
+    display: none;
+  }
+
+  .language {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    gap: 8px;
+
+    width: auto;
+    margin: 0;
+
+    flex: 0 0 auto;
+  }
+
+  .burger {
+    display: none;
   }
 }
