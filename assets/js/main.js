@@ -7,8 +7,9 @@ const contactForm = document.getElementById("contact-form");
 const translations = {
   en: {
     navAbout: "About me",
-    navSkills: "Skills",
+    navSkills: "My skills",
     navPortfolio: "Portfolio",
+    navContact: "Contact",
 
     heroIam: "I am",
     heroJob: "FRONTEND DEVELOPER",
@@ -34,12 +35,12 @@ const translations = {
       "Reveal enthusiasm for learning new technologies and frameworks.",
     skillsButton: "Get in touch",
 
+    portfolioDescription:
+      "Explore a selection of my work here - Interact with projects to see my skills in action.",
+
     joinTech: "Angular | TypeScript | HTML | CSS | Firebase",
     joinDescription:
       "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
-
-      portfolioDescription:
-  "Explore a selection of my work here - Interact with projects to see my skills in action.",
 
     polloTech: "JavaScript | HTML | CSS",
     polloDescription:
@@ -54,30 +55,36 @@ const translations = {
       "Encourage people to contact you and describe what role you are interested in. Show that you will add value to their projects through your work.",
     contactHighlight: "Need a Frontend developer?",
     contactHighlightSpan: "Contact me!",
+
     namePlaceholder: "Your name",
     emailPlaceholder: "Your email",
     messagePlaceholder: "Your message",
+
     privacyStart: "I've read the",
     privacyLink: "privacy policy",
     privacyEnd: "and agree to the processing of my data as outlined.",
+
     sendButton: "Send message :)",
     legalNotice: "Legal Notice",
+    privacyPolicy: "Privacy Policy",
 
     sending: "Message is being sent...",
-success: "Message sent successfully!",
-serverError: "Server error.",
-errors: {
-  name: "Your name is required",
-  email: "Your email is required",
-  message: "Your message is empty",
-  privacy: "Please accept the privacy policy."
-}
-},
+    success: "Message sent successfully!",
+    serverError: "Server error.",
+
+    errors: {
+      name: "Your name is required",
+      email: "Your email is required",
+      message: "Your message is empty",
+      privacy: "Please accept the privacy policy."
+    }
+  },
 
   de: {
     navAbout: "Über mich",
-    navSkills: "Fähigkeiten",
+    navSkills: "Meine Skills",
     navPortfolio: "Portfolio",
+    navContact: "Kontakt",
 
     heroIam: "Ich bin",
     heroJob: "FRONTEND ENTWICKLER",
@@ -103,11 +110,13 @@ errors: {
       "Ich bin offen dafür, neue Technologien und Frameworks zu lernen.",
     skillsButton: "Kontakt aufnehmen",
 
+    portfolioDescription:
+      "Entdecke hier eine Auswahl meiner Projekte – interagiere mit ihnen und erhalte einen Einblick in meine Fähigkeiten.",
+
     joinTech: "Angular | TypeScript | HTML | CSS | Firebase",
     joinDescription:
       "Task Manager inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben mit Drag-and-Drop-Funktionen, weise Benutzer und Kategorien zu.",
-portfolioDescription:
-  "Entdecke hier eine Auswahl meiner Projekte – interagiere mit ihnen und erhalte einen Einblick in meine Fähigkeiten.",
+
     polloTech: "JavaScript | HTML | CSS",
     polloDescription:
       "Ein Jump-and-Run-Spiel auf Basis objektorientierter Programmierung. Hilf El Pollo Loco dabei, Münzen und Giftflaschen zu sammeln und gegen das Killer-Huhn zu kämpfen.",
@@ -121,25 +130,30 @@ portfolioDescription:
       "Kontaktiere mich und beschreibe, welche Rolle du suchst. Ich zeige dir, wie ich durch meine Arbeit Mehrwert für dein Projekt schaffen kann.",
     contactHighlight: "Brauchst du einen Frontend Entwickler?",
     contactHighlightSpan: "Kontaktiere mich!",
+
     namePlaceholder: "Dein Name",
     emailPlaceholder: "Deine E-Mail",
     messagePlaceholder: "Deine Nachricht",
+
     privacyStart: "Ich habe die",
     privacyLink: "Datenschutzerklärung",
     privacyEnd: "gelesen und stimme der Verarbeitung meiner Daten zu.",
+
     sendButton: "Nachricht senden :)",
     legalNotice: "Impressum",
+    privacyPolicy: "Datenschutz",
 
-sending: "Nachricht wird gesendet...",
-success: "Nachricht erfolgreich gesendet!",
-serverError: "Serverfehler.",
-errors: {
-  name: "Dein Name ist erforderlich",
-  email: "Deine E-Mail ist erforderlich",
-  message: "Deine Nachricht ist leer",
-  privacy: "Bitte akzeptiere die Datenschutzerklärung."
-}
-}
+    sending: "Nachricht wird gesendet...",
+    success: "Nachricht erfolgreich gesendet!",
+    serverError: "Serverfehler.",
+
+    errors: {
+      name: "Dein Name ist erforderlich",
+      email: "Deine E-Mail ist erforderlich",
+      message: "Deine Nachricht ist leer",
+      privacy: "Bitte akzeptiere die Datenschutzerklärung."
+    }
+  }
 };
 
 function setText(selector, text) {
@@ -154,10 +168,13 @@ function setPlaceholder(selector, text) {
 
 function translateNav(t) {
   const links = document.querySelectorAll(".nav-list a");
-  if (links[0]) links[0].textContent = t.navAbout;
-  if (links[1]) links[1].textContent = t.navSkills;
-  if (links[2]) links[2].textContent = t.navPortfolio;
+  const labels = [t.navAbout, t.navSkills, t.navPortfolio, t.navContact];
+
+  links.forEach((link, index) => {
+    if (labels[index]) link.textContent = labels[index];
+  });
 }
+
 function translateHero(t) {
   setText(".iam > span", t.heroIam);
   setText(".hero-text h2", t.heroJob);
@@ -166,12 +183,12 @@ function translateHero(t) {
 }
 
 function translateAbout(t) {
-  const aboutInfos = document.querySelectorAll(".about-info p");
+  const infos = document.querySelectorAll(".about-info p");
   setText(".about-text h2", t.aboutTitle);
   setText(".about-intro", t.aboutIntro);
-  if (aboutInfos[0]) aboutInfos[0].textContent = t.aboutLocation;
-  if (aboutInfos[1]) aboutInfos[1].textContent = t.aboutLearning;
-  if (aboutInfos[2]) aboutInfos[2].textContent = t.aboutProblem;
+  if (infos[0]) infos[0].textContent = t.aboutLocation;
+  if (infos[1]) infos[1].textContent = t.aboutLearning;
+  if (infos[2]) infos[2].textContent = t.aboutProblem;
 }
 
 function translateSkills(t) {
@@ -185,12 +202,14 @@ function translateSkills(t) {
 function setSkillsHeadline(t) {
   const headline = document.querySelector(".skills-question h3");
   if (!headline) return;
-  headline.innerHTML = `${t.skillsHeadline} <span>${t.skillsSpan}</span>`;
+  headline.innerHTML =
+    `${t.skillsHeadline} <span>${t.skillsSpan}</span>`;
 }
 
 function translatePortfolio(t) {
   const techs = document.querySelectorAll(".project-tech");
   const descriptions = document.querySelectorAll(".project-description");
+
   if (techs[0]) techs[0].textContent = t.joinTech;
   if (techs[1]) techs[1].textContent = t.polloTech;
   if (descriptions[0]) descriptions[0].textContent = t.joinDescription;
@@ -199,25 +218,29 @@ function translatePortfolio(t) {
 }
 
 function translateProjectButtons(t) {
-  document.querySelectorAll(".live-btn").forEach((btn) => {
-    btn.textContent = t.liveTest;
+  document.querySelectorAll(".live-btn").forEach((button) => {
+    button.textContent = t.liveTest;
   });
-  document.querySelectorAll(".github-btn").forEach((btn) => {
-    btn.textContent = t.github;
+
+  document.querySelectorAll(".github-btn").forEach((button) => {
+    button.textContent = t.github;
   });
 }
+
 function translateContact(t, lang) {
   setText(".contact-left h2", t.contactTitle);
   setText(".contact-left h3", t.contactHeadline);
   setText(".contact-description", t.contactText1);
-
   translateContactHighlight(t);
   translatePrivacy(t, lang);
 }
+
 function translateContactHighlight(t) {
   const element = document.querySelector(".contact-highlight");
   if (!element) return;
-  element.innerHTML = `${t.contactHighlight} <span>${t.contactHighlightSpan}</span>`;
+
+  element.innerHTML =
+    `${t.contactHighlight} <span>${t.contactHighlightSpan}</span>`;
 }
 
 function translatePlaceholders(t) {
@@ -226,34 +249,39 @@ function translatePlaceholders(t) {
   setPlaceholder('textarea[name="message"]', t.messagePlaceholder);
 }
 
+function getPrivacyHref(lang) {
+  return lang === "de"
+    ? "./datenschutz.html"
+    : "./privacypolicy.html";
+}
+
 function translatePrivacy(t, lang) {
   const privacyText = document.querySelector(".privacy-text");
   if (!privacyText) return;
- const href = lang === "de"
-  ? "./datenschutz.html"
-  : "./privacypolicy.html";
-  privacyText.innerHTML = `${t.privacyStart} <a href="${href}" class="privacy-link">${t.privacyLink}</a> ${t.privacyEnd}`;
+
+  const href = getPrivacyHref(lang);
+  privacyText.innerHTML =
+    `${t.privacyStart} <a href="${href}" class="privacy-link">${t.privacyLink}</a> ${t.privacyEnd}`;
+}
+
+function setFooterLink(element, text, href) {
+  if (!element) return;
+  element.textContent = text;
+  element.href = href;
+}
+
+function getLegalHref(lang) {
+  return lang === "de"
+    ? "./impressum.html"
+    : "./legalnotice.html";
 }
 
 function translateFooter(t, lang) {
-  const footerLegal = document.querySelector(".footer-legal");
-  const footerPrivacy = document.querySelector(".footer-privacy");
+  const legal = document.querySelector(".footer-legal");
+  const privacy = document.querySelector(".footer-privacy");
 
-  if (footerLegal) {
-    footerLegal.textContent = t.legalNotice;
-    footerLegal.href =
-      lang === "de"
-        ? "./impressum.html"
-        : "./legalnotice.html";
-  }
-
-  if (footerPrivacy) {
-    footerPrivacy.textContent = t.privacyPolicy;
-    footerPrivacy.href =
-      lang === "de"
-        ? "./datenschutz.html"
-        : "./privacypolicy.html";
-  }
+  setFooterLink(legal, t.legalNotice, getLegalHref(lang));
+  setFooterLink(privacy, t.privacyPolicy, getPrivacyHref(lang));
 }
 
 function setActiveLanguageButton(lang) {
@@ -265,6 +293,7 @@ function setActiveLanguageButton(lang) {
 function setLanguage(lang) {
   const t = translations[lang];
   if (!t) return;
+
   document.documentElement.lang = lang;
   translatePage(t, lang);
   localStorage.setItem("language", lang);
@@ -279,46 +308,48 @@ function translatePage(t, lang) {
   translateProjectButtons(t);
   translateContact(t, lang);
   translatePlaceholders(t);
-  setText(".contact-btn", t.sendButton);
   translateFooter(t, lang);
+  setText(".contact-btn", t.sendButton);
   setActiveLanguageButton(lang);
 }
 
 function toggleMenu() {
+  if (!burger || !nav) return;
   burger.classList.toggle("open");
   nav.classList.toggle("open");
   nav.classList.toggle("active");
 }
 
 function closeMenu() {
+  if (!burger || !nav) return;
   burger.classList.remove("open");
   nav.classList.remove("open");
   nav.classList.remove("active");
-}
-
-function initBurgerMenu() {
-  if (!burger || !nav) return;
-  burger.addEventListener("click", toggleMenu);
-  nav.querySelectorAll("a").forEach(addCloseEvent);
 }
 
 function addCloseEvent(link) {
   link.addEventListener("click", closeMenu);
 }
 
+function initBurgerMenu() {
+  if (!burger || !nav) return;
+
+  burger.addEventListener("click", toggleMenu);
+  nav.querySelectorAll("a").forEach(addCloseEvent);
+}
+
 function initLanguageButtons() {
-  if (btnDe) btnDe.addEventListener("click", () => setLanguage("de"));
-  if (btnEn) btnEn.addEventListener("click", () => setLanguage("en"));
+  if (btnDe) {
+    btnDe.addEventListener("click", () => setLanguage("de"));
+  }
+
+  if (btnEn) {
+    btnEn.addEventListener("click", () => setLanguage("en"));
+  }
 }
 
 function getCurrentLanguage() {
   return localStorage.getItem("language") || "en";
-}
-
-function showToast(message) {
-  const toast = createToast(message);
-  document.body.appendChild(toast);
-  window.setTimeout(() => toast.remove(), 3000);
 }
 
 function createToast(message) {
@@ -327,6 +358,13 @@ function createToast(message) {
   toast.textContent = message;
   return toast;
 }
+
+function showToast(message) {
+  const toast = createToast(message);
+  document.body.appendChild(toast);
+  window.setTimeout(() => toast.remove(), 3000);
+}
+
 function setSubmitState(button, text, disabled) {
   if (!button) return;
   button.disabled = disabled;
@@ -334,6 +372,8 @@ function setSubmitState(button, text, disabled) {
 }
 
 function getFormFields() {
+  if (!contactForm) return {};
+
   return {
     name: contactForm.querySelector("#name"),
     email: contactForm.querySelector("#email"),
@@ -344,8 +384,10 @@ function getFormFields() {
 }
 
 function isEmailValid(value) {
-  const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+$/;
-  return emailPattern.test(value) && !value.includes("..");
+  const pattern =
+    /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+$/;
+
+  return pattern.test(value) && !value.includes("..");
 }
 
 function getErrorTexts() {
@@ -356,6 +398,7 @@ function getErrorTexts() {
 function setFieldError(field, message) {
   const group = field.closest(".input-group");
   const error = group.querySelector(".error-message");
+
   group.classList.add("error");
   error.textContent = message;
 }
@@ -363,6 +406,7 @@ function setFieldError(field, message) {
 function clearFieldError(field) {
   const group = field.closest(".input-group");
   const error = group.querySelector(".error-message");
+
   group.classList.remove("error");
   error.textContent = "";
 }
@@ -370,7 +414,11 @@ function clearFieldError(field) {
 function validateName(showError = true) {
   const { name } = getFormFields();
   const isValid = name.value.trim().length > 0;
-  if (!isValid && showError) setFieldError(name, getErrorTexts().name);
+
+  if (!isValid && showError) {
+    setFieldError(name, getErrorTexts().name);
+  }
+
   if (isValid) clearFieldError(name);
   return isValid;
 }
@@ -378,7 +426,11 @@ function validateName(showError = true) {
 function validateEmail(showError = true) {
   const { email } = getFormFields();
   const isValid = isEmailValid(email.value.trim());
-  if (!isValid && showError) setFieldError(email, getErrorTexts().email);
+
+  if (!isValid && showError) {
+    setFieldError(email, getErrorTexts().email);
+  }
+
   if (isValid) clearFieldError(email);
   return isValid;
 }
@@ -386,7 +438,11 @@ function validateEmail(showError = true) {
 function validateMessage(showError = true) {
   const { message } = getFormFields();
   const isValid = message.value.trim().length >= 10;
-  if (!isValid && showError) setFieldError(message, getErrorTexts().message);
+
+  if (!isValid && showError) {
+    setFieldError(message, getErrorTexts().message);
+  }
+
   if (isValid) clearFieldError(message);
   return isValid;
 }
@@ -396,20 +452,26 @@ function validatePrivacy(showError = true) {
   const wrapper = privacy.closest(".privacy-wrapper");
   const error = wrapper.querySelector(".error-message");
   const isValid = privacy.checked;
+
   wrapper.classList.toggle("error", !isValid && showError);
-  error.textContent = !isValid && showError ? getErrorTexts().privacy : "";
+  error.textContent =
+    !isValid && showError ? getErrorTexts().privacy : "";
+
   return isValid;
 }
 
 function isFormValid() {
-  return validateName(false) &&
+  return (
+    validateName(false) &&
     validateEmail(false) &&
     validateMessage(false) &&
-    validatePrivacy(false);
+    validatePrivacy(false)
+  );
 }
 
 function updateSubmitButton() {
   const { button } = getFormFields();
+  if (!button) return;
   button.disabled = !isFormValid();
 }
 
@@ -424,8 +486,20 @@ function validateAllFields() {
 async function handleFormSubmit(event) {
   event.preventDefault();
   validateAllFields();
+
   if (!isFormValid()) return;
   await submitContactForm();
+}
+
+function handleSubmitError(button, t) {
+  showToast(t.serverError);
+  setSubmitState(button, t.sendButton, false);
+}
+
+function handleSubmitSuccess(button, t) {
+  contactForm.reset();
+  showToast(t.success);
+  setSubmitState(button, t.sendButton, true);
 }
 
 async function submitContactForm() {
@@ -433,18 +507,13 @@ async function submitContactForm() {
   const { button } = getFormFields();
 
   setSubmitState(button, t.sending, true);
-
   const response = await sendContactMail();
 
   if (!response.ok) {
-    showToast(t.serverError);
-    setSubmitState(button, t.sendButton, false);
-    return;
+    return handleSubmitError(button, t);
   }
 
-  contactForm.reset();
-  showToast(t.success);
-  setSubmitState(button, t.sendButton, true);
+  handleSubmitSuccess(button, t);
 }
 
 function getFormData() {
@@ -483,18 +552,21 @@ function addInputEvents(fields) {
 
 function initContactForm() {
   if (!contactForm) return;
+
   const fields = getFormFields();
   fields.button.disabled = true;
+
   addFormEvents(fields);
   addInputEvents(fields);
   contactForm.addEventListener("submit", handleFormSubmit);
 }
 
- 
-
 function scrollToTop(event) {
   event.preventDefault();
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 }
 
 function initScrollTop() {
@@ -503,7 +575,9 @@ function initScrollTop() {
 }
 
 function closeMenuOnDesktop() {
-  if (window.innerWidth > 768 && burger && nav) closeMenu();
+  if (window.innerWidth > 768) {
+    closeMenu();
+  }
 }
 
 function initResizeHandler() {
