@@ -965,7 +965,6 @@ img {
   transform: scale(1.03);
 }
 
-
 .project-content {
   width: 513px;
   display: flex;
@@ -2591,8 +2590,6 @@ img {
   .portfolio-header {
     gap: 12px;
   }
-}
-
 
 /* == BIS 380PX == */
 @media (max-width: 380px) {
@@ -2793,5 +2790,28 @@ img {
 
   .burger {
     display: none;
+  }
+}
+@media (max-width: 1110px) {
+  .project-image-elpoloco img {
+    transform: scale(1.06);
+  }
+
+  .project-image-elpoloco img:hover {
+    transform: scale(1.09);
+  }
+}
+
+
+@media (max-width: 1350px) {
+  .project-image {
+    aspect-ratio: 620 / 339;
+    height: auto;
+  }
+
+  .project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 }
