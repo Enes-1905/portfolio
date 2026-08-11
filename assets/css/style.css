@@ -278,15 +278,12 @@ img {
 
 .iam > span {
   display: block;
-
   font-family: "Poppins", sans-serif;
-  font-size: 56px;
+  font-size: 64px;
   font-weight: 400;
   line-height: 1;
   color: var(--white);
-
   white-space: nowrap;
-
   transform: rotate(-90deg) translateY(6px);
   transform-origin: center;
 }
@@ -1080,7 +1077,7 @@ img {
   content: "";
   position: absolute;
   left: -260px;
-  bottom: -170px;
+  bottom: 40px;
   width: 700px;
   height: 760px;
   background: url("../img/shadowportfolio.png") no-repeat center center;
@@ -1749,10 +1746,7 @@ img {
 }
 
 @media (max-width: 1110px) {
-  /* =========================
-     HERO
-  ========================= */
-
+  
   .hero {
     min-height: auto;
   }
@@ -2096,19 +2090,11 @@ img {
   }
   .contact-section::before {
   left: -360px;
-  bottom: -360px;
+  bottom: -210px;
   width: 700px;
   height: 760px;
 }
 }
-/* =========================================
-   RESPONSIVE HERO / NAV / PORTFOLIO / MOBILE
-========================================= */
-
-
-/* =========================================
-   BIS 1350PX
-========================================= */
 
 @media (max-width: 1350px) {
 
@@ -2162,8 +2148,6 @@ img {
     object-fit: contain;
   }
 }
-
-
 /* =========================================
    BIS 1110PX
 ========================================= */
@@ -2190,8 +2174,6 @@ img {
     height: auto;
   }
 }
-
-
 /* =========================================
    MOBILE NAVIGATION
 ========================================= */
@@ -2977,6 +2959,5 @@ img {
     font-size: 16px;
     line-height: 1.18;
   }
-
 
 }
