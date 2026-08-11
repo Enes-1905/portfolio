@@ -2937,10 +2937,9 @@ img {
 .legal-heading {
   display: flex;
   align-items: center;
-
   gap: 16px;
 
-  width: calc(100% + 24px);
+  width: 100%;
 
   margin-bottom: 36px;
 }
@@ -2980,33 +2979,4 @@ img {
   }
 
 
-  /* FOOTER wie im Figma */
-
-  .legal-notice-page + .footer-section .footer-content {
-    min-height: 380px;
-    flex-direction: column;
-    justify-content: center;
-    gap: 36px;
-  }
-
-  .legal-notice-page + .footer-section .footer-left {
-    align-items: center;
-  }
-
-  .legal-notice-page + .footer-section .footer-logo {
-    font-size: 52px;
-  }
-
-  .legal-notice-page + .footer-section .footer-copyright {
-    font-size: 23px;
-  }
-
-  .legal-notice-page + .footer-section .footer-socials {
-    gap: 42px;
-  }
-
-  .legal-notice-page + .footer-section .footer-legal {
-    margin-top: 8px;
-    font-size: 16px;
-  }
 }
