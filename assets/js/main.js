@@ -347,8 +347,23 @@ function initLanguageButtons() {
     btnEn.addEventListener("click", () => setLanguage("en"));
   }
 }
-
 function getCurrentLanguage() {
+  const path = window.location.pathname;
+
+  if (
+    path.includes("datenschutz.html") ||
+    path.includes("impressum.html")
+  ) {
+    return "de";
+  }
+
+  if (
+    path.includes("privacypolicy.html") ||
+    path.includes("legalnotice.html")
+  ) {
+    return "en";
+  }
+
   return localStorage.getItem("language") || "en";
 }
 

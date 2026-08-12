@@ -1698,25 +1698,27 @@ img {
     width: calc(100% - 24px);
   }
 
-  .hero-content {
+ .hero-content {
     width: 100%;
     max-width: 100%;
-    gap: 6px;
+    gap: 0;
   }
 
-  .iam {
-    width: 28px;
-    height: 76px;
-    flex-shrink: 0;
-  }
+ .iam {
+  width: 24px;
+  height: 76px;
+  margin-right: -10px;
+  transform: translateX(8px);
+}
 
+ 
   .iam > span {
     font-size: 24px;
+    transform: rotate(-90deg);
   }
-
-  .hero-text {
-    width: calc(100% - 34px);
-    max-width: calc(100% - 34px);
+ .hero-text {
+    width: calc(100% - 20px);
+    max-width: calc(100% - 20px);
     min-width: 0;
   }
 
@@ -2543,6 +2545,14 @@ img {
 
     margin: 0 auto;
   }
+  .skills-section {
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+.skills-content {
+  gap: 32px;
+}
   /* -------------------------
      PORTFOLIO
   ------------------------- */
