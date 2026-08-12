@@ -2969,5 +2969,44 @@ img {
     font-size: 16px;
     line-height: 1.18;
   }
+}
+/* HERO MOBILE – I AM näher an Enes Kurt */
+@media (max-width: 600px) {
+  .hero-content {
+    gap: 0;
+    justify-content: center;
+  }
 
+    .iam {
+    width: 22px;
+    height: 82px;
+    margin-right: -18px;
+    flex-shrink: 0;
+  }
+
+
+ .iam > span {
+    font-size: 35px;
+    transform: rotate(-90deg) translateY(26px);
+    transform-origin: center;
+  }
+
+  .hero-text {
+    width: auto;
+    max-width: calc(100% - 22px);
+  }
+
+  .hero-text h1 {
+    font-size: clamp(36px, 10.5vw, 44px);
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .hero-text h2 {
+    margin-top: 4px;
+    font-size: clamp(17px, 4.8vw, 20px);
+    line-height: 1.1;
+    white-space: nowrap;
+    width: 91%;
+  }
 }
