@@ -2986,7 +2986,7 @@ img {
 
 
  .iam > span {
-    font-size: 35px;
+    font-size: 32px;
     transform: rotate(-90deg) translateY(26px);
     transform-origin: center;
   }
@@ -2998,7 +2998,7 @@ img {
 
   .hero-text h1 {
     font-size: clamp(36px, 10.5vw, 44px);
-    line-height: 1;
+    line-height: 1.4;
     white-space: nowrap;
   }
 
@@ -3008,5 +3008,101 @@ img {
     line-height: 1.1;
     white-space: nowrap;
     width: 91%;
+  }
+}
+/* =========================================
+   FINAL MOBILE POLISH – nur Abstände/Ausrichtung
+   Desktop-Design und Farben bleiben unverändert
+========================================= */
+@media (max-width: 600px) {
+  /* Hero: Social-Gruppe sauber mittig */
+  .hero-socials {
+    width: fit-content;
+    margin-top: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+  }
+
+  .hero-socials > .hero-line {
+    width: 72px;
+    max-width: 72px;
+    flex: 0 0 72px;
+  }
+
+  /* About: große Leerflächen reduzieren */
+  .about-section {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  .about-text {
+    gap: 24px;
+  }
+
+  .about-info {
+    align-items: center;
+  }
+
+  /* Skills: kompakter und Symbole sauber zentriert */
+  .skills-section {
+    padding-top: 60px;
+    padding-bottom: 70px;
+  }
+
+  .skills-content {
+    gap: 24px;
+  }
+
+  .skills-heading {
+    margin-bottom: 16px;
+  }
+
+  .skills-description {
+    margin-bottom: 32px;
+  }
+
+  .skills-icons {
+    justify-items: center;
+    align-items: center;
+    gap: 30px 44px;
+  }
+
+  .skill-item {
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Portfolio: unnötige vertikale Lücken reduzieren */
+  .portfolio-section {
+    padding-top: 60px;
+    padding-bottom: 80px;
+  }
+
+  .portfolio-description {
+    margin-top: 18px;
+  }
+
+  .portfolio-project {
+    margin-top: 40px;
+    gap: 20px;
+  }
+
+  /* Contact: Text/Formular enger zusammenziehen */
+  .contact-section {
+    padding-top: 70px;
+    padding-bottom: 100px;
+  }
+
+  .contact-content {
+    gap: 36px;
+  }
+
+  .contact-left h3 {
+    margin-top: 28px;
+  }
+
+  .contact-description {
+    margin-top: 20px;
   }
 }
