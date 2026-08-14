@@ -22,7 +22,7 @@ body {
   font-family: "Poppins", Arial, sans-serif;
   background: var(--bg);
   color: var(--white);
- 
+
 }
 
 a {
@@ -91,8 +91,8 @@ img {
   gap: 32px;
 }
 
-/* Contact remains part of the mobile menu only.
-   Desktop stays aligned with the Figma navigation. */
+/* Contact remains .
+ */
 .nav-list li:last-child {
   display: none;
 }
@@ -158,7 +158,7 @@ img {
   transform: rotate(-45deg) translate(8px, -8px);
 }
 /* =========================================
-   HERO
+HERO
 ========================================= */
 
 .hero {
@@ -174,9 +174,9 @@ img {
   left: 0;
 
   top: clamp(
-    150px,
-    calc(150px + (1442px - 100vw) * 0.38),
-    420px
+  150px,
+  calc(150px + (1442px - 100vw) * 0.38),
+  420px
   );
 
   width: 100%;
@@ -207,7 +207,6 @@ img {
   column-gap: 20px;
 }
 
-/* Person und Schatten */
 .hero-image {
   position: relative;
 
@@ -355,7 +354,7 @@ img {
 /* Social Links */
 .hero-socials {
   position: absolute;
- left: calc((100vw - 100%) / -2);
+  left: calc((100vw - 100%) / -2);
   bottom: 48px;
 
   display: flex;
@@ -366,11 +365,11 @@ img {
 }
 
 .hero-line {
-    width: 180px;
-    height: 4px;
-    background: var(--purple);
-    flex-shrink: 0;
-    left: -95px;
+  width: 180px;
+  height: 4px;
+  background: var(--purple);
+  flex-shrink: 0;
+  left: -95px;
 }
 .hero-socials a {
   display: flex;
@@ -434,7 +433,7 @@ img {
 }
 
 /* =========================================
-   HERO RESPONSIVE – KLEINER DESKTOP
+HERO RESPONSIVE 
 ========================================= */
 
 @media (max-width: 1450px) {
@@ -664,7 +663,7 @@ img {
   transform: translateY(-50%);
 }
 /* =========================================
-   SKILLS
+SKILLS
 ========================================= */
 
 .skills-section {
@@ -759,8 +758,8 @@ img {
   flex-direction: column;
   align-items: flex-end;
   text-align: right;
-   position: relative;
-   left: 40px;
+  position: relative;
+  left: 40px;
 }
 
 .skills-heading {
@@ -784,7 +783,7 @@ img {
 .skills-purple-line {
   position: absolute;
   left: calc(100% + 32px);
-  
+
   width: calc((100vw - 1440px) / 2 + 48px);
   min-width: 68px;
   height: 4px;
@@ -895,9 +894,6 @@ img {
   align-items: center;
   column-gap: 32px;
 }
-
-
-
 
 .portfolio-line-left {
   width: 100px;
@@ -1384,7 +1380,7 @@ img {
   transform: scale(1.2);
 }
 /* =========================================
-   LEGAL NOTICE
+LEGAL NOTICE
 ========================================= */
 
 .legal-page {
@@ -1494,7 +1490,7 @@ img {
 
 
 /* =========================================
-   RESPONSIVE
+RESPONSIVE
 ========================================= */
 
 @media (max-width: 1350px) {
@@ -1641,7 +1637,7 @@ img {
     gap: 48px;
   }
 }
-/* Verhindert horizontalen Overflow, ohne Abstände oder Ausrichtung umzubauen. */
+/* Verhindert  Overflow */
 @media (min-width: 1111px) and (max-width: 1350px) {
   .portfolio-project,
   .contact-content {
@@ -1698,25 +1694,25 @@ img {
     width: calc(100% - 24px);
   }
 
- .hero-content {
+  .hero-content {
     width: 100%;
     max-width: 100%;
     gap: 0;
   }
 
- .iam {
-  width: 24px;
-  height: 76px;
-  margin-right: -10px;
-  transform: translateX(8px);
-}
+  .iam {
+    width: 24px;
+    height: 76px;
+    margin-right: -10px;
+    transform: translateX(8px);
+  }
 
- 
+
   .iam > span {
     font-size: 24px;
     transform: rotate(-90deg);
   }
- .hero-text {
+  .hero-text {
     width: calc(100% - 20px);
     max-width: calc(100% - 20px);
     min-width: 0;
@@ -1748,10 +1744,10 @@ img {
 }
 
 @media (max-width: 1110px) {
-  
+
   .hero {
-  min-height: 100vh;
-}
+    min-height: 100vh;
+  }
 
   .hero-wave {
     top: 330px;
@@ -1841,46 +1837,46 @@ img {
     display: none;
   }
 
-.hero-socials {
-  left: -150;
-  bottom: 48px;
+  .hero-socials {
+    left: -150;
+    bottom: 48px;
 
-  display: flex;
-  align-items: center;
-  gap: 24px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
 
-  transform: none;
-}
-.hero-socials > a:not(.hero-email) {
-  width: 30px;
-  min-width: 30px;
-  height: 30px;
-  flex: 0 0 30px;
-}
+    transform: none;
+  }
+  .hero-socials > a:not(.hero-email) {
+    width: 30px;
+    min-width: 30px;
+    height: 30px;
+    flex: 0 0 30px;
+  }
 
-.hero-socials > a:not(.hero-email) > img {
-  display: block;
-  width: 30px;
-  min-width: 30px;
-  height: 30px;
-  max-width: none;
-  flex-shrink: 0;
-  object-fit: contain;
-}
+  .hero-socials > a:not(.hero-email) > img {
+    display: block;
+    width: 30px;
+    min-width: 30px;
+    height: 30px;
+    max-width: none;
+    flex-shrink: 0;
+    object-fit: contain;
+  }
 
-.hero-line {
-  display: block;
-  width: 72px;
-  height: 4px;
-  flex: 0 0 72px;
-}
+  .hero-line {
+    display: block;
+    width: 72px;
+    height: 4px;
+    flex: 0 0 72px;
+  }
 
-.hero-email {
-  flex-shrink: 0;
-}
+  .hero-email {
+    flex-shrink: 0;
+  }
 
   /* =========================
-     ABOUT
+  ABOUT
   ========================= */
 
   .about-content,
@@ -1905,7 +1901,7 @@ img {
   }
 
   /* =========================
-     SKILLS
+  SKILLS
   ========================= */
 
   .skills-section {
@@ -1993,7 +1989,7 @@ img {
   }
 
   /* =========================
-     PORTFOLIO
+  PORTFOLIO
   ========================= */
 
   .portfolio-header {
@@ -2004,25 +2000,25 @@ img {
     display: grid;
 
     grid-template-columns:
-      minmax(24px, 1fr)
-      auto
-      minmax(24px, 1fr);
+    minmax(24px, 1fr)
+    auto
+    minmax(24px, 1fr);
 
     gap: 16px;
 
     align-items: center;
   }
 
- .portfolio-line-left {
-  width: 100px;
-  max-width: 100px;
-  justify-self: end;
-}
+  .portfolio-line-left {
+    width: 100px;
+    max-width: 100px;
+    justify-self: end;
+  }
 
-.portfolio-line-right {
-  width: 100%;
-  max-width: none;
-}
+  .portfolio-line-right {
+    width: 100%;
+    max-width: none;
+  }
 
   .portfolio-title {
     width: auto;
@@ -2059,16 +2055,16 @@ img {
   .project-description {
     width: 100%;
   }
-.project-image {
+  .project-image {
     max-width: 540px;
     width: 100%;
     margin: 0 auto;
-}
+  }
 
-.project-image img {
+  .project-image img {
     width: 100%;
     height: auto;
-}
+  }
   .project-content,
   .project-content-right,
   .elpoloco-content {
@@ -2084,18 +2080,18 @@ img {
   }
 
   /* =========================
-     CONTACT
+  CONTACT
   ========================= */
 
   .contact-form {
     margin-top: 0;
   }
   .contact-section::before {
-  left: -360px;
-  bottom: -210px;
-  width: 700px;
-  height: 760px;
-}
+    left: -360px;
+    bottom: -210px;
+    width: 700px;
+    height: 760px;
+  }
 }
 
 @media (max-width: 1350px) {
@@ -2151,7 +2147,7 @@ img {
   }
 }
 /* =========================================
-   BIS 1110PX
+BIS 1110PX
 ========================================= */
 
 @media (max-width: 1110px) {
@@ -2177,7 +2173,7 @@ img {
   }
 }
 /* =========================================
-   MOBILE NAVIGATION
+MOBILE NAVIGATION
 ========================================= */
 
 @media (max-width: 768px) {
@@ -2214,8 +2210,8 @@ img {
     pointer-events: none;
 
     transition:
-      opacity 0.3s ease,
-      visibility 0.3s ease;
+    opacity 0.3s ease,
+    visibility 0.3s ease;
 
     z-index: 1200;
   }
@@ -2311,9 +2307,9 @@ img {
 }
 
 
-/* ==  MOBILE BIS 600PX== */
+/* ==  MOBILE 600PX== */
 @media (max-width: 600px) {
- 
+
   .container {
     padding-left: 16px;
     padding-right: 16px;
@@ -2322,7 +2318,7 @@ img {
   .legal-content h1 {
     font-size: 38px;
   }
- 
+
   .hero {
     min-height: auto;
     padding-bottom: 40px;
@@ -2344,7 +2340,7 @@ img {
     flex-direction: column;
     align-items: stretch;
   }
-  
+
   .hero-image {
     order: 1;
 
@@ -2399,7 +2395,7 @@ img {
     font-size: 16px;
   }
   /* -------------------------
-     SOCIAL ICONS
+  SOCIAL ICONS
   ------------------------- */
   .hero-socials {
     order: 3;
@@ -2469,7 +2465,7 @@ img {
     object-fit: contain;
   }
   /* -------------------------
-     ABOUT
+  ABOUT
   ------------------------- */
   .about-content {
     align-items: center;
@@ -2496,7 +2492,7 @@ img {
     text-align: left;
   }
   /* -------------------------
-     SKILLS
+  SKILLS
   ------------------------- */
   .skills-content {
     width: 100%;
@@ -2546,15 +2542,15 @@ img {
     margin: 0 auto;
   }
   .skills-section {
-  padding-top: 40px;
-  padding-bottom: 60px;
-}
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
 
-.skills-content {
-  gap: 32px;
-}
+  .skills-content {
+    gap: 32px;
+  }
   /* -------------------------
-     PORTFOLIO
+  PORTFOLIO
   ------------------------- */
   .portfolio-project {
     margin-top: 56px;
@@ -2576,44 +2572,44 @@ img {
     justify-content: center;
   }
   /* -------------------------
-   CONTACT SHADOW MOBILE
-------------------------- */
+  CONTACT SHADOW MOBILE
+  ------------------------- */
 
-.contact-section::before {
-  left: 0;
-  bottom: 24px;
+  .contact-section::before {
+    left: 0;
+    bottom: 24px;
 
-  width: 220px;
-  height: 260px;
+    width: 220px;
+    height: 260px;
 
-  background-size: contain;
-  background-position: left bottom;
+    background-size: contain;
+    background-position: left bottom;
 
-  z-index: 0;
-}
-/* -------------------------
-   FOOTER
-------------------------- */
+    z-index: 0;
+  }
+  /* -------------------------
+  FOOTER
+  ------------------------- */
 
-.footer-section {
-  min-height: auto;
-}
+  .footer-section {
+    min-height: auto;
+  }
 
-.footer-content {
-  min-height: auto;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  .footer-content {
+    min-height: auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
 
-  flex-direction: column;
-  justify-content: center;
-  gap: 24px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
 
-  text-align: center;
-}
+    text-align: center;
+  }
 
-.footer-left {
-  align-items: center;
-}
+  .footer-left {
+    align-items: center;
+  }
 }
 /* == BIS 480PX == */
 @media (max-width: 490px) {
@@ -2649,19 +2645,19 @@ img {
   }
 }
 
-  .hero-socials > .hero-line {
-    max-width: 100px;
-  }
+.hero-socials > .hero-line {
+  max-width: 100px;
+}
 
-  /* PORTFOLIO */
-  .portfolio-line-left {
-    width: 40px;
-    max-width: 40px;
-  }
+/* PORTFOLIO */
+.portfolio-line-left {
+  width: 40px;
+  max-width: 40px;
+}
 
-  .portfolio-header {
-    gap: 12px;
-  }
+.portfolio-header {
+  gap: 12px;
+}
 
 /* == BIS 380PX == */
 @media (max-width: 380px) {
@@ -2707,7 +2703,7 @@ img {
 }
 
 
-/* == WIDESCREEN AB 1440PX == */
+/* == WIDESCREEN  1440PX == */
 @media (min-width: 1440px) {
 
   .container {
@@ -2790,7 +2786,7 @@ img {
   }
 }
 /* =========================================
-   Desktop-Design 
+Desktop-Design
 ========================================= */
 
 @media (min-width: 769px) {
@@ -2887,7 +2883,7 @@ img {
   }
 }
 /* =========================================
-   LEGAL NOTICE MOBILE – FIGMA
+LEGAL NOTICE MOBILE – FIGMA
 ========================================= */
 
 @media (max-width: 768px) {
@@ -2901,56 +2897,56 @@ img {
     padding-left: 24px;
     padding-right: 0;
   }
-.legal-back {
-  position: relative;
-  top: auto;
-  right: auto;
+  .legal-back {
+    position: relative;
+    top: auto;
+    right: auto;
 
-  margin-left: auto;
-  margin-right: 16px;
-  margin-bottom: 24px;
+    margin-left: auto;
+    margin-right: 16px;
+    margin-bottom: 24px;
 
-  width: 40px;
-  height: 40px;
+    width: 40px;
+    height: 40px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  border: 2px solid var(--purple);
-  border-radius: 50%;
+    border: 2px solid var(--purple);
+    border-radius: 50%;
 
-  color: var(--purple);
-  background: var(--bg);
+    color: var(--purple);
+    background: var(--bg);
 
-  font-size: 24px;
-  line-height: 1;
-}
-.legal-heading {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+    font-size: 24px;
+    line-height: 1;
+  }
+  .legal-heading {
+    display: flex;
+    align-items: center;
+    gap: 16px;
 
-  width: 100%;
+    width: 100%;
 
-  margin-bottom: 36px;
-}
+    margin-bottom: 36px;
+  }
 
-.legal-heading h1 {
-  flex-shrink: 0;
+  .legal-heading h1 {
+    flex-shrink: 0;
 
-  font-size: 43px;
-  line-height: 1.1;
-}
+    font-size: 43px;
+    line-height: 1.1;
+  }
 
-.legal-heading-line {
-  flex: 1;
+  .legal-heading-line {
+    flex: 1;
 
-  width: auto;
-  height: 4px;
+    width: auto;
+    height: 4px;
 
-  background: var(--purple);
-}
+    background: var(--purple);
+  }
   .legal-copy {
     width: calc(100% - 24px);
     max-width: none;
@@ -2970,14 +2966,14 @@ img {
     line-height: 1.18;
   }
 }
-/* HERO MOBILE – I AM näher an Enes Kurt */
+/* HERO MOBILE Enes Kurt */
 @media (max-width: 600px) {
   .hero-content {
     gap: 0;
     justify-content: center;
   }
 
-    .iam {
+  .iam {
     width: 22px;
     height: 82px;
     margin-right: -18px;
@@ -2985,7 +2981,7 @@ img {
   }
 
 
- .iam > span {
+  .iam > span {
     font-size: 32px;
     transform: rotate(-90deg) translateY(26px);
     transform-origin: center;
@@ -3011,8 +3007,8 @@ img {
   }
 }
 /* =========================================
-   FINAL MOBILE POLISH – nur Abstände/Ausrichtung
-   Desktop-Design und Farben bleiben unverändert
+Ausrichtung
+
 ========================================= */
 @media (max-width: 600px) {
   /* Hero: Social-Gruppe sauber mittig */
@@ -3030,7 +3026,7 @@ img {
     flex: 0 0 72px;
   }
 
-  /* About: große Leerflächen reduzieren */
+  /* About */
   .about-section {
     padding-top: 70px;
     padding-bottom: 70px;
@@ -3044,7 +3040,7 @@ img {
     align-items: center;
   }
 
-  /* Skills: kompakter und Symbole sauber zentriert */
+  /* Skills*/
   .skills-section {
     padding-top: 60px;
     padding-bottom: 70px;
@@ -3073,7 +3069,7 @@ img {
     text-align: center;
   }
 
-  /* Portfolio: unnötige vertikale Lücken reduzieren */
+  /* Portfolio */
   .portfolio-section {
     padding-top: 60px;
     padding-bottom: 80px;
@@ -3088,7 +3084,7 @@ img {
     gap: 20px;
   }
 
-  /* Contact: Text/Formular enger zusammenziehen */
+  /* Contact: Text*/
   .contact-section {
     padding-top: 70px;
     padding-bottom: 100px;
