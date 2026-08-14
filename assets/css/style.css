@@ -1750,8 +1750,8 @@ img {
 @media (max-width: 1110px) {
   
   .hero {
-    min-height: auto;
-  }
+  min-height: 100vh;
+}
 
   .hero-wave {
     top: 330px;
@@ -1759,7 +1759,7 @@ img {
 
   .hero-inner {
     width: calc(100% - 32px);
-    min-height: 860px;
+    min-height: calc(100vh - 88px);
 
     padding-top: 24px;
     padding-bottom: 120px;
