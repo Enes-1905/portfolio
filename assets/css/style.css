@@ -2054,14 +2054,15 @@ RESPONSIVE
   }
 
   .portfolio-description {
-    width: min(733px, 100%);
-    height: auto;
+  width: min(733px, 100%);
+  height: auto;
 
-    margin: 24px auto 0;
-    padding: 0 16px;
+  margin: 24px auto 0;
+  padding: 0 16px;
 
-    white-space: normal;
-  }
+  white-space: normal;
+  transform: none;
+}
 
   .portfolio-project {
     flex-direction: column;
