@@ -98,7 +98,13 @@ img {
 }
 
 .nav-list a {
-  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: 0;
+  color: #ffffff;
+
   transition: 0.2s;
 }
 
@@ -1614,11 +1620,16 @@ RESPONSIVE
     justify-content: center;
   }
 
-  .about-text {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-  }
+.about-text {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.about-text h2 {
+  margin-bottom: 8px;
+}
 
   .about-image-wrapper,
   .about-line {
@@ -2038,20 +2049,29 @@ RESPONSIVE
   }
 
   .portfolio-line-left {
-    width: 100px;
-    max-width: 100px;
-    justify-self: end;
-  }
+  grid-column: 1;
 
-  .portfolio-line-right {
-    width: 100%;
-    max-width: none;
-  }
+  width: 100px;
+  max-width: 100px;
 
-  .portfolio-title {
-    width: auto;
-    height: auto;
-  }
+  justify-self: end;
+}
+
+.portfolio-title {
+  grid-column: 2;
+
+  width: auto;
+  height: auto;
+}
+
+.portfolio-line-right {
+  grid-column: 3;
+
+  width: 100%;
+  max-width: none;
+
+  margin-left: 0;
+}
 
   .portfolio-description {
   width: min(733px, 100%);
@@ -2508,18 +2528,60 @@ MOBILE NAVIGATION
     margin: 0 auto;
   }
 
-  .about-intro {
-    max-width: 280px;
-  }
+ .about-text {
+  width: 342px;
+  max-width: 100%;
 
-  .about-info {
-    width: 100%;
-    max-width: 280px;
+  align-items: center;
+  text-align: center;
 
-    justify-content: center;
+  margin: 0 auto;
+}
 
-    text-align: left;
-  }
+.about-text h2 {
+  width: 342px;
+  max-width: 100%;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 45px;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: 0;
+
+  text-align: left;
+}
+
+.about-intro {
+  width: 342px;
+  max-width: 100%;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: 0;
+
+  text-align: left;
+}
+
+.about-info {
+  width: 342px;
+  max-width: 100%;
+
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.about-info p {
+  width: 278px;
+  max-width: calc(100% - 64px);
+
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: 0;
+}
   /* -------------------------
   SKILLS
   ------------------------- */
@@ -3061,14 +3123,17 @@ Ausrichtung
     padding-bottom: 70px;
   }
 
-  .about-text {
-    gap: 24px;
-  }
+.about-text {
+  gap: 36px;
+}
 
-  .about-info {
-    align-items: center;
-  }
+.about-text h2 {
+  margin-bottom: 8px;
+}
 
+.about-info {
+  align-items: center;
+}
   /* Skills*/
   .skills-section {
     padding-top: 60px;
