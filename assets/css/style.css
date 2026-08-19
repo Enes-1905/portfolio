@@ -1074,6 +1074,41 @@ SKILLS
   padding: 100px 0 140px;
   background: var(--bg);
 }
+.contact-heading {
+  width: 943px;
+  height: 108px;
+
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 40px;
+  margin-left: calc((100vw - 1440px) / 82 - 278px);
+}
+
+.contact-line {
+  width: 535px;
+  height: 4px;
+
+  background: var(--purple);
+  flex-shrink: 0;
+}
+
+.contact-heading h2 {
+  width: 376px;
+  height: 108px;
+
+  margin: 0;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 90px;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: 0;
+
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+}
 .go-up-button {
   position: absolute;
   right: 32px;
@@ -1124,34 +1159,49 @@ SKILLS
   align-items: flex-start;
   gap: 80px;
 }
-
 .contact-left {
   width: 474px;
 }
 
-.contact-left h2 {
-  font-size: 90px;
-  font-weight: 700;
-  line-height: 120%;
-}
 
 .contact-left h3 {
-  margin-top: 40px;
+  width: 474px;
+  height: 38px;
+  margin: 0;
+
+  font-family: "Poppins", sans-serif;
   font-size: 32px;
   font-weight: 700;
   line-height: 120%;
+  letter-spacing: 0;
+
+  color: #ffffff;
 }
 
 .contact-description {
+  width: 474px;
+
   margin-top: 32px;
+
+  font-family: "Poppins", sans-serif;
   font-size: 16px;
+  font-weight: 400;
   line-height: 120%;
+  letter-spacing: 0;
+  color: #ffffff;
 }
 
 .contact-highlight {
+  width: 474px;
+
   margin-top: 16px;
-  font-size: 23px;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
   line-height: 120%;
+  letter-spacing: 0;
+  color: #ffffff;
 }
 
 .contact-highlight span {
@@ -1163,7 +1213,7 @@ SKILLS
   display: flex;
   flex-direction: column;
   gap: 32px;
-  margin-top: 135px;
+  margin-top: 0;
 }
 
 .contact-form input,
@@ -1462,7 +1512,7 @@ LEGAL NOTICE
   align-items: center;
   gap: 24px;
 
-  margin-bottom: 48px;
+  margin-bottom: 32px;
 }
 
 .legal-heading h1 {
@@ -2143,6 +2193,8 @@ RESPONSIVE
   }
 }
 
+
+
 @media (max-width: 1350px) {
 
   .hero-socials {
@@ -2332,6 +2384,24 @@ MOBILE NAVIGATION
   #btn-de {
     order: 2;
   }
+  .contact-heading {
+  width: 100%;
+  height: auto;
+  margin-left: 0;
+}
+
+.contact-line {
+  width: auto;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.contact-heading h2 {
+  width: auto;
+  height: auto;
+  flex-shrink: 0;
+  font-size: 45px;
+}
 }
 .language-link {
   display: flex;
@@ -2443,6 +2513,41 @@ MOBILE NAVIGATION
 
     font-size: 16px;
   }
+  /* CONTACT MOBILE */
+
+.contact-heading {
+  width: calc(100% + 16px);
+  margin-left: -16px;
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+.contact-line {
+  width: 16px;
+  min-width: 16px;
+  flex: 0 0 16px;
+}
+
+.contact-heading h2 {
+  width: auto;
+  height: auto;
+  flex: 0 0 auto;
+
+  font-size: 45px;
+  line-height: 120%;
+}
+
+.contact-left,
+.contact-left h3,
+.contact-description,
+.contact-highlight {
+  width: 100%;
+  max-width: 100%;
+}
+
+.contact-left h3 {
+  height: auto;
+}
   /* -------------------------
   SOCIAL ICONS
   ------------------------- */
