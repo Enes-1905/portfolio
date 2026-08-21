@@ -765,7 +765,7 @@ SKILLS
   align-items: flex-end;
   text-align: right;
   position: relative;
-  left: 40px;
+  left: -40px;
 }
 
 .skills-heading {
@@ -1576,6 +1576,32 @@ LEGAL NOTICE
 RESPONSIVE
 ========================================= */
 
+@media (max-width: 1420px) {
+  .about-content {
+    justify-content: flex-start;
+  }
+
+  .about-image-wrapper,
+  .about-line {
+    display: none;
+  }
+
+  .about-text {
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    gap: 45px;
+  }
+.about-text h2 {
+    width: 100%;
+    text-align: center;
+  }
+  .about-intro,
+  .about-info p {
+    width: 100%;
+    max-width: none;
+  }
+}
 @media (max-width: 1350px) {
   .container {
     max-width: 100%;
@@ -1583,7 +1609,7 @@ RESPONSIVE
     padding-right: 32px;
   }
 
-  /* HERO: kleinere Desktops, weiterhin zweispaltig */
+  /* HERO:Desktops */
   .hero-inner {
     width: calc(100% - 64px);
     max-width: 1240px;
@@ -1666,10 +1692,7 @@ RESPONSIVE
     margin-top: 30px;
   }
 
-  .about-content {
-    justify-content: center;
-  }
-
+ 
 .about-text {
   width: 100%;
   max-width: 600px;
@@ -1681,10 +1704,6 @@ RESPONSIVE
   margin-bottom: 8px;
 }
 
-  .about-image-wrapper,
-  .about-line {
-    display: none;
-  }
 
   .skills-content {
     flex-direction: column-reverse;
@@ -1830,8 +1849,15 @@ RESPONSIVE
     justify-content: center;
   }
 }
+/* =========================================
+   BIS 1110PX
+   ========================================= */
 
 @media (max-width: 1110px) {
+
+  /* =========================
+     HERO
+     ========================= */
 
   .hero {
     min-height: 100vh;
@@ -1926,7 +1952,7 @@ RESPONSIVE
   }
 
   .hero-socials {
-    left: -150;
+    left: 0;
     bottom: 48px;
 
     display: flex;
@@ -1935,6 +1961,7 @@ RESPONSIVE
 
     transform: none;
   }
+
   .hero-socials > a:not(.hero-email) {
     width: 30px;
     min-width: 30px;
@@ -1944,9 +1971,11 @@ RESPONSIVE
 
   .hero-socials > a:not(.hero-email) > img {
     display: block;
+
     width: 30px;
     min-width: 30px;
     height: 30px;
+
     max-width: none;
     flex-shrink: 0;
     object-fit: contain;
@@ -1959,95 +1988,10 @@ RESPONSIVE
     flex: 0 0 72px;
   }
 
-  .hero-email {
-    flex-shrink: 0;
-  }
-  /* Notebook: z. B. 1024 x 600 */
-/* Notebook Skills Feinschliff */
-@media (min-width: 769px) and (max-width: 1110px) and (max-height: 700px) {
-  .skills-icons {
-    max-width: 440px;
-    column-gap: 64px;
-    row-gap: 40px;
-  }
-}
-
-  .hero {
-    min-height: 100vh;
-    padding-top: 88px;
-  }
-
-  .hero-inner {
-    width: calc(100% - 64px);
-    min-height: calc(100vh - 88px);
-
-    padding-top: 0;
-    padding-bottom: 0;
-
-    display: grid;
-    grid-template-columns: 44% 56%;
-    align-items: center;
-    column-gap: 16px;
-  }
-
-  .hero-image {
-    width: 100%;
-    max-width: 430px;
-    height: auto;
-
-    margin: 0;
-  }
-
-  .hero-shadow,
-  .hero-photo {
-    width: 100%;
-    height: auto;
-  }
-
-  .hero-content {
-    position: relative;
-    top: auto;
-    left: auto;
-
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-
-    margin: 0;
-
-    justify-content: flex-start;
-    gap: 4px;
-  }
-
-  .iam {
-    width: 42px;
-    height: 108px;
-  }
-
-  .iam > span {
-    font-size: 42px;
-  }
-
-  .hero-text h1 {
-    font-size: clamp(48px, 6vw, 60px);
-  }
-
-  .hero-text h2 {
-    font-size: clamp(28px, 4vw, 36px);
-  }
-
-  .cta {
-    margin-top: 24px;
-  }
-
-  .hero-socials {
-    bottom: 8px;
-  }
-}
 
   /* =========================
-  ABOUT
-  ========================= */
+     ABOUT
+     ========================= */
 
   .about-content,
   .contact-content {
@@ -2065,14 +2009,14 @@ RESPONSIVE
 
   .about-text h2,
   .skills-heading h2,
-  .contact-left h2,
   .portfolio-title {
     font-size: 45px;
   }
 
+
   /* =========================
-  SKILLS
-  ========================= */
+     SKILLS
+     ========================= */
 
   .skills-section {
     padding: 80px 0;
@@ -2139,14 +2083,12 @@ RESPONSIVE
     margin: 0 auto;
 
     align-items: center;
-
     text-align: center;
   }
 
   .skills-question h3,
   .skills-question p {
     width: 100%;
-
     text-align: center;
   }
 
@@ -2157,6 +2099,222 @@ RESPONSIVE
 
     justify-self: center;
   }
+
+
+  /* =========================
+     PORTFOLIO
+     ========================= */
+
+  .portfolio-header {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+
+    display: grid;
+
+    grid-template-columns:
+      minmax(24px, 1fr)
+      auto
+      minmax(24px, 1fr);
+
+    gap: 16px;
+
+    align-items: center;
+  }
+
+  .portfolio-line-left {
+    grid-column: 1;
+
+    width: 100px;
+    max-width: 100px;
+
+    justify-self: end;
+  }
+
+  .portfolio-title {
+    grid-column: 2;
+
+    width: auto;
+    height: auto;
+  }
+
+  .portfolio-line-right {
+    grid-column: 3;
+
+    width: 100%;
+    max-width: none;
+
+    margin-left: 0;
+  }
+
+  .portfolio-description {
+    width: min(733px, 100%);
+    height: auto;
+
+    margin: 24px auto 0;
+    padding: 0 16px;
+
+    white-space: normal;
+    transform: none;
+  }
+
+  .portfolio-project {
+    flex-direction: column;
+
+    gap: 40px;
+
+    margin-top: 80px;
+  }
+
+  .portfolio-project-reverse {
+    flex-direction: column-reverse;
+  }
+
+  .project-image,
+  .project-image img,
+  .project-content,
+  .project-content p,
+  .project-tech,
+  .project-description {
+    width: 100%;
+  }
+
+  .project-image {
+    max-width: 540px;
+    width: 100%;
+
+    margin: 0 auto;
+  }
+
+  .project-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .project-content,
+  .project-content-right,
+  .elpoloco-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .project-content-right .project-tech,
+  .project-content-right .project-description,
+  .elpoloco-content p {
+    text-align: center;
+  }
+
+
+  /* =========================
+     CONTACT
+     ========================= */
+
+  .contact-form {
+    margin-top: 0;
+  }
+
+  .contact-section::before {
+    left: -360px;
+    bottom: -210px;
+    width: 700px;
+    height: 760px;
+  }
+
+} /* ENDE max-width: 1110px */
+
+
+/* =========================================
+   NOTEBOOK / 1024 x 600
+   ========================================= */
+
+@media (min-width: 769px) and (max-width: 1110px) and (max-height: 700px) {
+
+  .hero {
+    min-height: 100vh;
+    padding-top: 88px;
+  }
+
+  .hero-wave {
+    top: 230px;
+  }
+
+  .hero-inner {
+    width: calc(100% - 64px);
+    min-height: calc(100vh - 88px);
+
+    padding-top: 0;
+    padding-bottom: 0;
+
+    display: grid;
+    grid-template-columns: 44% 56%;
+    align-items: center;
+
+    column-gap: 16px;
+  }
+
+  .hero-image {
+    width: 100%;
+    max-width: 430px;
+    height: auto;
+
+    margin: 0;
+  }
+
+  .hero-shadow,
+  .hero-photo {
+    width: 100%;
+    height: auto;
+  }
+
+  .hero-content {
+    position: relative;
+
+    top: auto;
+    left: auto;
+
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+
+    margin: 0;
+
+    justify-content: flex-start;
+    gap: 4px;
+  }
+
+  .iam {
+    width: 42px;
+    height: 108px;
+  }
+
+  .iam > span {
+    font-size: 42px;
+  }
+
+  .hero-text h1 {
+    font-size: clamp(48px, 6vw, 60px);
+  }
+
+  .hero-text h2 {
+    font-size: clamp(28px, 4vw, 36px);
+  }
+
+  .cta {
+    margin-top: 24px;
+  }
+
+  .hero-socials {
+    bottom: 8px;
+  }
+
+  .skills-icons {
+    max-width: 440px;
+
+    column-gap: 64px;
+    row-gap: 40px;
+  }
+
+}
 
   /* =========================
   PORTFOLIO
