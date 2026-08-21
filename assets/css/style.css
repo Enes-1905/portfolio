@@ -1838,7 +1838,7 @@ RESPONSIVE
   }
 
   .hero-wave {
-    top: 330px;
+    top: 230px;
   }
 
   .hero-inner {
@@ -1962,7 +1962,88 @@ RESPONSIVE
   .hero-email {
     flex-shrink: 0;
   }
-  
+  /* Notebook: z. B. 1024 x 600 */
+/* Notebook Skills Feinschliff */
+@media (min-width: 769px) and (max-width: 1110px) and (max-height: 700px) {
+  .skills-icons {
+    max-width: 440px;
+    column-gap: 64px;
+    row-gap: 40px;
+  }
+}
+
+  .hero {
+    min-height: 100vh;
+    padding-top: 88px;
+  }
+
+  .hero-inner {
+    width: calc(100% - 64px);
+    min-height: calc(100vh - 88px);
+
+    padding-top: 0;
+    padding-bottom: 0;
+
+    display: grid;
+    grid-template-columns: 44% 56%;
+    align-items: center;
+    column-gap: 16px;
+  }
+
+  .hero-image {
+    width: 100%;
+    max-width: 430px;
+    height: auto;
+
+    margin: 0;
+  }
+
+  .hero-shadow,
+  .hero-photo {
+    width: 100%;
+    height: auto;
+  }
+
+  .hero-content {
+    position: relative;
+    top: auto;
+    left: auto;
+
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+
+    margin: 0;
+
+    justify-content: flex-start;
+    gap: 4px;
+  }
+
+  .iam {
+    width: 42px;
+    height: 108px;
+  }
+
+  .iam > span {
+    font-size: 42px;
+  }
+
+  .hero-text h1 {
+    font-size: clamp(48px, 6vw, 60px);
+  }
+
+  .hero-text h2 {
+    font-size: clamp(28px, 4vw, 36px);
+  }
+
+  .cta {
+    margin-top: 24px;
+  }
+
+  .hero-socials {
+    bottom: 8px;
+  }
+}
 
   /* =========================
   ABOUT
@@ -2191,16 +2272,13 @@ RESPONSIVE
     width: 700px;
     height: 760px;
   }
-}
-
-
 
 @media (max-width: 1350px) {
 
   .hero-socials {
     position: absolute;
-    left: 0;
-    bottom: 48px;
+    left: -10px;
+    bottom: 28px;
 
     width: 100%;
     max-width: 100%;
