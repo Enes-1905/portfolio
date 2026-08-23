@@ -3873,17 +3873,11 @@ Ausrichtung
   line-height: 1.3;
 }
 
-
-/* PROJEKTE - Layout NICHT verändern */
-
 .portfolio-project {
   gap: 60px;
   margin-bottom: 160px;
 }
-
-
 /* LAPTOP */
-
 .project-image {
   width: 750px;
   height: auto;
@@ -3911,15 +3905,183 @@ Ausrichtung
   font-size: 30px;
   line-height: 1.3;
 }
-
-
-/* BUTTONS */
-
 .project-buttons {
   gap: 28px;
 }
 
 .project-btn {
   font-size: 36px;
-  padding: 30px 45px;
-}}
+  padding: 30px 45px;}
+  /* =========================
+   CONTACT - ULTRAWIDE
+   ========================= */
+
+.contact-section {
+  padding-top: 180px;
+  padding-bottom: 220px;
+}
+
+.contact-heading {
+  width: auto;
+  height: auto;
+  margin-bottom: 70px;
+  margin-left: 0;
+  gap: 45px;
+}
+
+.contact-line {
+  width: 520px;
+  height: 4px;
+}
+
+.contact-heading h2 {
+  width: auto;
+  height: auto;
+  font-size: 110px;
+}
+
+.contact-content {
+  width: calc(100% - 160px);
+  max-width: 1920px;
+  margin: 0 auto;
+
+  gap: 180px;
+  justify-content: space-between;
+}
+
+.contact-left {
+  width: 720px;
+}
+
+.contact-left h3 {
+  width: 100%;
+  height: auto;
+font-size: 54px;
+  
+}
+
+.contact-description {
+  width: 100%;
+  margin-top: 40px;
+
+  font-size: 30px;
+  line-height: 1.4;
+}
+
+.contact-highlight {
+  width: 100%;
+  margin-top: 28px;
+
+  font-size: 30px;
+  line-height: 1.4;
+}
+.contact-form {
+  width: 850px;
+  gap: 42px;
+}
+.contact-form input,
+.contact-form textarea {
+  font-size: 28px;
+  border-width: 2px;
+}
+
+
+.contact-form input {
+  height: 72px;
+  padding: 20px 30px;
+}
+
+.contact-form textarea {
+  height: 270px;
+  padding: 24px 30px;
+}
+
+.privacy-label {
+  gap: 20px;
+  align-items: center;
+}
+.custom-checkbox {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+
+.privacy-text {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.contact-btn {
+  min-height: 72px;
+  padding: 18px 38px;
+
+  font-size: 27px;
+}
+
+.go-up-button {
+  right: 80px;
+  bottom: -130px;
+
+  width: 52px;
+  height: 52px;
+
+  font-size: 28px;
+}
+
+
+/* =========================
+   FOOTER - ULTRAWIDE
+   ========================= */
+
+.footer-section {
+  min-height: 360px;
+}
+
+.footer-content {
+  min-height: 360px;
+
+  width: calc(100% - 160px);
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  font-size: 72px;
+}
+
+.footer-links {
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.footer-legal,
+.footer-privacy {
+  font-size: 21px;
+}
+
+.footer-copyright {
+  font-size: 28px;
+}
+
+.footer-socials {
+  gap: 50px;
+}
+
+.footer-socials a img {
+  width: 42px;
+  height: 42px;
+}
+.privacy-text a {
+  font-size: inherit;
+}
+
+
+/* BUTTON */
+
+.contact-btn {
+  min-height: 78px;
+  padding: 20px 42px;
+  font-size: 30px;
+}
+}
