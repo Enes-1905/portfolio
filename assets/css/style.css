@@ -582,7 +582,7 @@ HERO RESPONSIVE
   display: flex;
   flex-direction: column;
   gap: 32px;
-  margin-left: -40px;
+  margin-left: 40px;
 }
 
 .about-text h2 {
@@ -3537,3 +3537,389 @@ Ausrichtung
     margin-top: 20px;
   }
 }
+/* ========== LARGE DESKTOP ab 2200px ========== */
+
+@media (min-width: 2200px) {
+
+  .container {
+    max-width: 1920px;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+.hero-wave {
+  top: 180px;
+  width: 100%;
+  height: auto;
+  max-width: none;
+}
+  /* =========================
+     NAVBAR - ULTRAWIDE
+     ========================= */
+
+ .logo {
+  font-size: 48px;
+}
+
+.nav-list {
+  gap: 48px;
+}
+
+.nav-list a {
+  font-size: 34px;
+}
+
+.language {
+  gap: 14px;
+}
+
+.language button {
+  font-size: 21px;
+  padding: 7px 12px;
+}
+
+  /* =========================
+     HERO - ULTRAWIDE
+     ========================= */
+
+  .hero-inner {
+    width: calc(100% - 160px);
+    max-width: 1920px;
+    min-height: calc(100vh - 88px);
+
+    grid-template-columns: 760px minmax(0, 1fr);
+    column-gap: 80px;
+
+    align-items: start;
+  }
+
+  .hero-image {
+    width: 760px;
+    height: 820px;
+
+    margin-left: 0;
+    margin-top: 170px;
+
+    align-self: start;
+  }
+
+  .hero-shadow {
+    left: -80px;
+    top: 80px;
+
+    width: 900px;
+    height: 900px;
+  }
+
+  .hero-photo {
+    width: 866px;
+    height: 865px;
+
+    object-position: bottom center;
+  }
+
+  .hero-content {
+    top: 315px;
+    left: 840px;
+
+    width: 1050px;
+    height: auto;
+
+    gap: 20px;
+  }
+
+  .iam {
+    width: 74px;
+    height: 190px;
+  }
+
+  .iam > span {
+    font-size: 82px;
+  }
+
+  .hero-text {
+    height: auto;
+  }
+
+  .hero-text h1 {
+    font-size: 112px;
+  }
+
+  .hero-text h2 {
+    font-size: 66px;
+  }
+
+  .cta {
+    min-height: 74px;
+
+    margin-top: 44px;
+    padding: 20px 40px;
+
+    font-size: 30px;
+  }
+  /* =========================
+     HERO SOCIALS - ULTRAWIDE
+     ========================= */
+
+  .hero-socials {
+    bottom: 60px;
+    gap: 32px;
+  }
+
+  .hero-line {
+    width: 260px;
+  }
+
+  .hero-socials a img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .hero-email {
+    font-size: 30px;
+  }
+
+  /* =========================
+     SCROLL DOWN - ULTRAWIDE
+     ========================= */
+
+  .scroll-down {
+    right: 40px;
+    bottom: 150px;
+  }
+
+  .scroll-text {
+    font-size: 40px;
+  }
+
+  .scroll-arrow {
+    font-size: 30px;
+  }
+
+
+  /* =========================
+     ABOUT - ULTRAWIDE
+     ========================= */
+
+  .about-section {
+    padding-top: 180px;
+    padding-bottom: 180px;
+  }
+
+  .about-content {
+    gap: 180px;
+  }
+
+  .about-text {
+    width: 700px;
+    margin-left: 0;
+    gap: 46px;
+  }
+
+  .about-text h2 {
+    font-size: 110px;
+  }
+
+  .about-intro {
+    width: 650px;
+
+    font-size: 24px;
+    line-height: 1.3;
+  }
+
+  .about-info {
+    gap: 24px;
+  }
+
+  .about-info p {
+    width: 620px;
+
+    font-size: 24px;
+    line-height: 1.3;
+  }
+
+  .about-icon-location {
+    width: 54px;
+    height: 54px;
+  }
+
+  .about-icon-bulb {
+    width: 68px;
+    height: 68px;
+  }
+
+  .about-icon-puzzle {
+    width: 50px;
+    height: 50px;
+  }
+
+  .about-image-wrapper {
+    width: 650px;
+    height: 650px;
+  }
+
+  .about-circle {
+    width: 640px;
+    height: 650px;
+  }
+
+  /* =========================
+     SKILLS - ULTRAWIDE
+     ========================= */
+
+  .skills-section {
+    padding-top: 120px;
+    padding-bottom: 140px;
+  }
+
+  .skills-content {
+    min-height: 520px;
+
+    gap: 90px;
+    align-items: center;
+  }
+
+  .skills-icons {
+    width: 820px;
+    max-width: 820px;
+
+    grid-template-columns: repeat(4, 120px);
+    justify-content: center;
+
+    column-gap: 90px;
+    row-gap: 72px;
+  }
+
+  .skill-item {
+    width: 90px;
+  }
+
+  .skill-item img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .skill-item span {
+    margin-top: 12px;
+    font-size: 23px;
+  }
+
+  .skills-right {
+    width: 700px;
+
+    left: -40px;
+    align-self: center;
+  }
+
+  .skills-heading {
+    height: auto;
+    gap: 32px;
+  }
+
+  .skills-heading h2 {
+    font-size: 90px;
+  }
+
+  .skills-text-wrapper {
+    width: 620px;
+    gap: 28px;
+  }
+
+  .skills-description {
+    width: 620px;
+
+    font-size: 23px;
+    line-height: 1.3;
+  }
+
+  .skills-question {
+    width: 570px;
+    gap: 18px;
+  }
+
+  .skills-question h3 {
+    width: 570px;
+    font-size: 42px;
+  }
+
+  .skills-question p {
+    width: 570px;
+
+    font-size: 23px;
+    line-height: 1.3;
+  }
+
+  .skills-btn {
+    width: 300px;
+    height: 70px;
+
+    font-size: 26px;
+  }
+ /* =========================
+   PORTFOLIO - ULTRAWIDE
+   ========================= */
+
+.portfolio-section {
+  padding-top: 150px;
+  padding-bottom: 200px;
+}
+
+.portfolio-title {
+  font-size: 90px;
+}
+
+.portfolio-description {
+  font-size: 30px;
+  line-height: 1.3;
+}
+
+
+/* PROJEKTE - Layout NICHT verändern */
+
+.portfolio-project {
+  gap: 60px;
+  margin-bottom: 160px;
+}
+
+
+/* LAPTOP */
+
+.project-image {
+  width: 750px;
+  height: auto;
+  transform: scale(1.45);
+}
+
+.project-image img {
+  width: 100%;
+  height: auto;
+  max-width: none;
+}
+
+
+/* TEXT */
+
+.project-content h3 {
+  font-size: 60px;
+}
+
+.project-content .project-tech {
+  font-size: 43px;
+}
+
+.project-content p {
+  font-size: 30px;
+  line-height: 1.3;
+}
+
+
+/* BUTTONS */
+
+.project-buttons {
+  gap: 28px;
+}
+
+.project-btn {
+  font-size: 36px;
+  padding: 30px 45px;
+}}
