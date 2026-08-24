@@ -361,11 +361,9 @@ HERO
   position: absolute;
   left: calc((100vw - 100%) / -2);
   bottom: 48px;
-
   display: flex;
   align-items: center;
   gap: 28px;
-
   z-index: 6;
 }
 
@@ -2733,7 +2731,14 @@ MOBILE NAVIGATION
     padding-left: 16px;
     padding-right: 16px;
   }
+.navbar-container {
+  padding-left: 24px;
+  padding-right: 24px;
+}
 
+.burger {
+  margin-right: 8px;
+}
   .legal-content h1 {
     font-size: 38px;
   }
@@ -3507,7 +3512,7 @@ Ausrichtung
   .hero-socials {
     width: fit-content;
     margin-top: 32px;
-    margin-left: auto;
+    margin-left: 10px;
     margin-right: auto;
     justify-content: center;
   }
