@@ -2223,6 +2223,88 @@ RESPONSIVE
 } 
 
 /* =========================================
+   TABLET 601px - 768px
+   ========================================= */
+
+@media (min-width: 601px) and (max-width: 768px) {
+
+  .hero {
+    min-height: auto;
+    padding-top: 88px;
+    padding-bottom: 70px;
+  }
+
+  .hero-inner {
+    width: calc(100% - 48px);
+    min-height: auto;
+
+    padding-top: 24px;
+    padding-bottom: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-image {
+    width: min(500px, 100%);
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .hero-shadow,
+  .hero-photo {
+    width: 100%;
+    height: auto;
+  }
+
+  .hero-wave {
+    top: 230px;
+  }
+
+  .hero-content {
+    position: relative;
+    top: auto;
+    left: auto;
+
+    width: min(100%, 600px);
+    max-width: 600px;
+    height: auto;
+
+    margin: -30px auto 0;
+
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .hero-text h1 {
+    font-size: 58px;
+  }
+
+  .hero-text h2 {
+    font-size: 34px;
+  }
+
+  .cta {
+    margin-top: 26px;
+  }
+
+  .hero-socials {
+    position: relative;
+    left: auto;
+    bottom: auto;
+
+    width: fit-content;
+    margin: 48px auto 0;
+
+    justify-content: center;
+  }
+
+  .about-section {
+    padding-top: 80px;
+  }
+}
+/* =========================================
    NOTEBOOK / 1024 x 600
    ========================================= */
 
@@ -3439,10 +3521,9 @@ LEGAL NOTICE MOBILE – FIGMA
 }
 /* =========================================
 Ausrichtung
-
 ========================================= */
 @media (max-width: 600px) {
-  /* Hero: Social-Gruppe sauber mittig */
+  
   .hero-socials {
     width: fit-content;
     margin-top: 32px;
@@ -4036,7 +4117,6 @@ font-size: 54px;
   font-size: 28px;
 }
 
-
 /* =========================
    FOOTER - ULTRAWIDE
    ========================= */
@@ -4082,7 +4162,6 @@ font-size: 54px;
 .privacy-text a {
   font-size: inherit;
 }
-
 
 /* BUTTON */
 
