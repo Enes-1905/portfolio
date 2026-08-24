@@ -2394,8 +2394,6 @@ RESPONSIVE
     row-gap: 40px;
   }
 
-}
-
   /* =========================
   PORTFOLIO
   ========================= */
@@ -2510,7 +2508,7 @@ RESPONSIVE
     width: 700px;
     height: 760px;
   }
-
+  }
 @media (max-width: 1350px) {
 
   .hero-socials {
@@ -4169,4 +4167,40 @@ font-size: 54px;
   padding: 20px 42px;
   font-size: 30px;
 }
+}
+/* =========================================
+   TALL TABLETS / iPad Pro PORTRAIT
+   ========================================= */
+
+@media (min-width: 769px) and (max-width: 1110px) and (min-height: 900px) {
+
+  .hero {
+    min-height: auto;
+    padding-top: 88px;
+    padding-bottom: 80px;
+  }
+
+  .hero-inner {
+    min-height: auto;
+    padding-top: 24px;
+    padding-bottom: 0;
+  }
+
+  .hero-socials {
+    position: relative;
+    left: auto;
+    bottom: auto;
+
+    width: fit-content;
+
+    margin-top: 70px;
+    margin-right: auto;
+    align-self: flex-start;
+
+    transform: none;
+  }
+
+  .about-section {
+    padding-top: 100px;
+  }
 }
