@@ -2259,7 +2259,7 @@ RESPONSIVE
   }
 
   .hero-wave {
-    top: 230px;
+    top: 330px;
   }
 
   .hero-content {
@@ -2293,15 +2293,14 @@ RESPONSIVE
     position: relative;
     left: auto;
     bottom: auto;
-
     width: fit-content;
-    margin: 48px auto 0;
-
+    margin: 70px auto 0;
     justify-content: center;
+    transform: translateY(50px);
   }
 
   .about-section {
-    padding-top: 80px;
+    padding-top: 180px;
   }
 }
 /* =========================================
@@ -2517,7 +2516,7 @@ RESPONSIVE
   .hero-socials {
     position: absolute;
     left: -10px;
-    bottom: 28px;
+    bottom: -100px;
 
     width: 100%;
     max-width: 100%;
