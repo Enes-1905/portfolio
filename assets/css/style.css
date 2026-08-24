@@ -302,7 +302,6 @@ HERO
   align-items: flex-start;
 }
 
-
 .hero-text h1 {
   width: auto;
   margin: 0;
@@ -439,7 +438,7 @@ HERO
 }
 
 /* =========================================
-HERO RESPONSIVE 
+HERO RESPONSIVE
 ========================================= */
 
 @media (max-width: 1450px) {
@@ -626,7 +625,6 @@ HERO RESPONSIVE
   margin: 2px;
 }
 
-
 .about-info p {
   width: 407px;
   font-size: 16px;
@@ -656,7 +654,6 @@ HERO RESPONSIVE
   object-position: center top;
   border-radius: 50%;
 }
-
 
 .about-line {
   position: absolute;
@@ -1163,7 +1160,6 @@ SKILLS
   width: 474px;
 }
 
-
 .contact-left h3 {
   width: 474px;
   height: 38px;
@@ -1394,7 +1390,6 @@ SKILLS
 
 /* FOOTER */
 
-
 .footer-section {
   width: 100%;
   min-height: 291px;
@@ -1571,7 +1566,6 @@ LEGAL NOTICE
   margin-top: 40px;
 }
 
-
 /* =========================================
 RESPONSIVE
 ========================================= */
@@ -1692,7 +1686,6 @@ RESPONSIVE
     margin-top: 30px;
   }
 
- 
 .about-text {
   width: 100%;
   max-width: 600px;
@@ -1703,7 +1696,6 @@ RESPONSIVE
 .about-text h2 {
   margin-bottom: 8px;
 }
-
 
   .skills-content {
     flex-direction: column-reverse;
@@ -1813,7 +1805,6 @@ RESPONSIVE
     margin-right: -10px;
     transform: translateX(8px);
   }
-
 
   .iam > span {
     font-size: 24px;
@@ -1988,7 +1979,6 @@ RESPONSIVE
     flex: 0 0 72px;
   }
 
-
   /* =========================
      ABOUT
      ========================= */
@@ -2012,7 +2002,6 @@ RESPONSIVE
   .portfolio-title {
     font-size: 45px;
   }
-
 
   /* =========================
      SKILLS
@@ -2099,7 +2088,6 @@ RESPONSIVE
 
     justify-self: center;
   }
-
 
   /* =========================
      PORTFOLIO
@@ -2204,7 +2192,6 @@ RESPONSIVE
     text-align: center;
   }
 
-
   /* =========================
      CONTACT
      ========================= */
@@ -2220,7 +2207,7 @@ RESPONSIVE
     height: 760px;
   }
 
-} 
+}
 
 /* =========================================
    TABLET 601px - 768px
@@ -2739,7 +2726,6 @@ MOBILE NAVIGATION
   color: var(--bg);
 }
 
-
 /* ==  MOBILE 600PX== */
 @media (max-width: 600px) {
 
@@ -3212,7 +3198,6 @@ MOBILE NAVIGATION
   transition: background-color 5000s ease-in-out 0s;
 }
 
-
 /* == WIDESCREEN  1440PX == */
 @media (min-width: 1440px) {
 
@@ -3379,7 +3364,6 @@ Desktop-Design
   }
 }
 
-
 @media (max-width: 1350px) {
   .project-image {
     aspect-ratio: 620 / 339;
@@ -3490,7 +3474,6 @@ LEGAL NOTICE MOBILE – FIGMA
     flex-shrink: 0;
   }
 
-
   .iam > span {
     font-size: 32px;
     transform: rotate(-90deg) translateY(26px);
@@ -3520,7 +3503,7 @@ LEGAL NOTICE MOBILE – FIGMA
 Ausrichtung
 ========================================= */
 @media (max-width: 600px) {
-  
+
   .hero-socials {
     width: fit-content;
     margin-top: 32px;
@@ -3776,7 +3759,6 @@ Ausrichtung
     font-size: 30px;
   }
 
-
   /* =========================
      ABOUT - ULTRAWIDE
      ========================= */
@@ -3970,7 +3952,6 @@ Ausrichtung
   max-width: none;
 }
 
-
 /* TEXT */
 
 .project-content h3 {
@@ -4042,7 +4023,7 @@ Ausrichtung
   width: 100%;
   height: auto;
 font-size: 54px;
-  
+
 }
 
 .contact-description {
@@ -4070,7 +4051,6 @@ font-size: 54px;
   border-width: 2px;
 }
 
-
 .contact-form input {
   height: 72px;
   padding: 20px 30px;
@@ -4090,7 +4070,6 @@ font-size: 54px;
   height: 30px;
   flex-shrink: 0;
 }
-
 
 .privacy-text {
   font-size: 26px;
