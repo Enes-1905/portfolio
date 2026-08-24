@@ -3932,8 +3932,13 @@ Ausrichtung
 }
 
 .contact-line {
-  width: 520px;
+  width: calc(535px + (100vw - 1440px) / 2);
   height: 4px;
+
+  background: var(--purple);
+  flex-shrink: 0;
+
+  margin-left: calc((100vw - 1440px) / -2);
 }
 
 .contact-heading h2 {
@@ -4010,7 +4015,7 @@ font-size: 54px;
 
 
 .privacy-text {
-  font-size: 20px;
+  font-size: 26px;
   line-height: 1.5;
 }
 
