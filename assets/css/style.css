@@ -2220,8 +2220,7 @@ RESPONSIVE
     height: 760px;
   }
 
-} /* ENDE max-width: 1110px */
-
+} 
 
 /* =========================================
    NOTEBOOK / 1024 x 600
@@ -3552,6 +3551,9 @@ Ausrichtung
   width: 100%;
   height: auto;
   max-width: none;
+
+  transform: scaleX(1.07);
+  transform-origin: center;
 }
   /* =========================
      NAVBAR - ULTRAWIDE
@@ -3613,7 +3615,7 @@ Ausrichtung
 
   .hero-photo {
     width: 866px;
-    height: 865px;
+    height: 1010px;
 
     object-position: bottom center;
   }
