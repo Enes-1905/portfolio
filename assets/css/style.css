@@ -3628,151 +3628,141 @@ Ausrichtung
   .skills-purple-line {
     width: calc((var(--viewport-width) - 1920px) / 2 + 80px);
   }
+/* =========================
+   NAVBAR - ULTRAWIDE
+   ========================= */
 
-  /* =========================
-     NAVBAR - ULTRAWIDE
-     ========================= */
+.navbar .container {
+  width: min(calc(100% - 300px), 5400px);
+  max-width: 5400px;
+}
 
-  .logo {
-    font-size: 48px;
-  }
+.logo {
+  font-size: 82px;
+}
 
-  .nav-list {
-    gap: 48px;
-  }
+.nav-list {
+  gap: 88px;
+}
 
-  .nav-list a {
-    font-size: 34px;
-  }
+.nav-list a {
+  font-size: 56px;
+}
 
-  .language {
-    gap: 14px;
-  }
+.language button {
+  font-size: 36px;
+  padding: 11px 19px;
+}
 
-  .language button {
-    font-size: 21px;
-    padding: 7px 12px;
-  }
+/* =========================
+   HERO - ULTRAWIDE
+   ========================= */
 
-  /* =========================
-     HERO - ULTRAWIDE
-     ========================= */
+.hero-inner {
+  width: min(calc(100% - 300px), 5400px);
+  max-width: 5400px;
 
-  .hero-inner {
-    width: min(calc(100% - 320px), 2560px);
-    max-width: 2560px;
-    min-height: calc(100vh - 88px);
+  min-height: calc(100vh - 88px);
 
-    grid-template-columns: 960px minmax(0, 1fr);
-    column-gap: 120px;
+  grid-template-columns: 1750px minmax(0, 1fr);
+  column-gap: 300px;
 
-    align-items: start;
-  }
+  align-items: start;
+}
 
-  .hero-image {
-    width: 960px;
-    height: 980px;
+.hero-image {
+  width: 1750px;
+  height: 1680px;
 
-    margin-left: 0;
-    margin-top: 140px;
+  margin-left: 0;
+  margin-top: 115px;
 
-    align-self: start;
-  }
+  align-self: start;
+}
 
-  .hero-shadow {
-    left: -100px;
-    top: 70px;
+.hero-shadow {
+  left: -150px;
+  top: 50px;
 
-    width: 1120px;
-    height: 1120px;
-  }
+  width: 1850px;
+  height: 1850px;
+}
 
-  .hero-photo {
-    width: 980px;
-    height: 1150px;
+.hero-photo {
+  width: 1650px;
+  height: 1820px;
 
-    object-position: bottom center;
-  }
+  object-position: bottom center;
+}
+.hero-content {
+  top: 350px;
+  left: 2100px;
 
-  .hero-content {
-    top: 330px;
-    left: 1080px;
+  width: 2900px;
+  height: auto;
 
-    width: 1300px;
-    height: auto;
+  gap: 42px;
+}
 
-    gap: 24px;
-  }
+.iam {
+  width: 145px;
+  height: 350px;
+}
 
-  .iam {
-    width: 74px;
-    height: 190px;
-  }
+.iam > span {
+  font-size: 150px;
+}
 
-  .iam > span {
-    font-size: 82px;
-  }
+.hero-text h1 {
+  font-size: 215px;
+}
 
-  .hero-text {
-    height: auto;
-  }
+.hero-text h2 {
+  font-size: 125px;
+}
 
-  .hero-text h1 {
-    font-size: 112px;
-  }
+.cta {
+  min-height: 140px;
 
-  .hero-text h2 {
-    font-size: 66px;
-  }
+  margin-top: 75px;
+  padding: 38px 72px;
 
-  .cta {
-    min-height: 74px;
+  font-size: 56px;
+}
+/* =========================
+   HERO SOCIALS - ULTRAWIDE
+   ========================= */
+.hero-socials {
+  bottom: 85px;
+  gap: 60px;
+}
 
-    margin-top: 44px;
-    padding: 20px 40px;
+.hero-line {
+  width: 750px;
+}
 
-    font-size: 30px;
-  }
+.hero-socials a img {
+  width: 72px;
+  height: 72px;
+}
 
-  /* =========================
-     HERO SOCIALS - ULTRAWIDE
-     ========================= */
+.hero-email {
+  font-size: 50px;
+}
 
-  .hero-socials {
-    bottom: 60px;
-    gap: 32px;
-  }
+/* SCROLL DOWN */
 
-  .hero-line {
-    width: 260px;
-  }
+.scroll-down {
+  right: 130px;
+  bottom: 200px;
+}
+.scroll-text {
+  font-size: 68px;
+}
 
-  .hero-socials a img {
-    width: 36px;
-    height: 36px;
-  }
-
-  .hero-email {
-    font-size: 30px;
-  }
-
-  /* =========================
-     SCROLL DOWN - ULTRAWIDE
-     ========================= */
-
-  .scroll-down {
-    right: 40px;
-    bottom: 150px;
-  }
-
-  .scroll-text {
-    font-size: 40px;
-  }
-
-  .scroll-arrow {
-    font-size: 30px;
-  }
-
+.scroll-arrow {
+  font-size: 54px;
+}
   /* =========================
      ABOUT - ULTRAWIDE
      ========================= */
@@ -4175,17 +4165,12 @@ Ausrichtung
 
   .hero-socials {
     position: relative;
-
     left: auto;
     bottom: auto;
-
     width: fit-content;
-
     margin-top: 70px;
     margin-right: auto;
-
     align-self: flex-start;
-
     transform: none;
   }
 
