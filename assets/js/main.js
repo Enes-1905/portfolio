@@ -609,3 +609,12 @@ function initPage() {
 }
 
 initPage();
+function setViewportWidth() {
+  document.documentElement.style.setProperty(
+    "--viewport-width",
+    `${document.documentElement.clientWidth}px`
+  );
+}
+
+setViewportWidth();
+window.addEventListener("resize", setViewportWidth);

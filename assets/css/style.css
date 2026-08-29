@@ -3612,88 +3612,96 @@ Ausrichtung
     padding-right: 80px;
   }
 
-.hero-wave {
-  top: 180px;
-  width: 100%;
-  height: auto;
-  max-width: none;
+  /* =========================
+     SHAPES / LINIEN
+     ========================= */
 
-  transform: scaleX(1.07);
-  transform-origin: center;
-}
+  .hero-wave {
+    top: 180px;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    transform: none;
+  }
+
+  .about-line,
+  .skills-purple-line {
+    width: calc((var(--viewport-width) - 1920px) / 2 + 80px);
+  }
+
   /* =========================
      NAVBAR - ULTRAWIDE
      ========================= */
 
- .logo {
-  font-size: 48px;
-}
+  .logo {
+    font-size: 48px;
+  }
 
-.nav-list {
-  gap: 48px;
-}
+  .nav-list {
+    gap: 48px;
+  }
 
-.nav-list a {
-  font-size: 34px;
-}
+  .nav-list a {
+    font-size: 34px;
+  }
 
-.language {
-  gap: 14px;
-}
+  .language {
+    gap: 14px;
+  }
 
-.language button {
-  font-size: 21px;
-  padding: 7px 12px;
-}
+  .language button {
+    font-size: 21px;
+    padding: 7px 12px;
+  }
 
   /* =========================
      HERO - ULTRAWIDE
      ========================= */
 
   .hero-inner {
-    width: calc(100% - 160px);
-    max-width: 1920px;
+    width: min(calc(100% - 320px), 2560px);
+    max-width: 2560px;
     min-height: calc(100vh - 88px);
 
-    grid-template-columns: 760px minmax(0, 1fr);
-    column-gap: 80px;
+    grid-template-columns: 960px minmax(0, 1fr);
+    column-gap: 120px;
 
     align-items: start;
   }
 
   .hero-image {
-    width: 760px;
-    height: 820px;
+    width: 960px;
+    height: 980px;
 
     margin-left: 0;
-    margin-top: 170px;
+    margin-top: 140px;
 
     align-self: start;
   }
 
   .hero-shadow {
-    left: -80px;
-    top: 80px;
+    left: -100px;
+    top: 70px;
 
-    width: 900px;
-    height: 900px;
+    width: 1120px;
+    height: 1120px;
   }
 
   .hero-photo {
-    width: 866px;
-    height: 1010px;
+    width: 980px;
+    height: 1150px;
 
     object-position: bottom center;
   }
 
   .hero-content {
-    top: 315px;
-    left: 840px;
+    top: 330px;
+    left: 1080px;
 
-    width: 1050px;
+    width: 1300px;
     height: auto;
 
-    gap: 20px;
+    gap: 24px;
   }
 
   .iam {
@@ -3725,6 +3733,7 @@ Ausrichtung
 
     font-size: 30px;
   }
+
   /* =========================
      HERO SOCIALS - ULTRAWIDE
      ========================= */
@@ -3789,7 +3798,6 @@ Ausrichtung
 
   .about-intro {
     width: 650px;
-
     font-size: 24px;
     line-height: 1.3;
   }
@@ -3800,7 +3808,6 @@ Ausrichtung
 
   .about-info p {
     width: 620px;
-
     font-size: 24px;
     line-height: 1.3;
   }
@@ -3841,7 +3848,6 @@ Ausrichtung
 
   .skills-content {
     min-height: 520px;
-
     gap: 90px;
     align-items: center;
   }
@@ -3873,7 +3879,6 @@ Ausrichtung
 
   .skills-right {
     width: 700px;
-
     left: -40px;
     align-self: center;
   }
@@ -3894,7 +3899,6 @@ Ausrichtung
 
   .skills-description {
     width: 620px;
-
     font-size: 23px;
     line-height: 1.3;
   }
@@ -3911,7 +3915,6 @@ Ausrichtung
 
   .skills-question p {
     width: 570px;
-
     font-size: 23px;
     line-height: 1.3;
   }
@@ -3919,239 +3922,239 @@ Ausrichtung
   .skills-btn {
     width: 300px;
     height: 70px;
-
     font-size: 26px;
   }
- /* =========================
-   PORTFOLIO - ULTRAWIDE
-   ========================= */
 
-.portfolio-section {
-  padding-top: 150px;
-  padding-bottom: 200px;
-}
-
-.portfolio-title {
-  font-size: 90px;
-}
-
-.portfolio-description {
-  font-size: 30px;
-  line-height: 1.3;
-}
-
-.portfolio-project {
-  gap: 60px;
-  margin-bottom: 160px;
-}
-/* LAPTOP */
-.project-image {
-  width: 750px;
-  height: auto;
-  transform: scale(1.45);
-}
-
-.project-image img {
-  width: 100%;
-  height: auto;
-  max-width: none;
-}
-
-/* TEXT */
-
-.project-content h3 {
-  font-size: 60px;
-}
-
-.project-content .project-tech {
-  font-size: 43px;
-}
-
-.project-content p {
-  font-size: 30px;
-  line-height: 1.3;
-}
-.project-buttons {
-  gap: 28px;
-}
-
-.project-btn {
-  font-size: 36px;
-  padding: 30px 45px;}
   /* =========================
-   CONTACT - ULTRAWIDE
-   ========================= */
+     PORTFOLIO - ULTRAWIDE
+     ========================= */
 
-.contact-section {
-  padding-top: 180px;
-  padding-bottom: 220px;
+  .portfolio-section {
+    padding-top: 150px;
+    padding-bottom: 200px;
+  }
+
+  .portfolio-title {
+    font-size: 90px;
+  }
+
+  .portfolio-description {
+    font-size: 30px;
+    line-height: 1.3;
+  }
+
+  .portfolio-project {
+    gap: 60px;
+    margin-bottom: 160px;
+  }
+
+  .project-image {
+    width: 750px;
+    height: auto;
+    transform: scale(1.45);
+  }
+
+  .project-image img {
+    width: 100%;
+    height: auto;
+    max-width: none;
+  }
+
+  .project-content h3 {
+    font-size: 60px;
+  }
+
+  .project-content .project-tech {
+    font-size: 43px;
+  }
+
+  .project-content p {
+    font-size: 30px;
+    line-height: 1.3;
+  }
+
+  .project-buttons {
+    gap: 28px;
+  }
+
+  .project-btn {
+    font-size: 36px;
+    padding: 30px 45px;
+  }
+
+  /* =========================
+     CONTACT - ULTRAWIDE
+     ========================= */
+
+  .contact-section {
+    padding-top: 180px;
+    padding-bottom: 220px;
+  }
+
+  .contact-heading {
+    width: auto;
+    height: auto;
+
+    margin-bottom: 70px;
+    margin-left: 0;
+
+    gap: 45px;
+  }
+
+  .contact-line {
+    width: calc(535px + (100vw - 1440px) / 2);
+    height: 4px;
+
+    background: var(--purple);
+    flex-shrink: 0;
+
+    margin-left: calc((100vw - 1440px) / -2);
+  }
+
+  .contact-heading h2 {
+    width: auto;
+    height: auto;
+    font-size: 110px;
+  }
+
+  .contact-content {
+    width: calc(100% - 160px);
+    max-width: 1920px;
+
+    margin: 0 auto;
+
+    gap: 180px;
+    justify-content: space-between;
+  }
+
+  .contact-left {
+    width: 720px;
+  }
+
+  .contact-left h3 {
+    width: 100%;
+    height: auto;
+    font-size: 54px;
+  }
+
+  .contact-description {
+    width: 100%;
+    margin-top: 40px;
+
+    font-size: 30px;
+    line-height: 1.4;
+  }
+
+  .contact-highlight {
+    width: 100%;
+    margin-top: 28px;
+
+    font-size: 30px;
+    line-height: 1.4;
+  }
+
+  .contact-form {
+    width: 850px;
+    gap: 42px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 28px;
+    border-width: 2px;
+  }
+
+  .contact-form input {
+    height: 72px;
+    padding: 20px 30px;
+  }
+
+  .contact-form textarea {
+    height: 270px;
+    padding: 24px 30px;
+  }
+
+  .privacy-label {
+    gap: 20px;
+    align-items: center;
+  }
+
+  .custom-checkbox {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+  }
+
+  .privacy-text {
+    font-size: 26px;
+    line-height: 1.5;
+  }
+
+  .privacy-text a {
+    font-size: inherit;
+  }
+
+  .contact-btn {
+    min-height: 78px;
+    padding: 20px 42px;
+    font-size: 30px;
+  }
+
+  .go-up-button {
+    right: 80px;
+    bottom: -130px;
+
+    width: 52px;
+    height: 52px;
+
+    font-size: 28px;
+  }
+
+  /* =========================
+     FOOTER - ULTRAWIDE
+     ========================= */
+
+  .footer-section {
+    min-height: 360px;
+  }
+
+  .footer-content {
+    min-height: 360px;
+
+    width: calc(100% - 160px);
+    max-width: 1920px;
+
+    margin: 0 auto;
+  }
+
+  .footer-logo {
+    font-size: 72px;
+  }
+
+  .footer-links {
+    gap: 24px;
+    margin-top: 16px;
+  }
+
+  .footer-legal,
+  .footer-privacy {
+    font-size: 21px;
+  }
+
+  .footer-copyright {
+    font-size: 28px;
+  }
+
+  .footer-socials {
+    gap: 50px;
+  }
+
+  .footer-socials a img {
+    width: 42px;
+    height: 42px;
+  }
 }
 
-.contact-heading {
-  width: auto;
-  height: auto;
-  margin-bottom: 70px;
-  margin-left: 0;
-  gap: 45px;
-}
-
-.contact-line {
-  width: calc(535px + (100vw - 1440px) / 2);
-  height: 4px;
-
-  background: var(--purple);
-  flex-shrink: 0;
-
-  margin-left: calc((100vw - 1440px) / -2);
-}
-
-.contact-heading h2 {
-  width: auto;
-  height: auto;
-  font-size: 110px;
-}
-
-.contact-content {
-  width: calc(100% - 160px);
-  max-width: 1920px;
-  margin: 0 auto;
-
-  gap: 180px;
-  justify-content: space-between;
-}
-
-.contact-left {
-  width: 720px;
-}
-
-.contact-left h3 {
-  width: 100%;
-  height: auto;
-font-size: 54px;
-
-}
-
-.contact-description {
-  width: 100%;
-  margin-top: 40px;
-
-  font-size: 30px;
-  line-height: 1.4;
-}
-
-.contact-highlight {
-  width: 100%;
-  margin-top: 28px;
-
-  font-size: 30px;
-  line-height: 1.4;
-}
-.contact-form {
-  width: 850px;
-  gap: 42px;
-}
-.contact-form input,
-.contact-form textarea {
-  font-size: 28px;
-  border-width: 2px;
-}
-
-.contact-form input {
-  height: 72px;
-  padding: 20px 30px;
-}
-
-.contact-form textarea {
-  height: 270px;
-  padding: 24px 30px;
-}
-
-.privacy-label {
-  gap: 20px;
-  align-items: center;
-}
-.custom-checkbox {
-  width: 30px;
-  height: 30px;
-  flex-shrink: 0;
-}
-
-.privacy-text {
-  font-size: 26px;
-  line-height: 1.5;
-}
-
-.contact-btn {
-  min-height: 72px;
-  padding: 18px 38px;
-
-  font-size: 27px;
-}
-
-.go-up-button {
-  right: 80px;
-  bottom: -130px;
-
-  width: 52px;
-  height: 52px;
-
-  font-size: 28px;
-}
-
-/* =========================
-   FOOTER - ULTRAWIDE
-   ========================= */
-
-.footer-section {
-  min-height: 360px;
-}
-
-.footer-content {
-  min-height: 360px;
-
-  width: calc(100% - 160px);
-  max-width: 1920px;
-  margin: 0 auto;
-}
-
-.footer-logo {
-  font-size: 72px;
-}
-
-.footer-links {
-  gap: 24px;
-  margin-top: 16px;
-}
-
-.footer-legal,
-.footer-privacy {
-  font-size: 21px;
-}
-
-.footer-copyright {
-  font-size: 28px;
-}
-
-.footer-socials {
-  gap: 50px;
-}
-
-.footer-socials a img {
-  width: 42px;
-  height: 42px;
-}
-.privacy-text a {
-  font-size: inherit;
-}
-
-/* BUTTON */
-
-.contact-btn {
-  min-height: 78px;
-  padding: 20px 42px;
-  font-size: 30px;
-}
-}
 /* =========================================
    TALL TABLETS / iPad Pro PORTRAIT
    ========================================= */
@@ -4172,6 +4175,7 @@ font-size: 54px;
 
   .hero-socials {
     position: relative;
+
     left: auto;
     bottom: auto;
 
@@ -4179,6 +4183,7 @@ font-size: 54px;
 
     margin-top: 70px;
     margin-right: auto;
+
     align-self: flex-start;
 
     transform: none;
