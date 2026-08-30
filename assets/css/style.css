@@ -4201,12 +4201,45 @@ Ausrichtung
   .hero-wave {
   top: 450px;
 }
+ .hero-socials {
+    bottom: 870px;
+    gap: 58px;
+  }
+
+  .hero-line {
+    width: 900px;
+  }
+
+  .hero-socials a img {
+    width: 118px;
+    height: 118px;
+  }
+
+  .hero-email {
+    font-size: 72px;
+    margin-left: 24px;
+  }
+
+  .scroll-down {
+    right: 120px;
+    bottom: 670px;
+    gap: 28px;
+  }
+
+  .scroll-text {
+    font-size: 84px;
+  }
+
+ .scroll-arrow {
+    width: 78px;
+    height: 78px;
+    font-size: 78px;
+  }
 }
 
 /* =========================================
-   TALL TABLETS / iPad Pro PORTRAIT
+   iPad Pro PORTRAIT
    ========================================= */
-
 @media (min-width: 769px) and (max-width: 1110px) and (min-height: 900px) {
 
   .hero {
