@@ -3638,20 +3638,24 @@ Ausrichtung
 }
 
 .logo {
-  font-size: 82px;
+  font-size: 192px;
 }
 
 .nav-list {
-  gap: 88px;
+  gap: 100px;
 }
 
 .nav-list a {
-  font-size: 56px;
+  font-size: 64px;
+}
+
+.language {
+  gap: 22px;
 }
 
 .language button {
-  font-size: 36px;
-  padding: 11px 19px;
+  font-size: 42px;
+  padding: 12px 22px;
 }
 
 /* =========================
@@ -3690,78 +3694,88 @@ Ausrichtung
 
 .hero-photo {
   width: 1650px;
-  height: 1820px;
+  height: 2250px;
 
   object-position: bottom center;
 }
 .hero-content {
-  top: 350px;
+  top: 700px;      
   left: 2100px;
 
-  width: 2900px;
+  width: 3000px;
   height: auto;
 
-  gap: 42px;
+  gap: 46px;
 }
 
 .iam {
-  width: 145px;
-  height: 350px;
+  width: 160px;
+  height: 390px;
 }
 
 .iam > span {
-  font-size: 150px;
+  font-size: 165px;
 }
 
 .hero-text h1 {
-  font-size: 215px;
+  font-size: 235px;
 }
 
 .hero-text h2 {
-  font-size: 125px;
+  font-size: 138px;
 }
 
 .cta {
-  min-height: 140px;
+  min-height: 150px;
 
-  margin-top: 75px;
-  padding: 38px 72px;
+  margin-top: 80px;
+  padding: 42px 78px;
 
-  font-size: 56px;
+  font-size: 62px;
 }
 /* =========================
    HERO SOCIALS - ULTRAWIDE
    ========================= */
 .hero-socials {
-  bottom: 85px;
-  gap: 60px;
+  bottom: 790px;
+  gap: 68px;
 }
 
 .hero-line {
-  width: 750px;
+  width: 820px;
 }
 
 .hero-socials a img {
-  width: 72px;
-  height: 72px;
+  width: 80px;
+  height: 80px;
 }
 
 .hero-email {
-  font-size: 50px;
+  font-size: 56px;
 }
 
 /* SCROLL DOWN */
 
 .scroll-down {
-  right: 130px;
-  bottom: 200px;
+  position: absolute;
+  right: 20px;
+  bottom: 79px;
+
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  transform: rotate(90deg) translateX(-90%);
+  transform-origin: right center;
+
+  z-index: 6;
 }
+
 .scroll-text {
-  font-size: 68px;
+  font-size: 74px;
 }
 
 .scroll-arrow {
-  font-size: 54px;
+  font-size: 69px;
 }
   /* =========================
      ABOUT - ULTRAWIDE
@@ -4143,6 +4157,50 @@ Ausrichtung
     width: 42px;
     height: 42px;
   }
+}
+@media (min-width: 5000px) {
+
+  .navbar {
+    height: 200px;
+  }
+
+  .navbar .container {
+    width: min(calc(100% - 300px), 5400px);
+    max-width: 5400px;
+  }
+
+ .navbar .footer-logo {
+  font-size: 150px;
+}
+  .nav-right {
+    gap: 160px;
+  }
+
+  .nav-list {
+    gap: 128px;
+  }
+
+  .nav-list a {
+    font-size: 92px;
+  }
+
+  .language {
+    gap: 32px;
+  }
+
+  .language button {
+    font-size: 64px;
+    padding: 16px 32px;
+    border-width: 4px;
+    border-radius: 20px;
+  }
+
+  .hero {
+    padding-top: 352px;
+  }
+  .hero-wave {
+  top: 450px;
+}
 }
 
 /* =========================================
