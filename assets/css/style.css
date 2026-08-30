@@ -4159,7 +4159,7 @@ Ausrichtung
   }
 }
 @media (min-width: 5000px) {
-
+}
   .navbar {
     height: 200px;
   }
@@ -4235,6 +4235,200 @@ Ausrichtung
     height: 78px;
     font-size: 78px;
   }
+  /* =========================
+   ABOUT - 25% / EXTREME ULTRAWIDE
+   ========================= */
+
+.about-section {
+  padding-top: 300px;
+  padding-bottom: 320px;
+}
+
+.about-section .container,
+.skills-section .container {
+  width: min(calc(100% - 420px), 5400px);
+  max-width: 5400px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.about-content {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 520px;
+}
+.about-text {
+  width: 1750px;
+  margin-left: 0;
+  gap: 100px;
+}
+.about-text h2 {
+  font-size: 250px;
+  line-height: 1.05;
+}
+.about-intro {
+  width: 1650px;
+
+  font-size: 64px;
+  line-height: 1.35;
+}
+
+
+.about-info {
+  width: 1650px;
+  gap: 60px;
+  align-items: center;
+}
+.about-info p {
+  width: 1450px;
+  font-size: 60px;
+  line-height: 1.35;
+}
+
+.about-icon-location {
+  width: 115px;
+  height: 115px;
+}
+
+.about-icon-bulb {
+  width: 135px;
+  height: 135px;
+
+  margin-left: 0;
+  margin-top: 0;
+}
+
+.about-icon-puzzle {
+  width: 115px;
+  height: 115px;
+
+  margin: 0;
+}
+
+.about-image-wrapper {
+  width: 1450px;
+  height: 1450px;
+
+  flex-shrink: 0;
+}
+
+.about-circle {
+  width: 1440px;
+  height: 1450px;
+
+  border-width: 12px;
+}
+
+.about-line {
+  height: 10px;
+}
+
+
+/* =========================
+   SKILLS - 25% / EXTREME ULTRAWIDE
+   ========================= */
+
+
+.skills-icons {
+  width: 2300px;
+  max-width: 2300px;
+
+  grid-template-columns: repeat(4, 280px);
+
+  justify-content: start;
+
+  column-gap: 260px;
+  row-gap: 190px;
+}
+
+.skill-item {
+  width: 220px;
+}
+
+.skill-item img {
+  width: 220px;
+  height: 220px;
+}
+
+.skill-item span {
+  margin-top: 32px;
+
+  font-size: 54px;
+  line-height: 1.2;
+}
+
+
+.skills-right {
+  width: 1950px;
+
+  left: 0;
+
+  align-self: center;
+}
+
+.skills-heading {
+  width: 100%;
+  height: auto;
+
+  gap: 80px;
+
+  justify-content: flex-end;
+}
+
+.skills-heading h2 {
+  font-size: 230px;
+  line-height: 1.05;
+}
+
+
+.skills-purple-line {
+  height: 10px;
+}
+
+.skills-text-wrapper {
+  width: 1800px;
+
+  margin-top: 55px;
+
+  gap: 75px;
+}
+
+.skills-description {
+  width: 1800px;
+
+  font-size: 60px;
+  line-height: 1.35;
+}
+
+.skills-question {
+  width: 1750px;
+
+  gap: 45px;
+}
+
+.skills-question h3 {
+  width: 1750px;
+
+  font-size: 105px;
+  line-height: 1.2;
+}
+
+.skills-question p {
+  width: 1750px;
+
+  font-size: 60px;
+  line-height: 1.35;
+}
+
+.skills-btn {
+  width: 700px;
+  height: 165px;
+  font-size: 58px;
+
 }
 
 /* =========================================
@@ -4268,4 +4462,5 @@ Ausrichtung
   .about-section {
     padding-top: 100px;
   }
+
 }
