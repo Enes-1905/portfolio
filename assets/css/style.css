@@ -4051,9 +4051,7 @@ Ausrichtung
   font-size: 24px;
   padding: 16px 32px;
 }
-  /* =========================
-    EXTREME ULTRAWIDE
-   ========================= */
+  
 .portfolio-section {
   padding-top: 320px;
   padding-bottom: 450px;
@@ -4131,20 +4129,21 @@ Ausrichtung
 .contact-heading h2 {
   width: auto;
   height: auto;
-
   flex-shrink: 0;
 
   font-size: 220px;
   line-height: 1;
+
+  transform: translateX(100px);
 }
 
 .contact-line {
   width: 1800px;
   height: 10px;
-
   flex-shrink: 0;
-}
 
+  margin-left: -4877px;
+}
 .contact-content {
   width: 3700px;
   max-width: 3700px;
@@ -4270,6 +4269,67 @@ Ausrichtung
 
   font-size: 50px;
   border-width: 5px;
+}
+/* =========================
+   FOOTER - 25% / EXTREME ULTRAWIDE
+   ========================= */
+
+.footer-section {
+  min-height: 520px;
+  border-top-width: 10px;
+}
+
+.footer-content {
+  width: min(calc(100% - 900px), 4300px);
+  max-width: 4300px;
+  min-height: 520px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LEFT */
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-logo {
+  font-size: 160px;
+  line-height: 1;
+}
+
+.footer-links {
+  gap: 50px;
+  margin-top: 32px;
+}
+
+.footer-legal,
+.footer-privacy {
+  font-size: 48px;
+  line-height: 1.2;
+}
+
+/* CENTER */
+
+.footer-copyright {
+  font-size: 58px;
+  line-height: 1.2;
+}
+
+/* RIGHT */
+
+.footer-socials {
+  gap: 90px;
+}
+
+.footer-socials a img {
+  width: 90px;
+  height: 90px;
 }
 /* =========================
    PROJECTS
