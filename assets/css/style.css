@@ -4019,6 +4019,199 @@ Ausrichtung
     align-items: center;
     gap: 650px;
   }
+  .project-image {
+  width: 700px;
+  height: 383px;
+  flex-shrink: 0;
+}
+
+.project-image img {
+  width: 700px;
+  height: 383px;
+  object-fit: contain;
+}
+
+.project-content {
+  width: 580px;
+}
+
+.project-content h3 {
+  font-size: 36px;
+}
+
+.project-content .project-tech {
+  font-size: 25px;
+}
+
+.project-content p {
+  font-size: 18px;
+}
+
+.project-btn {
+  font-size: 24px;
+  padding: 16px 32px;
+}
+  /* =========================
+    EXTREME ULTRAWIDE
+   ========================= */
+.portfolio-section {
+  padding-top: 320px;
+  padding-bottom: 450px;
+}
+
+/* PORTFOLIO HEADER */
+
+.portfolio-header {
+  width: 100%;
+  height: auto;
+
+  grid-template-columns:
+    1fr
+    350px
+    90px
+    1050px
+    90px
+    1fr;
+
+  align-items: center;
+}
+
+.portfolio-line-left {
+  width: 350px;
+  height: 10px;
+}
+
+.portfolio-line-right {
+  width: 100%;
+  height: 10px;
+  margin-left: 0;
+}
+
+.portfolio-title {
+  width: auto;
+  height: auto;
+
+  font-size: 230px;
+  line-height: 1.1;
+
+  text-align: center;
+}
+
+.portfolio-description {
+  width: 1900px;
+
+  margin-top: 60px;
+
+  font-size: 58px;
+  line-height: 1.35;
+
+  transform: none;
+}
+
+
+/* =========================
+   PROJECTS
+   ========================= */
+
+.portfolio-project {
+  width: min(calc(100% - 700px), 5000px);
+  max-width: 5000px;
+
+  margin: 320px auto 0;
+
+  gap: 380px;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.portfolio-project + .portfolio-project {
+  margin-top: 380px;
+}
+
+
+/* =========================
+   PROJECT IMAGE
+   ========================= */
+
+.project-image {
+  width: 1850px;
+  height: auto;
+
+  flex-shrink: 0;
+
+  transform: none;
+}
+
+.project-image img {
+  width: 100%;
+  height: auto;
+
+  max-width: none;
+}
+
+
+/* =========================
+   PROJECT TEXT
+   ========================= */
+
+.project-content {
+  width: 1750px;
+}
+
+.project-content h3 {
+  font-size: 115px;
+  line-height: 1.15;
+}
+
+.project-content .project-tech {
+  margin-top: 32px;
+
+  font-size: 72px;
+  line-height: 1.25;
+}
+
+.project-content p {
+  width: 1650px;
+
+  margin-top: 42px;
+
+  font-size: 54px;
+  line-height: 1.4;
+}
+
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+.project-buttons {
+  gap: 55px;
+  margin-top: 70px;
+}
+
+.project-btn {
+  min-height: 150px;
+
+  padding: 38px 70px;
+
+  border-radius: 22px;
+
+  font-size: 58px;
+}
+/* =========================
+   FIX HORIZONTAL OVERFLOW
+   ========================= */
+
+.about-line {
+  width: calc(max(350px, (100vw - 5000px) / 2) - 8px);
+  min-width: 0;
+}
+
+.skills-purple-line {
+  width: calc(max(350px, (100vw - 5000px) / 2) - 72px);
+  min-width: 0;
+}
 }
 
 /* =========================================
