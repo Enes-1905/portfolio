@@ -3795,6 +3795,7 @@ Ausrichtung
 
   .language {
     gap: 32px;
+
   }
 
   .language button {
@@ -4115,17 +4116,18 @@ Ausrichtung
   padding-bottom: 420px;
 }
 .contact-heading {
-  width: 100%;
+  width: calc(100vw - 32px);
   height: auto;
+
+  margin-left: calc((100vw - 100%) / -2);
   margin-bottom: 180px;
 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 
   gap: 100px;
 }
-
 .contact-heading h2 {
   width: auto;
   height: auto;
@@ -4134,25 +4136,29 @@ Ausrichtung
   font-size: 220px;
   line-height: 1;
 
-  transform: translateX(100px);
+  transform: none;
 }
 
 .contact-line {
-  width: 1800px;
+  width: 1500px;
   height: 10px;
   flex-shrink: 0;
 
-  margin-left: -4877px;
+  margin-left: 0;
 }
 .contact-content {
   width: 3700px;
   max-width: 3700px;
+
   margin: 0 auto;
+
   display: flex;
   justify-content: center;
   align-items: flex-start;
+
   gap: 220px;
-  transform: translateX(-180px);
+
+  transform: translateX(-650px);
 }
 
 .contact-left {
@@ -4221,7 +4227,16 @@ Ausrichtung
 
   resize: none;
 }
+.contact-section::before {
+  left: -1000px;
+  bottom: -250px;
 
+  width: 2400px;
+  height: 2400px;
+
+  background-size: contain;
+  background-position: left bottom;
+}
 .privacy-label {
   width: 100%;
   max-width: none;
@@ -4330,6 +4345,151 @@ Ausrichtung
 .footer-socials a img {
   width: 90px;
   height: 90px;
+}
+/* =========================
+   PRIVACY / LEGAL - EXTREME ULTRAWIDE
+   ========================= */
+
+.legal-page {
+  min-height: 100vh;
+  padding-top: 420px;
+  padding-bottom: 300px;
+}
+
+.legal-content {
+  width: min(calc(100% - 900px), 4300px);
+  max-width: 4300px;
+  margin: 0 auto;
+}
+
+
+.legal-heading {
+  width: 100%;
+  margin-bottom: 140px;
+
+  display: flex;
+  align-items: center;
+  gap: 90px;
+}
+
+.legal-heading h1 {
+  font-size: 220px;
+  line-height: 1.05;
+  white-space: nowrap;
+}
+
+.legal-heading-line {
+  flex: 1;
+  width: auto;
+  height: 10px;
+}
+
+.legal-copy {
+  width: 3200px;
+  max-width: 3200px;
+}
+
+.legal-copy section {
+  margin-bottom: 100px;
+}
+
+.legal-copy h2 {
+  margin-bottom: 24px;
+
+  font-size: 80px;
+  line-height: 1.2;
+}
+
+.legal-copy p,
+.legal-copy address {
+  font-size: 54px;
+  line-height: 1.4;
+}
+
+.legal-copy a {
+  font-size: inherit;
+}
+
+.legal-note {
+  margin-top: 120px;
+  font-size: 48px;
+}
+
+.legal-back {
+  top: -60px;
+  right: 0;
+
+  width: 110px;
+  height: 110px;
+
+  border-width: 6px;
+  font-size: 60px;
+
+  transform: none;
+}
+
+/* =========================
+   LEGAL / PRIVACY HEADER
+   ========================= */
+
+.legal-page ~ .navbar,
+.navbar {
+  height: 200px;
+}
+
+.navbar .container {
+  width: min(calc(100% - 300px), 5400px);
+  max-width: 5400px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.navbar .footer-logo {
+  font-size: 150px;
+}
+
+.nav-right {
+  gap: 160px;
+}
+
+.nav-list {
+  gap: 128px;
+}
+
+.nav-list a {
+  font-size: 92px;
+}
+
+.language {
+  gap: 32px;
+}
+
+.language button {
+  font-size: 64px;
+  padding: 16px 32px;
+  border-width: 4px;
+  border-radius: 20px;
+}
+.language-link {
+  min-width: 120px;
+  min-height: 90px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 16px 32px;
+
+  font-size: 64px;
+  line-height: 1;
+
+  border-width: 4px;
+  border-radius: 20px;
+}
+
+.language-link.active {
+  background: var(--green);
+  color: var(--bg);
 }
 /* =========================
    PROJECTS
