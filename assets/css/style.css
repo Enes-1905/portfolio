@@ -3273,7 +3273,7 @@ Ausrichtung
 
 /* ========== LARGE DESKTOP ab 2200px ========== */
 
-@media (min-width: 2200px) {
+@media (min-width: 2200px) and (max-width: 4999px) {
   .container {
     max-width: 1920px;
     padding-left: 80px;
@@ -3293,130 +3293,137 @@ Ausrichtung
     width: calc((var(--viewport-width) - 1920px) / 2 + 80px);
   }
 
-  .navbar .container {
-    width: min(calc(100% - 300px), 5400px);
-    max-width: 5400px;
-  }
+.navbar {
+  height: 120px;
+}
 
-  .logo {
-    font-size: 192px;
-  }
+.navbar .container {
+  width: min(calc(100% - 240px), 2600px);
+  max-width: 2600px;
+}
 
-  .nav-list {
-    gap: 100px;
-  }
+.logo {
+  font-size: 64px;
+}
 
-  .nav-list a {
-    font-size: 64px;
-  }
 
-  .language {
-    gap: 22px;
-  }
+.nav-list a {
+  font-size: 34px;
+}
 
-  .language button {
-    font-size: 42px;
-    padding: 12px 22px;
-  }
+.language {
+  gap: 14px;
+}
 
-  .hero-inner {
-    width: min(calc(100% - 300px), 5400px);
-    max-width: 5400px;
-    min-height: calc(100vh - 88px);
-    grid-template-columns: 1750px minmax(0, 1fr);
-    column-gap: 300px;
-    align-items: start;
-  }
+.language button {
+  font-size: 26px;
+  padding: 8px 16px;
+}
 
-  .hero-image {
-    width: 1750px;
-    height: 1680px;
-    margin-left: 0;
-    margin-top: 115px;
-    align-self: start;
-  }
+.hero-inner {
+  width: min(calc(100% - 240px), 2600px);
+  max-width: 2600px;
+  min-height: calc(100vh - 88px);
 
-  .hero-shadow {
-    left: -150px;
-    top: 50px;
-    width: 1850px;
-    height: 1850px;
-  }
+  grid-template-columns: 900px minmax(0, 1fr);
+  column-gap: 120px;
 
-  .hero-photo {
-    width: 1650px;
-    height: 2250px;
-    object-position: bottom center;
-  }
+  align-items: start;
+}
+.hero-image {
+  width: 900px;
+  height: 950px;
 
-  .hero-content {
-    top: 700px;
-    left: 2100px;
-    width: 3000px;
-    height: auto;
-    gap: 46px;
-  }
+  margin-left: 0;
+  margin-top: 170px;
 
-  .iam {
-    width: 160px;
-    height: 390px;
-  }
+  align-self: start;
+}
 
-  .iam > span {
-    font-size: 165px;
-  }
+.hero-shadow {
+  left: -80px;
+  top: 40px;
 
-  .hero-text h1 {
-    font-size: 235px;
-  }
+  width: 950px;
+  height: 950px;
+}
 
-  .hero-text h2 {
-    font-size: 138px;
-  }
 
-  .cta {
-    min-height: 150px;
-    margin-top: 80px;
-    padding: 42px 78px;
-    font-size: 62px;
-  }
+.hero-photo {
+  width: 850px;
+  height: 1050px;
 
-  .hero-socials {
-    bottom: 790px;
-    gap: 68px;
-  }
+  object-position: bottom center;
+  transform: translateY(35px);
+}
 
-  .hero-line {
-    width: 820px;
-  }
 
-  .hero-socials a img {
-    width: 80px;
-    height: 80px;
-  }
+.hero-content {
+  top: 320px;
+  left: 1050px;
 
-  .hero-email {
-    font-size: 56px;
-  }
+  width: 1350px;
+  height: auto;
 
-  .scroll-down {
-    position: absolute;
-    right: 20px;
-    bottom: 79px;
-    display: flex;
-    align-items: center;
-    gap: 60px;
-    transform: rotate(90deg) translateX(-90%);
-    transform-origin: right center;
-    z-index: 6;
-  }
+  gap: 24px;
+}
+
+.iam {
+  width: 80px;
+  height: 200px;
+}
+
+.iam > span {
+  font-size: 82px;
+}
+
+.hero-text h1 {
+  font-size: 110px;
+}
+
+.hero-text h2 {
+  font-size: 66px;
+}
+
+.cta {
+  min-height: 76px;
+  margin-top: 38px;
+  padding: 20px 40px;
+  font-size: 30px;
+}
+.hero-socials {
+  bottom: 180px;
+  gap: 40px;
+}
+
+.hero-line {
+  width: 320px;
+}
+.hero-socials a img {
+  width: 54px;
+  height: 44px;
+}
+.hero-email {
+  font-size: 42px;
+}
+.scroll-down {
+  position: absolute;
+  right: 35px;
+  bottom: 35px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  transform: rotate(90deg) translateX(-90%);
+  transform-origin: right center;
+  z-index: 6;
+}
 
   .scroll-text {
-    font-size: 74px;
+    font-size: 54px;
   }
 
   .scroll-arrow {
-    font-size: 69px;
+    font-size: 54px;
   }
 
   .about-section {
@@ -3813,15 +3820,14 @@ Ausrichtung
     top: 450px;
   }
 
-  .hero-socials {
-    bottom: 870px;
-    gap: 58px;
-  }
+.hero-socials {
+  bottom: 180px;
+  gap: 40px;
+}
 
-  .hero-line {
-    width: 900px;
-  }
-
+.hero-line {
+  width: 320px;
+}
   .hero-socials a img {
     width: 118px;
     height: 118px;
