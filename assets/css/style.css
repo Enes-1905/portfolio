@@ -3271,7 +3271,7 @@ Ausrichtung
   }
 }
 
-/* ========== LARGE DESKTOP ab 2200px ========== */
+/* ========== DESKTOP 1351px–2199px ========== */
 @media (min-width: 1351px) and (max-width: 2199px) {
   .navbar,
   .hero,
@@ -3283,6 +3283,9 @@ Ausrichtung
     width: calc(100% - 1px);
   }
 }
+
+/* ========== LARGE DESKTOP ab 2200px ========== */
+
 @media (min-width: 2200px) and (max-width: 4999px) {
 .hero-socials {
   position: absolute;
@@ -3382,7 +3385,7 @@ Ausrichtung
   align-self: start;
   position: relative;
 }
-hero-shadow {
+.hero-shadow {
   left: -80px;
   top: 40px;
 
@@ -3862,10 +3865,88 @@ hero-shadow {
   }
 
 .hero-socials {
-  bottom: 180px;
+  bottom: 280px;
   gap: 40px;
 }
+.hero-inner {
+  width: min(calc(100% - 700px), 5000px);
+  max-width: 5000px;
+  min-height: calc(100vh - 200px);
 
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1900px 1fr;
+  column-gap: 350px;
+
+  position: relative;
+  align-items: start;
+}
+
+.hero-image {
+  width: 1900px;
+  height: 2100px;
+
+  margin-left: 0;
+  margin-top: 470px;
+
+  position: relative;
+  align-self: start;
+}
+
+.hero-shadow {
+  left: -150px;
+  top: 80px;
+
+  width: 2000px;
+  height: 2000px;
+}
+
+.hero-photo {
+  width: 1800px;
+  height: 2200px;
+
+  object-fit: contain;
+  object-position: bottom center;
+
+  transform: translateY(100px);
+}
+
+.hero-content {
+  position: absolute;
+
+  top: 750px;
+  left: 2280px;
+  width: 2500px;
+  height: auto;
+  gap: 55px;
+}
+
+.iam {
+  width: 170px;
+  height: 430px;
+}
+
+.iam > span {
+  font-size: 170px;
+}
+
+.hero-text h1 {
+  font-size: 230px;
+}
+
+.hero-text h2 {
+  font-size: 135px;
+}
+
+.cta {
+  min-height: 150px;
+
+  margin-top: 70px;
+  padding: 35px 75px;
+
+  font-size: 58px;
+}
 .hero-line {
   width: 320px;
 }
@@ -3881,7 +3962,7 @@ hero-shadow {
 
   .scroll-down {
     right: 120px;
-    bottom: 670px;
+    bottom: 520px;
     gap: 28px;
   }
 
