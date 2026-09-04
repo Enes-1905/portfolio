@@ -3272,8 +3272,44 @@ Ausrichtung
 }
 
 /* ========== LARGE DESKTOP ab 2200px ========== */
-
+@media (min-width: 1351px) and (max-width: 2199px) {
+  .navbar,
+  .hero,
+  .about-section,
+  .skills-section,
+  .portfolio-section,
+  .contact-section,
+  .footer-section {
+    width: calc(100% - 1px);
+  }
+}
 @media (min-width: 2200px) and (max-width: 4999px) {
+.hero-socials {
+  position: absolute;
+  left: 0;
+  bottom: 48px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  z-index: 6;
+}
+.hero-line {
+  margin-left: 0;
+}
+.hero-socials {
+  left: 0;
+  transform: none;
+}
+.about-line,
+.skills-purple-line {
+  max-width: calc(100vw - 2px);
+  min-width: 0;
+}
+.about-line,
+.skills-purple-line {
+  margin-left: 0;
+}
+
   .container {
     max-width: 1920px;
     padding-left: 80px;
@@ -3288,11 +3324,13 @@ Ausrichtung
     transform: none;
   }
 
-  .about-line,
-  .skills-purple-line {
-    width: calc((var(--viewport-width) - 1920px) / 2 + 80px);
-  }
+.about-line {
+  width: calc((var(--viewport-width) - 1920px) / 2 + 77px);
+}
 
+.skills-purple-line {
+  width: calc((var(--viewport-width) - 1920px) / 2 + 76px);
+}
 .navbar {
   height: 120px;
 }
@@ -3321,48 +3359,43 @@ Ausrichtung
 }
 
 .hero-inner {
-  width: min(calc(100% - 240px), 2600px);
-  max-width: 2600px;
-  min-height: calc(100vh - 88px);
+  width: min(calc(100% - 200px), 2400px);
+  max-width: 2400px;
+  min-height: calc(100vh - 120px);
 
-  grid-template-columns: 900px minmax(0, 1fr);
-  column-gap: 120px;
+  margin: 0 auto;
 
+  display: grid;
+  grid-template-columns: 900px 1fr;
+  column-gap: 140px;
+
+  position: relative;
   align-items: start;
 }
 .hero-image {
   width: 900px;
-  height: 950px;
+  height: 980px;
 
   margin-left: 0;
-  margin-top: 170px;
+  margin-top: 260px;
 
   align-self: start;
+  position: relative;
 }
-
-.hero-shadow {
+hero-shadow {
   left: -80px;
   top: 40px;
 
-  width: 950px;
-  height: 950px;
+  width: 980px;
+  height: 980px;
 }
-
-
-.hero-photo {
-  width: 850px;
-  height: 1050px;
-
-  object-position: bottom center;
-  transform: translateY(35px);
-}
-
-
 .hero-content {
-  top: 320px;
-  left: 1050px;
+  position: absolute;
 
-  width: 1350px;
+  top: 360px;
+  left: 1040px;
+
+  width: 1200px;
   height: auto;
 
   gap: 24px;
@@ -3387,44 +3420,52 @@ Ausrichtung
 
 .cta {
   min-height: 76px;
+
   margin-top: 38px;
   padding: 20px 40px;
+
   font-size: 30px;
 }
 .hero-socials {
-  bottom: 180px;
-  gap: 40px;
+  bottom: 90px;
+  gap: 48px;
 }
 
 .hero-line {
-  width: 320px;
+  width: 360px;
 }
 .hero-socials a img {
-  width: 54px;
-  height: 44px;
+  width: 64px;
+  height: 64px;
 }
+
 .hero-email {
-  font-size: 42px;
+  font-size: 44px;
 }
+
 .scroll-down {
   position: absolute;
-  right: 35px;
-  bottom: 35px;
+
+  right: 40px;
+  bottom: 70px;
+
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 28px;
+
   transform: rotate(90deg) translateX(-90%);
   transform-origin: right center;
+
   z-index: 6;
 }
 
-  .scroll-text {
-    font-size: 54px;
-  }
+.scroll-text {
+  font-size: 54px;
+}
 
-  .scroll-arrow {
-    font-size: 54px;
-  }
+.scroll-arrow {
+  font-size: 54px;
+}
 
   .about-section {
     padding-top: 180px;
@@ -4087,7 +4128,7 @@ Ausrichtung
 }
 
 .portfolio-line-right {
-  width: 100%;
+  width: calc(100% - 1px);
   height: 10px;
   margin-left: 0;
 }
