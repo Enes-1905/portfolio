@@ -3296,6 +3296,14 @@ Ausrichtung
   gap: 28px;
   z-index: 6;
 }
+#contact::before,
+.contact-section::before {
+  left: 0;
+}
+#skills::before,
+.skills-section::before {
+  left: 0;
+}
 .hero-line {
   margin-left: 0;
 }
@@ -3677,14 +3685,14 @@ Ausrichtung
     margin-left: 0;
     gap: 45px;
   }
-
-  .contact-line {
-    width: calc(535px + (100vw - 1440px) / 2);
-    height: 4px;
-    background: var(--purple);
-    flex-shrink: 0;
-    margin-left: calc((100vw - 1440px) / -2);
-  }
+.contact-line {
+  width: 900px;
+  max-width: 100%;
+  height: 4px;
+  background: var(--purple);
+  flex-shrink: 1;
+  margin-left: 0;
+}
 
   .contact-heading h2 {
     width: auto;
@@ -3882,46 +3890,37 @@ Ausrichtung
   position: relative;
   align-items: start;
 }
-
 .hero-image {
   width: 1900px;
-  height: 2100px;
-
+  height: 2300px;
   margin-left: 0;
-  margin-top: 470px;
-
+  margin-top: 80px;  
   position: relative;
   align-self: start;
 }
 
 .hero-shadow {
   left: -150px;
-  top: 80px;
-
+  top: 180px;
   width: 2000px;
   height: 2000px;
 }
 
 .hero-photo {
   width: 1800px;
-  height: 2200px;
-
+  height: 2300px;
   object-fit: contain;
-  object-position: bottom center;
-
-  transform: translateY(100px);
+  object-position: center bottom;
+  transform: translateY(-180px);
 }
-
 .hero-content {
   position: absolute;
-
   top: 750px;
   left: 2280px;
-  width: 2500px;
+  width: 2250px;
   height: auto;
   gap: 55px;
 }
-
 .iam {
   width: 170px;
   height: 430px;
@@ -4244,16 +4243,16 @@ Ausrichtung
   padding-bottom: 420px;
 }
 .contact-heading {
-  width: calc(100vw - 32px);
+  width: 100%;
+  max-width: 100%;
   height: auto;
 
-  margin-left: calc((100vw - 100%) / -2);
+  margin-left: 0;
   margin-bottom: 180px;
 
   display: flex;
   align-items: center;
   justify-content: flex-start;
-
   gap: 100px;
 }
 .contact-heading h2 {
