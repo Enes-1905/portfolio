@@ -8,7 +8,13 @@
   <title>Enes Kurt | Frontend Developer</title>
 
   <link rel="icon" type="image/png" href="./assets/img/favicon.png" />
-  <link rel="stylesheet" href="./assets/css/style.css" />
+
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+/>
+
+<link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
 <body>
@@ -186,7 +192,11 @@
 
 
 <!-- ABOUT -->
-<section id="about-me" class="about-section">
+<section
+  id="about-me"
+  class="about-section"
+  data-aos="fade-up"
+>
 
   <div class="container about-content">
 
@@ -263,7 +273,11 @@
 </section>
 
 <!-- SKILLS -->
-<section id="skills" class="skills-section">
+<section
+  id="skills"
+  class="skills-section"
+  data-aos="fade-up"
+>
 
   <div class="container skills-content">
 
@@ -382,7 +396,10 @@
 <section id="portfolio" class="portfolio-section">
 
   <!-- TITLE AUSSERHALB DES CONTAINERS -->
-  <div class="portfolio-header">
+<div
+  class="portfolio-header"
+  data-aos="fade-up"
+>
 
     <div class="portfolio-line-left"></div>
 
@@ -398,7 +415,8 @@
   <div class="container portfolio-content">
 
     <p
-      class="portfolio-description"
+  class="portfolio-description"
+  data-aos="fade-up"
       data-de="Entdecke hier eine Auswahl meiner Projekte – Interagiere mit ihnen und erhalte einen Einblick in meine Fähigkeiten."
       data-en="Explore a selection of my work here - Interact with projects to see my skills in action."
     >
@@ -406,7 +424,10 @@
     </p>
 
     <!-- PROJECT 1 -->
-    <div class="portfolio-project">
+    <div
+  class="portfolio-project"
+  data-aos="fade-right"
+>
 
       <div class="project-image">
         <img
@@ -454,7 +475,10 @@
     </div>
 
     <!-- PROJECT 2 -->
-    <div class="portfolio-project portfolio-project-reverse">
+    <div
+  class="portfolio-project portfolio-project-reverse"
+  data-aos="fade-left"
+>
 
       <div class="project-content project-content-right">
 
@@ -506,7 +530,11 @@
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="contact-section">
+<section
+  id="contact"
+  class="contact-section"
+  data-aos="fade-up"
+>
 
   <div class="container">
 
@@ -672,6 +700,18 @@
   </div>
 </footer>
 
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 <script src="./assets/js/main.js"></script>
+
+<script>
+  AOS.init({
+    duration: 700,
+    easing: 'ease-out',
+    once: true,
+    offset: 100
+  });
+</script>
+
 </body>
 </html>

@@ -3889,8 +3889,8 @@ Ausrichtung
   align-items: start;
 }
 .hero-image {
-  width: 1900px;
-  height: 2300px;
+  width: 2000px;
+  height: 2600px;
   margin-left: 0;
   margin-top: 80px;  
   position: relative;
@@ -3906,7 +3906,7 @@ Ausrichtung
 
 .hero-photo {
   width: 1800px;
-  height: 2300px;
+  height: 2500px;
   object-fit: contain;
   object-position: center bottom;
   transform: translateY(-180px);
