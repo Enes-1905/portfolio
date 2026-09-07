@@ -7,6 +7,9 @@
   --white: #ffffff;
   --cyan: #00bee8;
 }
+.language-loading body {
+  visibility: hidden;
+}
 
 * {
   margin: 0;

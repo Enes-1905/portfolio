@@ -598,14 +598,16 @@ function closeMenuOnDesktop() {
 function initResizeHandler() {
   window.addEventListener("resize", closeMenuOnDesktop);
 }
-
 function initPage() {
+  setLanguage(getCurrentLanguage());
+
   initBurgerMenu();
   initLanguageButtons();
   initContactForm();
   initScrollTop();
   initResizeHandler();
-  setLanguage(getCurrentLanguage());
+
+  document.documentElement.classList.remove("language-loading");
 }
 
 initPage();
