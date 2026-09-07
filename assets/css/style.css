@@ -3284,8 +3284,6 @@ Ausrichtung
   }
 }
 
-/* ========== LARGE DESKTOP ab 2200px ========== */
-
 @media (min-width: 2200px) and (max-width: 4999px) {
 .hero-socials {
   position: absolute;
@@ -3383,32 +3381,36 @@ Ausrichtung
   position: relative;
   align-items: start;
 }
-.hero-image {
-  width: 900px;
-  height: 980px;
+  .hero-image {
+    width: 1000px;
+    height: 1080px;
+    margin-left: 0;
+    margin-top: 180px;
+    position: relative;
+    align-self: start;
+  }
 
-  margin-left: 0;
-  margin-top: 260px;
 
-  align-self: start;
-  position: relative;
-}
-.hero-shadow {
-  left: -80px;
-  top: 40px;
-
-  width: 980px;
-  height: 980px;
-}
+  .hero-shadow {
+    left: -100px;
+    top: 70px;
+    width: 1080px;
+    height: 1080px;
+  }
+ .hero-photo {
+    width: 950px;
+    height: 1120px;
+    max-width: none;
+    object-fit: contain;
+    object-position: bottom center;
+    transform: translateY(20px);
+  }
 .hero-content {
   position: absolute;
-
   top: 360px;
   left: 1040px;
-
   width: 1200px;
   height: auto;
-
   gap: 24px;
 }
 
@@ -3456,17 +3458,13 @@ Ausrichtung
 
 .scroll-down {
   position: absolute;
-
   right: 40px;
   bottom: 70px;
-
   display: flex;
   align-items: center;
   gap: 28px;
-
   transform: rotate(90deg) translateX(-90%);
   transform-origin: right center;
-
   z-index: 6;
 }
 
