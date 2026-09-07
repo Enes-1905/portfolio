@@ -75,7 +75,7 @@ const translations = {
     errors: {
       name: "Your name is required",
       email: "Your email is required",
-      message: "Your message is empty",
+     message: "Your message must be at least 10 characters long",
       privacy: "Please accept the privacy policy."
     }
   },
@@ -150,7 +150,7 @@ const translations = {
     errors: {
       name: "Dein Name ist erforderlich",
       email: "Deine E-Mail ist erforderlich",
-      message: "Deine Nachricht ist leer",
+      message: "Deine Nachricht muss mindestens 10 Zeichen lang sein",
       privacy: "Bitte akzeptiere die Datenschutzerklärung."
     }
   }
@@ -400,7 +400,7 @@ function getFormFields() {
 
 function isEmailValid(value) {
   const pattern =
-    /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+$/;
+    /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
 
   return pattern.test(value) && !value.includes("..");
 }
@@ -542,7 +542,7 @@ function getFormData() {
 }
 
 function sendContactMail() {
-  return fetch("./send_mail.php", {
+  return fetch("./assets/php/sendMail.php", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
