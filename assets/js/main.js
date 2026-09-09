@@ -72,12 +72,13 @@ const translations = {
     success: "Message sent successfully!",
     serverError: "Server error.",
 
-    errors: {
-      name: "Your name is required",
-      email: "Your email is required",
-     message: "Your message must be at least 10 characters long",
-      privacy: "Please accept the privacy policy."
-    }
+errors: {
+  name: "Your name is required",
+  emailRequired: "Your email is required",
+  emailInvalid: "Your email address is not valid",
+  message: "Your message must be at least 10 characters long",
+  privacy: "Please accept the privacy policy."
+}
   },
 
   de: {
@@ -147,12 +148,13 @@ const translations = {
     success: "Nachricht erfolgreich gesendet!",
     serverError: "Serverfehler.",
 
-    errors: {
-      name: "Dein Name ist erforderlich",
-      email: "Deine E-Mail ist erforderlich",
-      message: "Deine Nachricht muss mindestens 10 Zeichen lang sein",
-      privacy: "Bitte akzeptiere die Datenschutzerklärung."
-    }
+errors: {
+  name: "Dein Name ist erforderlich",
+  emailRequired: "Deine E-Mail ist erforderlich",
+  emailInvalid: "Deine E-Mail-Adresse ist nicht gültig",
+  message: "Deine Nachricht muss mindestens 10 Zeichen lang sein",
+  privacy: "Bitte akzeptiere die Datenschutzerklärung."
+}
   }
 };
 
@@ -400,7 +402,7 @@ function getFormFields() {
 
 function isEmailValid(value) {
   const pattern =
-    /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
+    /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,5}$/;
 
   return pattern.test(value) && !value.includes("..");
 }
@@ -440,14 +442,24 @@ function validateName(showError = true) {
 
 function validateEmail(showError = true) {
   const { email } = getFormFields();
-  const isValid = isEmailValid(email.value.trim());
+  const value = email.value.trim();
 
-  if (!isValid && showError) {
-    setFieldError(email, getErrorTexts().email);
+  if (value.length === 0) {
+    if (showError) {
+      setFieldError(email, getErrorTexts().emailRequired);
+    }
+    return false;
   }
 
-  if (isValid) clearFieldError(email);
-  return isValid;
+  if (!isEmailValid(value)) {
+    if (showError) {
+      setFieldError(email, getErrorTexts().emailInvalid);
+    }
+    return false;
+  }
+
+  clearFieldError(email);
+  return true;
 }
 
 function validateMessage(showError = true) {
