@@ -3020,10 +3020,6 @@ Desktop-Design
     flex: 0 0 auto;
   }
 
-  .nav-list li:last-child {
-    display: none;
-  }
-
   .language {
     display: flex;
     flex-direction: row;
@@ -3285,6 +3281,23 @@ Ausrichtung
   .footer-section {
     width: calc(100% - 1px);
   }
+  .legal-page {
+  min-height: auto;
+  padding-top: 110px;
+  padding-bottom: 30px;
+}
+
+.legal-heading {
+  margin-bottom: 20px;
+}
+
+.legal-copy section {
+  margin-bottom: 22px;
+}
+
+.legal-note {
+  margin-top: 20px;
+}
 }
 
 @media (min-width: 2200px) and (max-width: 4999px) {
@@ -4754,5 +4767,72 @@ iPad Pro PORTRAIT
 
   .about-section {
     padding-top: 100px;
+  }
+}
+@media (min-width: 2200px) and (max-width: 2299px) {
+  .legal-page {
+    min-height: calc(100vh - 310px);
+  }
+
+  .legal-back {
+    transform: none;
+    top: -20px;
+  }
+}
+
+@media (min-width: 769px) {
+  .legal-nav-list li:last-child {
+    display: block;
+  }
+}
+@media (min-width: 2200px) and (max-width: 2299px) {
+  .hero-content {
+    width: calc(100% - 1040px);
+  }
+
+  .hero-image {
+    width: 820px;
+    height: 880px;
+    margin-top: 140px;
+  }
+
+  .hero-shadow {
+    left: -80px;
+    top: 80px;
+    width: 880px;
+    height: 880px;
+  }
+
+  .hero-photo {
+    width: 780px;
+    height: 900px;
+  }
+
+  .hero-socials {
+    bottom: 55px;
+    gap: 32px;
+  }
+
+  .hero-socials a img {
+    width: 46px;
+    height: 46px;
+  }
+
+  .hero-email {
+    font-size: 32px;
+  }
+
+  .scroll-down {
+    right: 35px;
+    bottom: 35px;
+    gap: 18px;
+  }
+
+  .scroll-text {
+    font-size: 38px;
+  }
+
+  .scroll-arrow {
+    font-size: 38px;
   }
 }
