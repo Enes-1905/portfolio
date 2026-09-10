@@ -4967,3 +4967,43 @@ iPad Pro PORTRAIT
     font-size: 28px;
   }
 }
+@media (min-width: 2200px) and (max-width: 4999px) {
+
+  .legal-back {
+    top: 20px;
+    right: 0;
+  }
+
+  .legal-page {
+    padding-bottom: 80px;
+  }
+
+  .legal-body .footer-section,
+  .legal-notice-page + .footer-section {
+    min-height: 220px;
+  }
+
+  .legal-body .footer-content,
+  .legal-notice-page + .footer-section .footer-content {
+    min-height: 220px;
+  }
+}
+@media (min-width: 1800px) and (max-width: 2199px) {
+  .legal-back {
+    top: -22px;
+    right: 20px;
+    transform: none;
+  }
+
+  .legal-page {
+    padding-bottom: 40px;
+  }
+
+  .legal-notice-page + .footer-section {
+    min-height: 200px;
+  }
+
+  .legal-notice-page + .footer-section .footer-content {
+    min-height: 200px;
+  }
+}
