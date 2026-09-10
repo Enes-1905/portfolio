@@ -4879,3 +4879,91 @@ iPad Pro PORTRAIT
     font-size: 27px;
   }
 }
+@media (min-width: 2360px) and (max-width: 2440px) {
+
+  /* IMAGE */
+  .hero-image {
+    width: 760px;
+    height: 850px;
+    margin-top: 150px;
+  }
+
+  .hero-shadow {
+    left: -65px;
+    top: 90px;
+    width: 830px;
+    height: 830px;
+  }
+
+  .hero-photo {
+    width: 710px;
+    height: 870px;
+  }
+
+
+  /* HERO TEXT */
+  .hero-content {
+    top: 330px;
+    gap: 18px;
+  }
+
+  .iam {
+    width: 65px;
+    height: 160px;
+  }
+
+  .iam > span {
+    font-size: 64px;
+  }
+
+  .hero-text h1 {
+    font-size: 86px;
+  }
+
+  .hero-text h2 {
+    font-size: 52px;
+  }
+
+  .cta {
+    min-height: 62px;
+    margin-top: 28px;
+    padding: 16px 32px;
+    font-size: 24px;
+  }
+
+
+  /* SCROLL DOWN */
+  .scroll-down {
+    right: 55px;
+    bottom: 55px;
+    gap: 18px;
+  }
+
+  .scroll-text {
+    font-size: 34px;
+  }
+
+  .scroll-arrow {
+    font-size: 34px;
+  }
+
+
+  /* SOCIALS + EMAIL */
+  .hero-socials {
+    bottom: 55px;
+    gap: 26px;
+  }
+
+  .hero-line {
+    width: 330px;
+  }
+
+  .hero-socials a img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .hero-email {
+    font-size: 28px;
+  }
+}
